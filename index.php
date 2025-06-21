@@ -22,7 +22,7 @@ if (isset($_SESSION['thouSandsIds'])) {
     <h2>Thousands of hours journey to make AAA like games</h2>
     <section>
         <h2>the goal</h2>
-        <p>this is a journey where i'll be making high quality products</p>
+        <p>this is a journey where i'll be making multiplayer Sandbox open world games</p>
     </section>
         <h2>stay tuned! and give some feedback(pls)</h2>
         <p>there's no point if i only make this games for myself, my goal were to share this dreams to you guys and if you have a suggestion or want to get some alpha testing, hit me up on slack or check my github cuz in there i usually release a somewhat stable build(not promised). Awhile that pleaseee if you find some bug or have a suggestion for a feature to improve the game expreience, post it on the Wished Feature Forum in this website(i've pour my time to made it y'know)</p>
