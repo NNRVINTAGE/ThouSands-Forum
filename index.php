@@ -1,14 +1,12 @@
 <?php
 require_once "processes/database.php";
 $errors = array();
+session_start();
 if (isset($_SESSION['thouSandsIds'])) {
     $isLogged = true;
-    // header ('location: GM/forum/dashboards.php');
     exit;
 };
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +17,12 @@ if (isset($_SESSION['thouSandsIds'])) {
     <title>Project ThouSands</title>
 </head>
 <body>
+    <header>
+        <nav id="nav">
+            <a href="forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
+            <a href="forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
+        </nav>
+    </header>
     <section class="sect_1">
         <h1>Project ThouSands</h1>
         <h2>Thousand journeys among the Endless Desert Oasis</h2>
@@ -29,16 +33,16 @@ if (isset($_SESSION['thouSandsIds'])) {
     </section>
     <section>
         <h2>the challenge as always</h2>
-        <P>making AAA games won't be easy, I'm not quite experienced at even making sandbox or open world games let alone the multiplayer ones.
+        <P>making this kind of games ain't be easy, I'm not quite experienced at even making sandbox or open world games let alone the multiplayer ones.
             but that doesn't meant that i'll never be able to, i mean doing it long enough and it will be somewhat done.
             not guaranteeing that it will be good and probably poorly optimized, the real challenge were to optimizing
-            and making sure there's close to no bug so that it won't be immersion breaking (let's be real, its useless to
+            and making sure there's close to no bug so that it won't be immersion breaking (let's be real, it'll be useless to
             have a nice looking game but crash every single second).
         </P>
-        <p>and to better track what's need to be done and what have been achieved, i made som roadmap that
-            you can see down below and it will be updated as it progress with time    
+        <p>and to better track what's need to be done and what have been achieved, i made some kind of
+            roadmap that you can see down below and it will be updated as it progress with time    
         </p>
-    </section>
+</section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
         <p>in there you'll see what have been done and what to be achieved</p>
@@ -94,7 +98,7 @@ if (isset($_SESSION['thouSandsIds'])) {
     </section>
     <section>
         <h2>testing and feedback</h2>
-        <p>i reaaalllyyy appreciate for trying my game and it will be nice if you willing to send some feedback about
+        <p>i reaaallyyy appreciate for trying my game and it will be nice if you willing to send some feedback about
             any improvement i can do even just for a smol little suggestion for more comfortable gameplay.
         </p>
         <div class="link-container">
