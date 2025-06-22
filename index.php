@@ -1,8 +1,9 @@
 <?php
-require_once "processes/datbase.php";
+require_once "processes/database.php";
 $errors = array();
 if (isset($_SESSION['thouSandsIds'])) {
-    header ('location: GM/forum/dashboards.php')
+    $isLogged = true;
+    // header ('location: GM/forum/dashboards.php');
     exit;
 };
 
@@ -15,21 +16,21 @@ if (isset($_SESSION['thouSandsIds'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/index.css">
-    <title>Project Thousand</title>
+    <title>Project ThouSands</title>
 </head>
 <body>
-    <h1>Project ThouSands</h1>
-    <h2>Thousands of hours journey to make AAA like games</h2>
-    <section>
-        <h2>the goal</h2>
-        <p>this is a journey where i'll be making multiplayer Sandbox open world games</p>
+    <section class="sect_1">
+        <h1>Project ThouSands</h1>
+        <h2>Thousand journeys among the Endless Desert Oasis</h2>
     </section>
-        <h2>stay tuned! and give some feedback(pls)</h2>
-        <p>there's no point if i only make this games for myself, my goal were to share this dreams to you guys and if you have a suggestion or want to get some alpha testing, hit me up on slack or check my github cuz in there i usually release a somewhat stable build(not promised). Awhile that pleaseee if you find some bug or have a suggestion for a feature to improve the game expreience, post it on the Wished Feature Forum in this website(i've pour my time to made it y'know)</p>
+    <section>
+        <h2>stay tuned! and send some feedback(pls)</h2>
+        <p>this is a game of a thousands hour making if you have a suggestion or want to get some alpha testing, hit me up on slack or check my github cuz in there i usually release a somewhat stable build(not promised). Awhile that pleaseee if you find some bug or have a suggestion for a feature to improve the game expreience, post it on the Wished Feature Forum in this website(i've pour my time to made it y'know)</p>
+    </section>
     <section>
         <h2>the challenge as always</h2>
-        <P>making AAA games won't be easy, I'm not quite experienced at even making 3d games let alone the AAA ones.
-            but that doesn't meant that i can't make it true, i mean doing it long enough and it will be somewhat done.
+        <P>making AAA games won't be easy, I'm not quite experienced at even making sandbox or open world games let alone the multiplayer ones.
+            but that doesn't meant that i'll never be able to, i mean doing it long enough and it will be somewhat done.
             not guaranteeing that it will be good and probably poorly optimized, the real challenge were to optimizing
             and making sure there's close to no bug so that it won't be immersion breaking (let's be real, its useless to
             have a nice looking game but crash every single second).
@@ -38,7 +39,7 @@ if (isset($_SESSION['thouSandsIds'])) {
             you can see down below and it will be updated as it progress with time    
         </p>
     </section>
-    <section>
+    <section class="map_main_container">
         <h2>the roadmap</h2>
         <p>in there you'll see what have been done and what to be achieved</p>
         <div class="map-container">
@@ -65,11 +66,10 @@ if (isset($_SESSION['thouSandsIds'])) {
             </div>
         </div>
     </section>
-    <section>
+    <section class="devlog_main_container">
         <h2>devlog</h2>
-        <p>in here i will make a notice to what currently im doin each day and what problem might i get stuck with</p>
+        <p>in here i will post notice to what currently im doin each day and what problem might i get stuck with</p>
         <div class="devlog-container">
-            <div class="devlines"></div>
             <div class="devlog">
                 <h3 class="devlog-title">devlog title</h3>
                 <p class="devlog-desc">devlog description</p>
@@ -104,14 +104,14 @@ if (isset($_SESSION['thouSandsIds'])) {
                 <p class="version">version: 0.0.0</p>
                 <a href="#" class="linkie">download</a>
             </div>
-            <div class="link-container">
+            <div class="suggestion-n-smol-feedback-container">
                 <h3 class="title">Some feedback plz</h3>
-                <p class="desc">I made a special forum page for bug reports and suggestions, feel free to use it!</p>
+                <p class="desc">I made a special forum page for bug reports and your suggestions, feel free to use it!</p>
                 <a href="#" class="linkie">go to da forum</a>
             </div>
         </div>
     </section>
-    <section>
+    <section class="comes_soon">
         <h2>comes soon</h2>
         <p>shh... there's will be more to come(if i have time that is)</p>
     </section>
@@ -125,12 +125,13 @@ if (isset($_SESSION['thouSandsIds'])) {
             <div class="footer-menu_group">
                 <a href="#" class="menu_button">Homepage</a>
                 <a href="#" class="menu_button">Github</a>
-                <a href="#" class="menu_button">Feedback Forum</a>
+                <a href="#" class="menu_button">Forum</a>
             </div>
         </div>
         <div class="copyright">
             <p>© 2025 Vintago - All right reserved</p> 
         </div>
+        <h2 class="things">VINTAGO</h2>
     </footer>
 </body>
 </html>

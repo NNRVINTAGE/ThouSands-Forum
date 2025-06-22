@@ -1,6 +1,6 @@
 var navElem = document.getElementById('nav');
 switch (nav) {
-    case nav === "sideboar":
+    case nav === "sidebor":
         navElem.style.width = "100vw";
         break;
         
