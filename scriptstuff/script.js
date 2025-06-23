@@ -51,7 +51,7 @@ var navbtn = document.getElementById('HideNav_Button');
 var searchpanel = document.getElementById('Search_Panel');
 var settingspanel = document.getElementById('Settings_Panel');
 function Navigation() {
-    navbtn.src = (navbtn.src.includes('hide.png')) ? 'asset/img/show.png' : 'asset/img/hide.png';
+    navbtn.src = (navbtn.src.includes('hide.png')) ? '../../img/show.png' : '../../img/hide.png';
     if (nav.style.transform === 'translateY(81px) translateX(-50%)') {
         nav.style.transform = "translateY(0px) translateX(-50%)";
         navbtn.style.transform = "translateY(0px) translateX(-50%)";
@@ -83,14 +83,8 @@ var loadFile = function(event) {
       URL.revokeObjectURL(output.src)
     }
 };
-function LoadPhoto(ID) {
-    return window.location.replace("interaction.php?ID=" + ID);
-}
-function LoadAlbum(ID) {
-    return window.location.replace("albumcontent.php?ID=" + ID);
-}
 
-function LoadEditAlbum(ReqstData) {
+function LoadEditTopics(ReqstData) {
     const form = document.forms.EDITALBUM;
     const values = ReqstData.dataset;
     Object.keys(values).forEach((key) => {

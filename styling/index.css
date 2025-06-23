@@ -15,6 +15,7 @@
     --highlight: #96d8c3;
     --footbg: black;
     --alttext: white;
+    --graditext: linear-gradient(to right, rgb(48, 204, 0), rgb(224, 228, 27), gold);
 }
 html {
     scroll-behavior: smooth;
@@ -54,6 +55,12 @@ p {
 a {
     transition: all 0.4s ease-in-out;
 }
+span {
+    font-size: inherit;
+    background: var(--graditext);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /* top bar stuff */
 header {
@@ -81,9 +88,11 @@ nav .linkie {
     background: none;
     border-radius: 3px;
 }
+nav .dashb,
 nav .linkie:nth-child(2) {
     background: var(--secondary);
 }
+
 
 /* content or just stuff */
 .sect_1 {

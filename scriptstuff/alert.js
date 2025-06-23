@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     const borderAnimate = document.getElementById('borderanimate');
-    
-    // Remove the border to restart the animation if needed
     setTimeout(() => {
         borderAnimate.style.animation = 'none'; // Remove animation
         void borderAnimate.offsetWidth; // Trigger reflow

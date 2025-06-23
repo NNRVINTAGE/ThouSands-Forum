@@ -1,15 +1,15 @@
 <?php
-$state = $_GET['state'];
 require_once "../processes/database.php";
-if ($state === 'login') {
-    require_once "../processes/connect_login.php";
-} else if ($state === 'register') {
-    require_once "../processes/connect_regist.php";
-};
+$state = $_GET['state'];
 $errors = array();
 session_start();
+// if (isset($_SESSION['state']) === 'login' || isset($_SESSION['state']) === 'register') {
+//   $states = $_SESSION['state'];
+//   header ('location: connect_it.php?state=' . $states);
+//   $_SESSION['state'] = '.';
+// };
 if (isset($_SESSION['thouSandsIds'])) {
-    header ('location: ../GM/forum/dashboards.php');
+    header ('location: ../TS/forum/dashboard.php');
     exit;
 };
 ?>
@@ -22,11 +22,12 @@ if (isset($_SESSION['thouSandsIds'])) {
     <link rel="stylesheet" href="../styling/connect_forms.css">
 <?php
 if ($state === 'login') {
+// $_SESSION['state'] = 'login';
 ?>
     <title>Connect Login</title>
 </head>
 <body class="LRContainer">
-  <form class="EntryPanel" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  <form class="EntryPanel" action="../processes/connect_login.php" method="post">
   <h1 class="EntryPanelTitle">Connect Login</h1>
     <div class="form-input-row">
       <label for="username">Username</label>
@@ -45,12 +46,12 @@ if ($state === 'login') {
   </form>
 <?php
 } else if ($state === 'register') {
-require_once "../processes/connect_regist.php";
+// $_SESSION['state'] = 'register';
 ?>
   <title>Connect Register</title>
 </head>
 <body class="LRContainer">
-    <form class="EntryPanel" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <form class="EntryPanel" action="../processes/connect_regist.php" method="post">
         <h1 class="EntryPanelTitle">Connect Register</h1>
         <div class="form-input-row">
         <label for="Email">Email</label>
@@ -76,17 +77,18 @@ require_once "../processes/connect_regist.php";
     echo "<p>wtf?</p>";
 }
 ?>
-  <div class="extraBanner"></div>
   <div id="alertcard">
-    <p id="alertcontent"></p>
+     <p id="alertcontent"></p>
     <div id="borderanimate"></div>
   </div>
   <script src="../scriptstuff/alert.js"></script>
   <?php
-  if (!empty($errors)) {
-    echo "<script> ";
-    echo "alerter('"; foreach ($errors as $error) {echo $error .";";} echo "')";
-    echo "</script>";
+  if (!empty($_SESSION['corsmsg'])) {
+      $corsmsg = $_SESSION['corsmsg'];
+      echo "<script> ";
+      echo "alerter('" . $corsmsg . "')";
+      echo "</script>";
+      $_SESSION['corsmsg'] = "";
   }
   ?>
 </body>

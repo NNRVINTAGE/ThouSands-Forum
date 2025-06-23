@@ -11,9 +11,10 @@
 }
 :root {
     --text: rgb(255, 255, 255);
-    --background: rgb(51, 51, 51);
-    --primary: #15f28b;
-    --secondary: rgb(5, 165, 233);
+    --background: rgb(242, 242, 242);
+    --primary: #35b189;
+    --secondary:#6bccac;
+    --highlight: #96d8c3;
     --accent: rgb(236, 178, 4);
 }
 body {
@@ -47,16 +48,6 @@ h1 {
     max-height: 100vh;
     display: flex;
     flex-direction: row;
-}
-.LRContainer .extraBanner {
-    margin: 0 0;
-    width: 70%;
-    aspect-ratio: 16/9;
-    background: url("../img/extraBanner.png");
-    background-color: white;
-    background-position: center;
-    background-size: 95%;
-    background-repeat: no-repeat;
 }
 .EntryPanelTitle {
     margin: 0 auto;

@@ -6,9 +6,10 @@ if (isset($_SESSION['thouSandsIds'])) {
     $aidis = $_SESSION['thouSandsIds'];
     $name = $_SESSION['username'];
 } else {
-    header ('location: ../GM/forum/dashboards.php');
+    header ('location: ../../index.php');
     exit;
-};
+}
+
 $page = "dashboard";
 $UploadEnabled = "yes";
 ?>
@@ -23,62 +24,74 @@ $UploadEnabled = "yes";
     <title>Dashboard</title>
 </head>
 <body>
-<!-- nav -->
-    <div id="Navigation_Panel">
-        <img src="../../img/home.png" alt="" class="Navigation_Button" onclick="linker('home')">
-        <?php
-            if ($UploadEnabled === "yes") {
-        ?>
-                <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
-                <img src="../../img/upload.png" alt="" class="Navigation_Button" onclick="SetDialog('add')">
-        <?php
-            }
-        ?>
-        <img src="../../img/topic.png" alt="" class="Navigation_Button" onclick="linker('topic')">
-        <img src="../../img/settings.png" alt="" class="Navigation_Button" onclick="settings()">
-    </div>
-    <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">
-    <div id="Settings_Panel" style="transform: translateY(100vh) translateX(-50%);">
-        <div class="RowGroup">
-            <h2>User : <?php echo isset($name) ? $name : 'Unidentified';?></h2>
-            <img src="../../img/information.png" alt="" class="Settings_Action" onclick="linker('profile')">
-        </div>
-        <div class="RowGroup">
-            <h2>Log-Out</h2>
-            <img src="../../img/log-out.png" alt="" class="Settings_Action" onclick="linker('logout')">
-        </div>
-    </div>
-    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'dashboard';?>.php">
-        <input type="text" name="search" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
-        <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>
-        <button class="searchbtn" onclick="linker('dashboard')" tabindex="3">Reset</button>
-    </form>
+<!-- nav get moved for modularity -->
+<?php include_once '../component/nav.php';?>
 <!-- forum -->
     <section class="forum-display">
+        <?php
+        $HForumState = "publics";
+        $stmt_check_HForum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'YES'");
+        $stmt_check_HForum->bind_param("s", $HForumState);
+        $stmt_check_HForum->execute();    
+        $result_check_HForum = $stmt_check_HForum->get_result();
+
+        if ($result_check_HForum->num_rows > 0) {
+            $Hvalue = $result_check_HForum->fetch_assoc();
+            $Hids = $value['ForumIds'];
+            $Hcreators = $value['ForumCreator'];
+            $Htitles = $value['ForumTitles'];
+            $Htopics = $value['Forumtopics'];
+            $Hdates = $value['ForumDates'];
+            $Hcontents = $value['ForumContents'];
+        ?>
         <div class="highligthed-forum-container">
-            <h2 class="forum-title">title of the highlighted forum</h2>
+            <h2 class="forum-title"><?php echo $Htitles;?>title of the highlighted forums</h2>
+            <div class="detail-wrap">
+                <p class="topic"><?php echo $Htopics;?>forum topic</p>
+                <p class="forum-dates"><?php echo $Hdates;?>22/6/2025</p>
+            </div>
+            <p class="username"><?php echo $Hcreators;?>usually me or forum admins</p>
+            <p class="forum-content"><?php echo $Hcontents;?>
+                highlighted forum content which ussually only for the
+                project ThouSands or some trending forum, nah later i'll explain.
+            </p>
+        </div>
+        <?php
+        } 
+        $ForumState = "publics";
+        $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ?");
+        $stmt_check_Forum->bind_param("s", $ForumState);
+        $stmt_check_Forum->execute();    
+        $result_check_Forum = $stmt_check_Forum->get_result();
+
+        if ($result_check_Forum->num_rows > 0) {
+            $value = $result_check_Forum->fetch_assoc();
+            $ids = $value['ForumIds'];
+            $creators = $value['ForumCreator'];
+            $titles = $value['ForumTitles'];
+            $topics = $value['Forumtopics'];
+            $dates = $value['ForumDates'];
+            $contents = $value['ForumContents'];
+        ?>
+        <div class="forum-container">
+            <h2 class="forum-title">le titles</h2>
             <p class="username">forum starter username</p>
             <div class="detail-wrap">
                 <p class="topic">forum topic</p>
-                <p class="forum-dates">31/12/9696</p>
+                <p class="forum-dates">23/6/2025</p>
             </div>
             <p class="forum-content">forum content which the rest of the word 
-                will be faded if reach the content word limit... 
+                will be faded if reach the content word limit
             </p>
         </div>
-        <div class="forum-container">
-            <h2 class="forum-title">le title</h2>
-            <p class="username">da forum starter username</p>
-            <div class="detail-wrap">
-                <p class="topic">forum topic</p>
-                <p class="forum-dates">31/12/6969</p>
-            </div>
-            <p class="forum-content">forum content which the rest of the word 
-                will be faded if reach the content word limit... 
-            </p>
-        </div>
+        <?php
+        } else {
+        ?>
+            <p class="unknown">No topic found, somethings wrong in here</p>
+        <?php
+        }
+        ?>
     </section>
-
 <!-- lil bit of messages passer -->
     <div class="extraBanner"></div>
     <div id="alertcard">
@@ -92,6 +105,13 @@ $UploadEnabled = "yes";
         echo "<script> ";
         echo "alerter('"; foreach ($errors as $error) {echo $error .";";} echo "')";
         echo "</script>";
+    }
+    if (!empty($_SESSION['corsmsg'])) {
+        $corsmsg = $_SESSION['corsmsg'];
+        echo "<script> ";
+        echo "alerter('" . $corsmsg . "')";
+        echo "</script>";
+        $_SESSION['corsmsg'] = "";
     }
     ?>
 </body>

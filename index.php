@@ -4,7 +4,8 @@ $errors = array();
 session_start();
 if (isset($_SESSION['thouSandsIds'])) {
     $isLogged = true;
-    exit;
+} else {
+    $isLogged = false;
 };
 ?>
 <!DOCTYPE html>
@@ -19,12 +20,22 @@ if (isset($_SESSION['thouSandsIds'])) {
 <body>
     <header>
         <nav id="nav">
+            <?php
+            if ($isLogged == true) {
+            ?>
+            <a href="TS/forum/dashboard.php" class="linkie dashb">Dashboard</a>
+            <?php
+            } else {
+            ?>
             <a href="forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
             <a href="forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
-        </nav>
+            <?php
+            }
+            ?>
+            </nav>
     </header>
     <section class="sect_1">
-        <h1>Project ThouSands</h1>
+        <h1>Project <span>ThouSands</span></h1>
         <h2>Thousand journeys among the Endless Desert Oasis</h2>
     </section>
     <section>
