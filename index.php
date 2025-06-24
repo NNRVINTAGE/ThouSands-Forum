@@ -88,22 +88,22 @@ if (isset($_SESSION['thouSandsIds'])) {
             <div class="devlog">
                 <h3 class="devlog-title">devlog title</h3>
                 <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress #fun</p>
+                <p class="devlog-tag">#daily #issue #progress</p>
             </div>
             <div class="devlog">
                 <h3 class="devlog-title">devlog title</h3>
                 <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress #fun</p>
+                <p class="devlog-tag">#daily #issue #progress</p>
             </div>
             <div class="devlog">
                 <h3 class="devlog-title">devlog title</h3>
                 <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress #fun</p>
+                <p class="devlog-tag">#daily #issue #progress</p>
             </div>
             <div class="devlog">
                 <h3 class="devlog-title">devlog title</h3>
                 <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress #fun<p>
+                <p class="devlog-tag">#daily #issue #progress<p>
             </div>
         </div>
     </section>

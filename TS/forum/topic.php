@@ -34,21 +34,25 @@ $page = 'topic';
         $result_check_topic = $stmt_check_topic->get_result();
 
         if ($result_check_topic->num_rows > 0) {
-            $value = $result_check_topic->fetch_assoc();
-            $ids = $value['topicIds'];
-            $titles = $value['topicTitles'];
-            $dates = $value['topicDates'];
-            $contents = $value['topicContents'];
+            $uniques = [];
+            while ($value = $result_check_topic->fetch_assoc()) {
+                $ids = $value['topicIds'];
+                $titles = $value['topicTitles'];
+                $dates = $value['topicDates'];
+                $contents = $value['topicContents'];
+                if (!in_array($ids, $uniques)) {
         ?>
         <div class="topic-container">
             <h2 class="topic-title"><?php echo $titles;?></h2>
             <div class="detail-wrap">
                 <p class="topic-id"><?php echo $ids;?></p>
-                <p class="forum-dates"><?php echo $dates;?></p>
+                <p class="dates"><?php echo $dates;?></p>
             </div>
             <p class="topic-desc"><?php echo $contents;?></p>
         </div>
         <?php
+                }
+            }
         } else {
         ?>
             <p class="unknown">No topic found, somethings wrong in here</p>

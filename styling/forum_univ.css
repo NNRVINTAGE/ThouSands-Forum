@@ -1,3 +1,97 @@
+/* dasbord */
+.container_again {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Hforum-display,
+.forum-display {
+    padding: 5px;
+    width: 74%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.highligthed-forum-container,
+.forum-container {
+    width: 48%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    background: var(--padBG);
+    border: 1px solid var(--borderA);
+    border-radius: 8px;
+}
+.forum-title {
+    margin: 12px auto 0 auto;
+    width: 94%;
+    font-size: 20px;
+}
+.forum-username {
+    margin: 0 auto;
+    width: 94%;
+    color: var(--subtletext);
+}
+.topic {
+    max-width: 80%;
+    font-size: 14px;
+    overflow: hidden;
+    color: var(--subtletext);
+}
+.forum-content {
+    margin: 2px auto 0 auto;
+    width: 94%;
+    height: 24vh;
+    font-size: 16px;
+    border-radius: 6px;
+    color: var(--subtletext);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.forum-link {
+    padding: 10px 5px;
+    width: 100%;
+    text-align: center;
+    border: var(--borderA);
+}
+
+/* for mini topics */
+.mitol-container {
+    position: fixed;
+    padding: 15px 5px;
+    top: 0;
+    right: 0;
+    width: 26%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--listBG);
+    border: 1px solid gray;
+    overflow: auto;
+    gap: 8px;
+}
+.mini-topic-list {
+    position: relative;
+    margin: 0 auto;
+    padding: 5px 10px;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    background: var(--padBG);
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+.mitol-title {
+    width: 94%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Topic Paging */
 .topic-lister {
     padding: 5px;
     width: 100%;
@@ -15,13 +109,13 @@
 }
 .topic-title {
     margin: 5px auto 0 auto;
-    width: 98%;
+    width: 94%;
     font-size: 20px;
 }
 .detail-wrap {
     padding: 5px 0;
     margin: 0 auto;
-    width: 98%;
+    width: 94%;
     display: flex;
     justify-content: space-between;
 }
@@ -30,12 +124,12 @@
     font-size: 14px;
     overflow: hidden;
 }
-.forum-dates {
+.dates {
     font-size: 14px;
 }
 .topic-desc {
     margin: 2px auto 0 auto;
-    width: 98%;
+    width: 94%;
     height: 28vh;
     font-size: 16px;
     border-radius: 6px;

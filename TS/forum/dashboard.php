@@ -12,6 +12,7 @@ if (isset($_SESSION['thouSandsIds'])) {
 
 $page = "dashboard";
 $UploadEnabled = "yes";
+$ForumState = "Publics";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,71 +24,107 @@ $UploadEnabled = "yes";
     <link rel="stylesheet" href="../../styling/connect_forms.css">
     <title>Dashboard</title>
 </head>
-<body>
+<body class="container_again">
 <!-- nav get moved for modularity -->
 <?php include_once '../component/nav.php';?>
-<!-- forum -->
-    <section class="forum-display">
+<!-- topic aon right of the page -->
+    <section class="mitol-container">
         <?php
-        $HForumState = "publics";
-        $stmt_check_HForum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'YES'");
-        $stmt_check_HForum->bind_param("s", $HForumState);
-        $stmt_check_HForum->execute();    
-        $result_check_HForum = $stmt_check_HForum->get_result();
+        $topicState = "publics";
+        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?");
+        $stmt_check_topic->bind_param("s", $topicState);
+        $stmt_check_topic->execute();    
+        $result_check_topic = $stmt_check_topic->get_result();
 
-        if ($result_check_HForum->num_rows > 0) {
-            $Hvalue = $result_check_HForum->fetch_assoc();
-            $Hids = $value['ForumIds'];
-            $Hcreators = $value['ForumCreator'];
-            $Htitles = $value['ForumTitles'];
-            $Htopics = $value['Forumtopics'];
-            $Hdates = $value['ForumDates'];
-            $Hcontents = $value['ForumContents'];
+        if ($result_check_topic->num_rows > 0) {
+            $uniques = [];
+            while ($value = $result_check_topic->fetch_assoc()) {
+                $ids = $value['topicIds'];
+                $titles = $value['topicTitles'];
+                if (!in_array($ids, $uniques)) {
         ?>
-        <div class="highligthed-forum-container">
-            <h2 class="forum-title"><?php echo $Htitles;?>title of the highlighted forums</h2>
-            <div class="detail-wrap">
-                <p class="topic"><?php echo $Htopics;?>forum topic</p>
-                <p class="forum-dates"><?php echo $Hdates;?>22/6/2025</p>
-            </div>
-            <p class="username"><?php echo $Hcreators;?>usually me or forum admins</p>
-            <p class="forum-content"><?php echo $Hcontents;?>
-                highlighted forum content which ussually only for the
-                project ThouSands or some trending forum, nah later i'll explain.
-            </p>
+        <div class="mini-topic-list">
+            <a href="viewtopic.php?idtopic=<?php echo $titles;?>" class="mitol-title"><?php echo $titles;?></a>
         </div>
         <?php
-        } 
-        $ForumState = "publics";
-        $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ?");
-        $stmt_check_Forum->bind_param("s", $ForumState);
-        $stmt_check_Forum->execute();    
-        $result_check_Forum = $stmt_check_Forum->get_result();
-
-        if ($result_check_Forum->num_rows > 0) {
-            $value = $result_check_Forum->fetch_assoc();
-            $ids = $value['ForumIds'];
-            $creators = $value['ForumCreator'];
-            $titles = $value['ForumTitles'];
-            $topics = $value['Forumtopics'];
-            $dates = $value['ForumDates'];
-            $contents = $value['ForumContents'];
-        ?>
-        <div class="forum-container">
-            <h2 class="forum-title">le titles</h2>
-            <p class="username">forum starter username</p>
-            <div class="detail-wrap">
-                <p class="topic">forum topic</p>
-                <p class="forum-dates">23/6/2025</p>
-            </div>
-            <p class="forum-content">forum content which the rest of the word 
-                will be faded if reach the content word limit
-            </p>
-        </div>
-        <?php
+                }
+            }
         } else {
         ?>
             <p class="unknown">No topic found, somethings wrong in here</p>
+        <?php
+        }
+        ?>
+    </section>
+<!-- forum -->
+    <section class="Hforum-display">
+        <?php
+        $stmt_check_HForum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'YES' ORDER BY ForumDates ASC");
+        $stmt_check_HForum->bind_param("s", $ForumState);
+        $stmt_check_HForum->execute();
+        $result_check_HForum = $stmt_check_HForum->get_result();
+        if ($result_check_HForum->num_rows > 0) {
+            $uniques = [];
+            while ($value = $result_check_HForum->fetch_assoc()) {
+                $Hids = $value['ForumIds'];
+                $Hcreators = $value['ForumCreator'];
+                $Htitles = $value['ForumTitles'];
+                $Htopics = $value['Forumtopics'];
+                $Hdates = $value['ForumDates'];
+                $Hcontents = $value['ForumContents'];
+                if (!in_array($Hids, $uniques)) {
+        ?>
+        <div class="highligthed-forum-container">
+            <h2 class="forum-title"><?php echo $Htitles;?></h2>
+            <p class="forum-username"><?php echo $Hcreators;?></p>
+            <div class="detail-wrap">
+                <p class="topic"><?php echo $Htopics;?></p>
+                <p class="dates"><?php echo $Hdates;?></p>
+            </div>
+            <p class="forum-content"><?php echo $Hcontents;?>
+            </p>
+            <a href="forum.php?ids=<?php echo $Hids;?>" class="forum-link">Open Forum</a>
+        </div>
+        <?php
+                }
+            }
+        };
+        ?>
+    </section>
+    <section class="forum-display">
+        <?php
+        $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'NOs'");
+        $stmt_check_Forum->bind_param("s", $ForumState);
+        $stmt_check_Forum->execute();
+        $result_check_Forum = $stmt_check_Forum->get_result();
+        if ($result_check_Forum->num_rows > 0) {
+            $uniques = [];
+            while ($value = $result_check_Forum->fetch_assoc()) {
+                $ids = $value['ForumIds'];
+                $creators = $value['ForumCreator'];
+                $titles = $value['ForumTitles'];
+                $topics = $value['Forumtopics'];
+                $dates = $value['ForumDates'];
+                $contents = $value['ForumContents'];
+                if (!in_array($ids, $uniques)) {
+        ?>
+        <div class="forum-container">
+            <h2 class="forum-title"><?php echo $titles;?></h2>
+            <p class="forum-username"<?php echo $creators;?>></p>
+            <div class="detail-wrap">
+                <p class="topic"><?php echo $topics;?></p>
+                <p class="dates"><?php echo $dates;?></p>
+            </div>
+            <p class="forum-content"><?php echo $contents;?>
+            </p>
+            <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">Open Forum</a>
+        </div>
+        <?php
+                }
+            }
+        } else {
+        ?>
+            <p class="unknown">No topic found, somethings wrong in there</p>
         <?php
         }
         ?>

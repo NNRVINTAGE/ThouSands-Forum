@@ -15,7 +15,11 @@
     --primary: #35b189;
     --secondary:#6bccac;
     --highlight: #96d8c3;
+    --listBG: rgb(219, 212, 198);
+    --padBG: rgb(133, 129, 121);
+    --borderA: #818181;
     --accent: rgb(236, 178, 4);
+    --subtletext : rgb(235, 235, 235);
 }
 body {
     width: auto;

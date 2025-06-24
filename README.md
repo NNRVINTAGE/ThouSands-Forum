@@ -14,6 +14,6 @@ not gonna made up any feature that are not made yet
 ## short Q&A
 you may ask
 "why php? is there no other language you can use or you just being lazy?"
-whatever you want to call me but neither of that is the answer, simply i've already pay for some hosting a month prior before hackathon(and it's not cheap) because I actually interested in learning PHP again before joining hackathon so i just go with it.
+whatever you want to call me but neither of that is the answer, simply i've already bought php hosting month prior before hackathon because I were interested in learning PHP again before joining hackathon so i just go with it.
 
-now that the question get answered, give me back my coffee >:(
+oh and one thing, give me back my coffee >:(
