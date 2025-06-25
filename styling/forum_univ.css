@@ -30,6 +30,7 @@
     margin: 12px auto 0 auto;
     width: 94%;
     font-size: 20px;
+    overflow: hidden;
 }
 .forum-username {
     margin: 0 auto;
