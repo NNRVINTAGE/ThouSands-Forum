@@ -28,7 +28,7 @@ $page = 'topic';
     <section class="topic-lister">
         <?php
         $topicState = "publics";
-        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?");
+        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
         $stmt_check_topic->bind_param("s", $topicState);
         $stmt_check_topic->execute();    
         $result_check_topic = $stmt_check_topic->get_result();

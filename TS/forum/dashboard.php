@@ -31,7 +31,7 @@ $ForumState = "Publics";
     <section class="mitol-container">
         <?php
         $topicState = "publics";
-        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?");
+        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
         $stmt_check_topic->bind_param("s", $topicState);
         $stmt_check_topic->execute();    
         $result_check_topic = $stmt_check_topic->get_result();
@@ -59,7 +59,7 @@ $ForumState = "Publics";
 <!-- forum -->
     <section class="Hforum-display">
         <?php
-        $stmt_check_HForum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'YES' ORDER BY ForumDates ASC");
+        $stmt_check_HForum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'YES' ORDER BY ForumDates ASC;");
         $stmt_check_HForum->bind_param("s", $ForumState);
         $stmt_check_HForum->execute();
         $result_check_HForum = $stmt_check_HForum->get_result();
@@ -93,7 +93,7 @@ $ForumState = "Publics";
     </section>
     <section class="forum-display">
         <?php
-        $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'NOs'");
+        $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'NOs';");
         $stmt_check_Forum->bind_param("s", $ForumState);
         $stmt_check_Forum->execute();
         $result_check_Forum = $stmt_check_Forum->get_result();

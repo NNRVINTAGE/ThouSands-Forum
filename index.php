@@ -7,6 +7,7 @@ if (isset($_SESSION['thouSandsIds'])) {
 } else {
     $isLogged = false;
 };
+$daState = "Publics";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,20 +38,22 @@ if (isset($_SESSION['thouSandsIds'])) {
     <section class="sect_1">
         <h1>Project <span>ThouSands</span></h1>
         <h2>Thousand journeys among the Endless Desert Oasis</h2>
+        <div class="linkie-button">
+            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum</a>
+            <a href="LibsClt/openlibrary/libs.php" class="Libs">Library Collection</a>
+        </div>
     </section>
     <section>
         <h2>stay tuned! and send some feedback(pls)</h2>
         <p>this is a game of a thousands hour making if you have a suggestion or want to get some alpha testing, hit me up on slack or check my github cuz in there i usually release a somewhat stable build(not promised). Awhile that pleaseee if you find some bug or have a suggestion for a feature to improve the game expreience, post it on the Wished Feature Forum in this website(i've pour my time to made it y'know)</p>
     </section>
     <section>
-        <h2>the challenge as always</h2>
-        <P>making this kind of games ain't be easy, I'm not quite experienced at even making sandbox or open world games let alone the multiplayer ones.
-            but that doesn't meant that i'll never be able to, i mean doing it long enough and it will be somewhat done.
-            not guaranteeing that it will be good and probably poorly optimized, the real challenge were to optimizing
-            and making sure there's close to no bug so that it won't be immersion breaking (let's be real, it'll be useless to
-            have a nice looking game but crash every single second).
+        <h2>What is Project ThouSands?</h2>
+        <P>In the desert oasis there is... nah idk it just a multiplyer sandbox game for now i'm not good
+            at making lore, if you have suggestion about it just hit me up and we discuss about it cuz
+            will probably get added if most people on forum agree
         </P>
-        <p>and to better track what's need to be done and what have been achieved, i made some kind of
+        <p>To better track what's need to be done and what have been achieved, i made some kind of
             roadmap that you can see down below and it will be updated as it progress with time    
         </p>
 </section>
@@ -59,52 +62,76 @@ if (isset($_SESSION['thouSandsIds'])) {
         <p>in there you'll see what have been done and what to be achieved</p>
         <div class="map-container">
             <div class="map-road"></div>
-            <div class="achievement-container">
-                <h3 class="acv-title">the achievement title</h3>
-                <p class="acv-desc">achievement description</p>
-                <p class="acv-status">not yet reached, in progress, achieved!</p>
+            <?php
+            $stmt_check_dvlog = $connects->prepare("SELECT * FROM acvs WHERE acvState = ? ORDER BY acvDates DESC LIMIT 4;");
+            $stmt_check_dvlog->bind_param("s", $daState);
+            $stmt_check_dvlog->execute();
+            $result_check_dvlog = $stmt_check_dvlog->get_result();
+            if ($result_check_dvlog->num_rows > 0) {
+                $uniques = [];
+                while ($value = $result_check_dvlog->fetch_assoc()) {
+                    $acvIds = $value['acvIds'];
+                    $acvBannerDitc = $value['acvBannerDitc'];
+                    $acvTitles = $value['acvTitles'];
+                    $acvDates = $value['acvDates'];
+                    if (!in_array($acvIds, $uniques)) {
+            ?>
+            <div class="mile-container">
+                <img class="acv-banner" src="TS/achvs/<?php echo $acvBannerDitc;?>" alt="logos_banner">
+                <h3 class="acv-title"><?php echo $acvTitles;?></h3>
+                <p class="acv-dates"><?php echo $acvDates;?></p>
+                <a class="acv-link" href="TS/forum/ThouSands.php?milestones=<?php echo $acvIds;?>">.</a>
             </div>
-            <div class="achievement-container">
-                <h3 class="acv-title">the achievement title</h3>
-                <p class="acv-desc">achievement description</p>
-                <p class="acv-status">not yet reached, in progress, achieved!</p>
+            <?php
+                    }
+                }
+            } else {
+            ?>
+            <div class="mile-container">
+                <p class="devlog-desc">No Achievement found, no way</p>
             </div>
-            <div class="achievement-container">
-                <h3 class="acv-title">the achievement title</h3>
-                <p class="acv-desc">achievement description</p>
-                <p class="acv-status">not yet reached, in progress, achieved!</p>
-            </div>
-            <div class="achievement-container">
-                <h3 class="acv-title">the achievement title</h3>
-                <p class="acv-desc">achievement description</p>
-                <p class="acv-status">not yet reached, in progress, achieved!</p>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </section>
     <section class="devlog_main_container">
         <h2>devlog</h2>
         <p>in here i will post notice to what currently im doin each day and what problem might i get stuck with</p>
         <div class="devlog-container">
+            <?php
+            $stmt_check_dvlog = $connects->prepare("SELECT * FROM dvlogs WHERE dvlogState = ? ORDER BY dvlogDates DESC LIMIT 4;");
+            $stmt_check_dvlog->bind_param("s", $daState);
+            $stmt_check_dvlog->execute();
+            $result_check_dvlog = $stmt_check_dvlog->get_result();
+            if ($result_check_dvlog->num_rows > 0) {
+                $uniques = [];
+                while ($value = $result_check_dvlog->fetch_assoc()) {
+                    $Dids = $value['dvlogIds'];
+                    $Dtitles = $value['dvlogTitles'];
+                    $Ddates = $value['dvlogDates'];
+                    $Ddesc = $value['dvlogdesc'];
+                    $Dtags = $value['dvlogtags'];
+                    if (!in_array($Dids, $uniques)) {
+            ?>
             <div class="devlog">
-                <h3 class="devlog-title">devlog title</h3>
-                <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress</p>
+                <h3 class="devlog-title"><?php echo $Dtitles;?></h3>
+                <p class="devlog-dates"><?php echo $Ddates;?></p>
+                <p class="devlog-desc"><?php echo $Ddesc;?></p>
+                <p class="devlog-tag"><?php echo $Dtags;?></p>
+                <a class="devlog-link" href="TS/forum/ThouSands.php?devlog=<?php echo $Dids;?>">.</a>
             </div>
+            <?php
+                    }
+                }
+            } else {
+            ?>
             <div class="devlog">
-                <h3 class="devlog-title">devlog title</h3>
-                <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress</p>
+                <p class="devlog-desc">No devlog found, somethings wrong in there</p>
             </div>
-            <div class="devlog">
-                <h3 class="devlog-title">devlog title</h3>
-                <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress</p>
-            </div>
-            <div class="devlog">
-                <h3 class="devlog-title">devlog title</h3>
-                <p class="devlog-desc">devlog description</p>
-                <p class="devlog-tag">#daily #issue #progress<p>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </section>
     <section>
@@ -138,9 +165,9 @@ if (isset($_SESSION['thouSandsIds'])) {
         <div class="footer-group">
             <h2 class="footer-title">Menus</h2>
             <div class="footer-menu_group">
-                <a href="#" class="menu_button">Homepage</a>
-                <a href="#" class="menu_button">Github</a>
-                <a href="#" class="menu_button">Forum</a>
+                <a href="#" class="menu_button">Documentation</a>
+                <a href="https://github.com/NNRVINTAGE" class="menu_button">Github</a>
+                <a href="forum-connect/connect_it.php?state=login" class="menu_button">Forum</a>
             </div>
         </div>
         <div class="copyright">
