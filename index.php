@@ -19,6 +19,7 @@ $daState = "Publics";
     <title>Project ThouSands</title>
 </head>
 <body>
+    <div class="bg">.</div>
     <header>
         <nav id="nav">
             <?php
@@ -37,7 +38,7 @@ $daState = "Publics";
     </header>
     <section class="sect_1">
         <h1>Project <span>ThouSands</span></h1>
-        <h2>Thousand journeys among the Endless Desert Oasis</h2>
+        <h2>Thousand journeys among the Desert Shores Oasis</h2>
         <div class="linkie-button">
             <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum</a>
             <a href="LibsClt/openlibrary/libs.php" class="Libs">Library Collection</a>
@@ -48,18 +49,18 @@ $daState = "Publics";
         <p>this is a game of a thousands hour making if you have a suggestion or want to get some alpha testing, hit me up on slack or check my github cuz in there i usually release a somewhat stable build(not promised). Awhile that pleaseee if you find some bug or have a suggestion for a feature to improve the game expreience, post it on the Wished Feature Forum in this website(i've pour my time to made it y'know)</p>
     </section>
     <section>
-        <h2>What is Project ThouSands?</h2>
-        <P>In the desert oasis there is... nah idk it just a multiplyer sandbox game for now i'm not good
-            at making lore, if you have suggestion about it just hit me up and we discuss about it cuz
-            will probably get added if most people on forum agree
+        <h2>What is <span>ThouSands</span>?</h2>
+        <P>In a strange world where desert, shores and sea are all you can see.
+            not further from it is an oasis made of dense forest and a city?
+            no matter what it is you were not alone, others like you were also curious so it's good to get teamed up.
         </P>
-        <p>To better track what's need to be done and what have been achieved, i made some kind of
-            roadmap that you can see down below and it will be updated as it progress with time    
+        <p>
+            ThouSands Shores is a prologue for the Project <span>ThouSands</span> series, made as foundation to have as much feedback for the next release.
         </p>
 </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
-        <p>in there you'll see what have been done and what to be achieved</p>
+        <p>so in here displayed current progress and future goal for the project</p>
         <div class="map-container">
             <div class="map-road"></div>
             <?php
@@ -97,7 +98,7 @@ $daState = "Publics";
     </section>
     <section class="devlog_main_container">
         <h2>devlog</h2>
-        <p>in here i will post notice to what currently im doin each day and what problem might i get stuck with</p>
+        <p>in here i will post notice to what i'm working on each day and what problem might i get stuck with</p>
         <div class="devlog-container">
             <?php
             $stmt_check_dvlog = $connects->prepare("SELECT * FROM dvlogs WHERE dvlogState = ? ORDER BY dvlogDates DESC LIMIT 4;");
@@ -171,9 +172,9 @@ $daState = "Publics";
             </div>
         </div>
         <div class="copyright">
-            <p>© 2025 Vintago - All right reserved</p> 
+            <p>© 2025 Vintago - All right reserved</p>
+            <h2 class="things">VINTAGO</h2>
         </div>
-        <h2 class="things">VINTAGO</h2>
     </footer>
 </body>
 </html>
