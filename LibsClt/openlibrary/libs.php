@@ -14,9 +14,9 @@ $daState = "Publics";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styling/index.css">
-    <title>Project ThouSands</title>
+    <link rel="stylesheet" href="../libsImg/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="libs.css">
+    <title>Oplico</title>
 </head>
 <body>
     <div class="bg">.</div>
@@ -25,23 +25,23 @@ $daState = "Publics";
             <?php
             if ($isLogged == true) {
             ?>
-            <a href="TS/forum/dashboard.php" class="linkie dashb">Dashboard</a>
+            <a href="../../TS/forum/dashboard.php" class="linkie dashb">Dashboard</a>
             <?php
             } else {
             ?>
-            <a href="forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
-            <a href="forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
+            <a href="../../forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
+            <a href="../../forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
             <?php
             }
             ?>
             </nav>
         </header>
     <section class="sect_1">
-        <h1>Project <span>ThouSands</span></h1>
-        <h2>Thousand journeys among the Desert Oasis</h2>
+        <h1>Oplico</h1>
+        <h2>Open library collection of software & games</h2>
         <div class="linkie-button">
-            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum</a>
-            <a href="LibsClt/openlibrary/libs.php" class="Libs">Library Collection</a>
+            <a href="softwarelist.php?type=apps" class="Apps">Search Apps</a>
+            <a href="softwarelist.php?type=games" class="Games">Discover Games</a>
         </div>
     </section>
     <section>
