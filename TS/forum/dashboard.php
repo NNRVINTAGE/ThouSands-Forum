@@ -27,7 +27,7 @@ $ForumState = "Publics";
 <body class="container_again">
 <!-- nav get moved for modularity -->
 <?php include_once '../component/nav.php';?>
-<!-- topic aon right of the page -->
+<!-- topic on right of the page -->
     <section class="mitol-container">
         <?php
         $topicState = "publics";

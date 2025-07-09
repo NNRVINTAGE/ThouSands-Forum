@@ -38,26 +38,27 @@ $daState = "Publics";
         </header>
     <section class="sect_1">
         <h1>Project <span>ThouSands</span></h1>
-        <h2>Thousand journeys among the Desert Oasis</h2>
+        <h2>Thousand of journeys among the Desert Oasis</h2>
         <div class="linkie-button">
             <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum</a>
             <a href="LibsClt/openlibrary/libs.php" class="Libs">Library Collection</a>
         </div>
     </section>
     <section>
-        <h2>stay tuned! and send some feedback(really appreciated)</h2>
-        <p>this is a game of a thousands hour making if you have a suggestion or report a bug, hit me up on slack or check my github cuz in there i usually release a somewhat stable build(not promised). Awhile that pleaseee if you find some bug or have a suggestion for a feature to improve the game expreience, post it on the Wished Feature Forum in this website(i've pour my time to made it y'know)</p>
+        <h2>About ThouSands Forum Site & Oplico</h2>
+        <p>ThouSands Forum is a feedback and topic discussion forum where anyone can 
+        <br>Oplico stand for Open Library collection, a software distribution platform made open for anyone share their works and try others shared software too</p>
     </section>
     <section>
-        <h2>What is <span>ThouSands</span>?</h2>
-        <P>In a strange world where the desert, shores and sea are all you can see.
-            an seemingly endless underground tunnels filled with unknown roar from the depth is yet to be investigated,
-            it is your duty discovering the source of the terror and ensuring the safety of your community.
+        <h2>About Project ThouSands</h2>
+        <P>In a strange place where the desert and the seas are all eyes can see.
+            an seemingly endless archaic tunnels appearing everywhere filled with frequent faint roar from the depth is yet to be investigated,
+            it is an {[FATAL_ERR:0_]} duty to uncover the source of the terror and ensuring the colony safety.
         </P>
         <p>
-            ThouSands Shores is a prologue for the Project <span>ThouSands</span> series, made as foundation to have as much feedback for the next release.
+            ThouSands Shores is part of the Project <span>ThouSands</span> series, made as foundation to have as much feedback for the next release.
         </p>
-</section>
+    </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
         <p>displayed in here is timeline of the future goal for the project</p>
@@ -153,10 +154,6 @@ $daState = "Publics";
                 <a href="#" class="linkie">go to da forum</a>
             </div>
         </div>
-    </section>
-    <section class="comes_soon">
-        <h2>comes soon</h2>
-        <p>shh... there's will be more to come(if i have time that is)</p>
     </section>
     <footer>
         <div class="footer-group">

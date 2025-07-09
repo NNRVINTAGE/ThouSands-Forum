@@ -36,12 +36,14 @@ body {
 .bg {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -25%;
     width: 100vw;
     height: 100vh;
     color: transparent;
-    background: linear-gradient(180deg, blue, rgb(71, 165, 228), rgba(255, 255, 0, 0.534));
+    background-image: radial-gradient(circle 50vh at 50% 100%, #b6b6b6, #31313100); 
+    background-size: 50% 110%;
     background-repeat: no-repeat;
+    transform: rotate(180deg);
     z-index: 0;
 }
 section {
@@ -57,6 +59,7 @@ section {
     z-index: 2;
 }
 h1 {
+    margin-top: auto;
     font-size: 34px;
     width: 90%;
 }
@@ -99,7 +102,7 @@ nav .linkie {
     padding: 3px 8px;
     width: max-content;
     background: none;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 nav .dashb,
 nav .linkie:nth-child(2) {
@@ -110,8 +113,18 @@ nav .linkie:nth-child(2) {
 /* content or just stuff */
 .sect_1 {
     height: 90vh;
-    justify-content: center;
     border: none;
+}
+.linkie-button {
+    margin-bottom: 28vh;
+    display: flex;
+    gap: 5px;
+}
+.Forum,
+.Libs {
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .devlog_main_container,
