@@ -51,7 +51,7 @@ $ForumState = "Publics";
             }
         } else {
         ?>
-            <p class="unknown">No topic found, somethings wrong in here</p>
+            <p class="unknown">No data get retrieved</p>
         <?php
         }
         ?>

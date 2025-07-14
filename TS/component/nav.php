@@ -1,3 +1,4 @@
+    <!-- nav panel -->
     <div id="Navigation_Panel">
         <img src="../../img/home.png" alt="" class="Navigation_Button" onclick="linker('dashboard')">
         <?php
@@ -22,6 +23,7 @@
             <img src="../../img/log-out.png" alt="" class="Settings_Action" onclick="linker('logout')">
         </div>
     </div>
+    <!-- search panel -->
     <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'dashboard';?>.php">
         <input type="text" name="search" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
         <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>

@@ -14,9 +14,9 @@ $daState = "Publics";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../libsImg/oplico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
     <link rel="stylesheet" href="libs.css">
-    <title>Oplico</title>
+    <title>ThouSands Library</title>
 </head>
 <body>
     <div class="bg">.</div>
@@ -37,7 +37,7 @@ $daState = "Publics";
             </nav>
         </header>
     <section class="sect_1">
-        <h1>Oplico</h1>
+        <h1>ThouSands Library</h1>
         <h2>Open library collection platform of software & games</h2>
         <div class="linkie-button">
             <a href="softwarelist.php?type=apps" class="Apps">Search Apps</a>

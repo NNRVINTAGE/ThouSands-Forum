@@ -1,5 +1,6 @@
 <?php
 require_once '../../processes/database.php';
+$UploadEnabled = "nope";
 $errors = array();
 session_start();
 if (isset($_SESSION['thouSandsIds'])) {
@@ -8,7 +9,6 @@ if (isset($_SESSION['thouSandsIds'])) {
     $UploadEnabled = "yes";
 } else {
     header ('location: libs.php');
-    $UploadEnabled = "nope";
     exit;
 };
 if (isset($_GET['state'])) {
@@ -29,7 +29,7 @@ $page = "softwarelist";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../libsImg/oplico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
     <link rel="stylesheet" href="softwarelist.css">
     <title>the collections</title>
 </head>
