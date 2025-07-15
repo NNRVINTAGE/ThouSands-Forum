@@ -5,6 +5,10 @@ session_start();
 if (isset($_SESSION['thouSandsIds'])) {
     $aidis = $_SESSION['thouSandsIds'];
     $name = $_SESSION['username'];
+    if (!isset($_GET['ids'])) {
+        header ('location: dashboard.php');
+        exit;
+    }
 } else {
     header ('location: ../../index.php');
     exit;
@@ -34,6 +38,7 @@ if ($result_check_HForum->num_rows == 1) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styling/forum_internal.css">
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
@@ -42,7 +47,7 @@ if ($result_check_HForum->num_rows == 1) {
             color: black;
         }
     </style>
-    <title>Forums</title>
+    <title><?php echo $Htitles;?></title>
 </head>
 <body>
 <?php include_once '../component/nav.php';?>
@@ -65,16 +70,16 @@ if ($result_check_HForum->num_rows == 1) {
         $stmt_check_HForum->execute();
         $result_check_HForum = $stmt_check_HForum->get_result();
         if ($result_check_HForum->num_rows > 0) {
-            $uniques = [];
+            $uniqueItem = [];
             while ($value = $result_check_HForum->fetch_assoc()) {
                 $Cids = $value['CommentIds'];
                 $Names = $value['CommentNames'];
                 $Comments = $value['Comments'];
                 $Cdates = $value['CommentDates'];
-                if (!in_array($Cids, $uniques)) {
+                if (!in_array($Cids, $uniqueItem)) {
         ?>
                 <div class="PostedComment">
-                    <h2><?php echo $Names;?> | <?php echo $Cdates;?></h2>
+                    <a href="prof.php?dt=<?php echo $Names;?>" class=""><?php echo $Names;?></a><p><?php echo $Cdates;?></p>
                     <p><?php echo $Comments;?></p>
                 </div>
         <?php
@@ -82,18 +87,13 @@ if ($result_check_HForum->num_rows == 1) {
             }
         }else{
         ?>
-                <h2 class="0thing">no data got fetched</h2>
+                <h2 class="0thing">be the first one to post</h2>
         <?php
         }
         ?>
         </div>
     </div>
 </div>
-<!-- input for comment -->
-<!-- <form class="Comment-Form" action="../component/comment.php?FotoID=<?php echo $Hids;?>" method="post">
-    <input type="text" name="IsiKomentar" class="CommentInp" placeholder="Leave a Comment..." auto-complete="off" maxlength="255" required>
-    <input class="SendBtn" type="submit" name="submit" value="">
-</form> -->
 <!-- lil bit of messages passer -->
     <div class="extraBanner"></div>
     <div id="alertcard">

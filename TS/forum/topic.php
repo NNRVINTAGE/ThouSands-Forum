@@ -20,7 +20,7 @@ $page = 'topic';
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
-    <title>Topic Page</title>
+    <title>Topics</title>
 </head>
 <body>
     <!-- modular dnavbar -->
@@ -34,13 +34,13 @@ $page = 'topic';
         $result_check_topic = $stmt_check_topic->get_result();
 
         if ($result_check_topic->num_rows > 0) {
-            $uniques = [];
+            $uniqueItem = [];
             while ($value = $result_check_topic->fetch_assoc()) {
                 $ids = $value['topicIds'];
                 $titles = $value['topicTitles'];
                 $dates = $value['topicDates'];
                 $contents = $value['topicContents'];
-                if (!in_array($ids, $uniques)) {
+                if (!in_array($ids, $uniqueItem)) {
         ?>
         <div class="topic-container">
             <h2 class="topic-title"><?php echo $titles;?></h2>
@@ -55,7 +55,7 @@ $page = 'topic';
             }
         } else {
         ?>
-            <p class="unknown">No topic found, somethings wrong in here</p>
+            <p class="unknown">No data retrieved</p>
         <?php
         }
         ?>

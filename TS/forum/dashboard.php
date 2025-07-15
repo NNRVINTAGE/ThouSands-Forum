@@ -37,14 +37,14 @@ $ForumState = "Publics";
         $result_check_topic = $stmt_check_topic->get_result();
 
         if ($result_check_topic->num_rows > 0) {
-            $uniques = [];
+            $uniqueItem = [];
             while ($value = $result_check_topic->fetch_assoc()) {
                 $ids = $value['topicIds'];
                 $titles = $value['topicTitles'];
-                if (!in_array($ids, $uniques)) {
+                if (!in_array($ids, $uniqueItem)) {
         ?>
         <div class="mini-topic-list">
-            <a href="viewtopic.php?idtopic=<?php echo $titles;?>" class="mitol-title"><?php echo $titles;?></a>
+            <a href="viewtopic.php?topicIds=<?php echo $titles;?>" class="mitol-title"><?php echo $titles;?></a>
         </div>
         <?php
                 }
@@ -64,7 +64,7 @@ $ForumState = "Publics";
         $stmt_check_HForum->execute();
         $result_check_HForum = $stmt_check_HForum->get_result();
         if ($result_check_HForum->num_rows > 0) {
-            $uniques = [];
+            $uniqueItem = [];
             while ($value = $result_check_HForum->fetch_assoc()) {
                 $Hids = $value['ForumIds'];
                 $Hcreators = $value['ForumCreator'];
@@ -72,7 +72,7 @@ $ForumState = "Publics";
                 $Htopics = $value['Forumtopics'];
                 $Hdates = $value['ForumDates'];
                 $Hcontents = $value['ForumContents'];
-                if (!in_array($Hids, $uniques)) {
+                if (!in_array($Hids, $uniqueItem)) {
         ?>
         <div class="highligthed-forum-container">
             <h2 class="forum-title"><?php echo $Htitles;?></h2>
@@ -98,7 +98,7 @@ $ForumState = "Publics";
         $stmt_check_Forum->execute();
         $result_check_Forum = $stmt_check_Forum->get_result();
         if ($result_check_Forum->num_rows > 0) {
-            $uniques = [];
+            $uniqueItem = [];
             while ($value = $result_check_Forum->fetch_assoc()) {
                 $ids = $value['ForumIds'];
                 $creators = $value['ForumCreator'];
@@ -106,7 +106,7 @@ $ForumState = "Publics";
                 $topics = $value['Forumtopics'];
                 $dates = $value['ForumDates'];
                 $contents = $value['ForumContents'];
-                if (!in_array($ids, $uniques)) {
+                if (!in_array($ids, $uniqueItem)) {
         ?>
         <div class="forum-container">
             <h2 class="forum-title"><?php echo $titles;?></h2>
@@ -117,7 +117,7 @@ $ForumState = "Publics";
             </div>
             <p class="forum-content"><?php echo $contents;?>
             </p>
-            <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">Open Forum</a>
+            <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">Open Forums</a>
         </div>
         <?php
                 }

@@ -71,13 +71,13 @@ $daState = "Publics";
             $stmt_check_dvlog->execute();
             $result_check_dvlog = $stmt_check_dvlog->get_result();
             if ($result_check_dvlog->num_rows > 0) {
-                $uniques = [];
+                $uniqueItem = [];
                 while ($value = $result_check_dvlog->fetch_assoc()) {
                     $acvIds = $value['acvIds'];
                     $acvBannerDitc = $value['acvBannerDitc'];
                     $acvTitles = $value['acvTitles'];
                     $acvDates = $value['acvDates'];
-                    if (!in_array($acvIds, $uniques)) {
+                    if (!in_array($acvIds, $uniqueItem)) {
             ?>
             <div class="mile-container">
                 <img class="acv-banner" src="TS/achvs/<?php echo $acvBannerDitc;?>" alt="logos_banner">
@@ -108,14 +108,14 @@ $daState = "Publics";
             $stmt_check_dvlog->execute();
             $result_check_dvlog = $stmt_check_dvlog->get_result();
             if ($result_check_dvlog->num_rows > 0) {
-                $uniques = [];
+                $uniqueItem = [];
                 while ($value = $result_check_dvlog->fetch_assoc()) {
                     $Dids = $value['dvlogIds'];
                     $Dtitles = $value['dvlogTitles'];
                     $Ddates = $value['dvlogDates'];
                     $Ddesc = $value['dvlogdesc'];
                     $Dtags = $value['dvlogtags'];
-                    if (!in_array($Dids, $uniques)) {
+                    if (!in_array($Dids, $uniqueItem)) {
             ?>
             <div class="devlog">
                 <h3 class="devlog-title"><?php echo $Dtitles;?></h3>
@@ -140,29 +140,44 @@ $daState = "Publics";
     <section>
         <h2>Downloads</h2>
         <div class="os_container">
-            <div class="os" onclick="SwitchOS('winds')">
+            <div class="os selected">
                 <img src="" alt="" class="logo">
                 <h2 class="os_name">Windows</h2>
             </div>
-            <div class="os" onclick="SwitchOS('linux')">
+            <div class="os">
                 <img src="" alt="" class="logo">
-                <h2 class="os_name">Linux</h2>
+                <h2 class="os_name">Linux(Unavailable)</h2>
             </div>
         </div>
         <div class="download_container">
             <table class="downloadlist">
-
+                <tr>
+                    <td>batch</td>
+                    <td>version</td>
+                    <td>release</td>
+                    <td>date</td>
+                    <td>key</td>
+                </tr>
+                <tr>
+                    <td>ThouSands_Shores_20J7AS.rar</td>
+                    <td>20J7AS</td>
+                    <td>Stable-Alpha</td>
+                    <td>20-7-2025</td>
+                    <td>901yfu82mj-c814tgx5-92j52fd3269</td>
+                </tr>
             </table>
             <div class="detail_info">
-
+                <img src="#" alt="#" class="banners">
+                <h2>Windows</h2>
+                <p>Tested in windows 10 & 11</p>
             </div>
         </div>
     </section>
     <script src="scriptstuff/thousandsStuff.js"></script>
     <footer>
         <div class="footer-group">
-            <h2 class="footer-title">Vintago</h2>
-            <h3 class="footer-subtitle">From <img src="img/vdsl.png" alt="" class="footer_logo"><h3>
+            <h2 class="footer-title">ThouSands</h2>
+            <h3 class="footer-subtitle">by <img src="img/vdsl.png" alt="" class="footer_logo"><h3>
         </div>
         <div class="footer-group">
             <h2 class="footer-title">Menus</h2>
@@ -173,8 +188,8 @@ $daState = "Publics";
             </div>
         </div>
         <div class="copyright">
-            <p>© 2025 Vintago - All right reserved</p>
-            <h2 class="things">VINTAGO</h2>
+            <p>© 2025 VODSOL - All right reserved</p>
+            <h2 class="things">VODSOL</h2>
         </div>
     </footer>
 </body>
