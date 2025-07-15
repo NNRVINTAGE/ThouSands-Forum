@@ -82,7 +82,7 @@ $daState = "Publics";
         </div>
     </section>
     <section class="libs_main_container">
-        <h2>Most Collected from the Library</h2>
+        <h2>Most collected software from the Library</h2>
         <p>see current top collected software from the library</p>
         <div class="libs-container">
             <?php
@@ -113,7 +113,7 @@ $daState = "Publics";
             } else {
             ?>
             <div class="libs">
-                <p class="libs-desc">there's a problem getting the data...</p>
+                <p class="libs-desc">No data retrieved</p>
             </div>
             <?php
             }

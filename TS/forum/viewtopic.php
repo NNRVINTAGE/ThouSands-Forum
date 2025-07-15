@@ -32,47 +32,50 @@ if ($result_check_Topic->num_rows == 1) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styling/forum_univ.css">
+    <link rel="stylesheet" href="../../styling/connect_univ.css">
+    <link rel="stylesheet" href="../../styling/connect_forms.css">
     <title><?php echo $titles;?></title>
 </head>
 <body>
 <?php include_once '../component/nav.php';?>
     <div class="topic-capsule">
-        <h1 class="topic-titles"><?php echo $Htitles;?></h1>
+        <h1 class="topic-titles"><?php echo $titles;?></h1>
+        <h2 class="topic-desc"><?php echo $descs;?></h2>
+        <div class="forum-display">
         <?php
-        $getUser = $connects->query("SELECT publicIds FROM user WHERE username = '$Hcreators'");
-        if($getUser){
-            $take = $getUser->fetch_assoc();
-        ?>
-            <a href="profile.php?user=<?php echo $take['publicIds']; ?>" class="topicStarter"><?php echo $Hcreators;?> | <?php echo $Hdates; ?></a>
-        <?php
-        };
-        ?>
-        <h2 class="topic-desc"><?php echo $Hdescs;?></h2>
-        <div class="topic-Forum">
-        <?php
-        $stmt_check_Htopic = $connects->prepare("SELECT * FROM Forums WHERE topicIds = ? ORDER BY ForumDates DESC;");
-        $stmt_check_Htopic->bind_param("s", $ids);
-        $stmt_check_Htopic->execute();
-        $result_check_Htopic = $stmt_check_Htopic->get_result();
-        if ($result_check_Htopic->num_rows > 0) {
+        $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE topicIds = ? ORDER BY ForumDates DESC;");
+        $stmt_check_forumtopics->bind_param("s", $ids);
+        $stmt_check_forumtopics->execute();
+        $result_check_forumtopics = $stmt_check_forumtopics->get_result();
+        if ($result_check_forumtopics->num_rows > 0) {
             $uniqueItem = [];
-            while ($value = $result_check_Htopic->fetch_assoc()) {
-                $Cids = $value['ForumIds'];
-                $Names = $value['ForumNames'];
-                $Forums = $value['Forums'];
-                $Cdates = $value['ForumDates'];
-                if (!in_array($Cids, $uniqueItem)) {
+            while ($value = $result_check_forumtopics->fetch_assoc()) {
+                $ids = $value['ForumIds'];
+                $creators = $value['ForumCreator'];
+                $titles = $value['ForumTitles'];
+                $topics = $value['Forumtopics'];
+                $dates = $value['ForumDates'];
+                $contents = $value['ForumContents'];
+                if (!in_array($ids, $uniqueItem)) {
         ?>
-                <div class="Forum">
-                    <a href="prof.php?dt=<?php echo $Names;?>" class=""><?php echo $Names;?></a><p><?php echo $Cdates;?></p>
-                    <p><?php echo $Forums;?></p>
+            <div class="forum-container">
+                <h2 class="forum-title"><?php echo $titles;?></h2>
+                <p class="forum-username"<?php echo $creators;?>></p>
+                <div class="detail-wrap">
+                    <p class="topic"><?php echo $topics;?></p>
+                    <p class="dates"><?php echo $dates;?></p>
                 </div>
+                <p class="forum-content"><?php echo $contents;?>
+                </p>
+                <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">Open Forum</a>
+            </div>
         <?php
                 }
             }
         }else{
         ?>
-                <h2 class="0thing">no forum post yet</h2>
+                <h2 class="zthing">no forum post on the topic yet</h2>
         <?php
         }
         ?>

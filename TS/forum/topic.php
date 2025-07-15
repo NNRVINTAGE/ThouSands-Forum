@@ -55,7 +55,7 @@ $page = 'topic';
             }
         } else {
         ?>
-            <p class="unknown">No data retrieved</p>
+            <h2 class="zthing">No data</h2>
         <?php
         }
         ?>

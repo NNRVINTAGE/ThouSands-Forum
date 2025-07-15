@@ -121,7 +121,6 @@ nav .linkie:nth-child(2) {
 .Games {
     padding: 5px 10px;
     border: 1px solid gray;
-    border-radius: 5px;
 }
 
 .libs_main_container,
@@ -358,7 +357,6 @@ footer {
 
 
 /* animation */
-
 @keyframes hover_animation {
     0% {
         background: var(--secondary);

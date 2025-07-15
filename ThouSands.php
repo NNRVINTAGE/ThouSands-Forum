@@ -46,11 +46,6 @@ $daState = "Publics";
         </div>
     </section>
     <section>
-        <h2>About ThouSands Forum & Library</h2>
-        <p>ThouSands Forum is a feedback and topic discussion forum where anyone can 
-        <br>ThouSands Library were a software distribution platform open for anyone to share their works and try others shared software too</p>
-    </section>
-    <section>
         <h2>About Project ThouSands</h2>
         <P>In a strange place where the desert and the seas are all eyes can see.
             an seemingly endless archaic tunnels appearing everywhere filled with frequent faint roar from the depth is yet to be investigated,
@@ -59,6 +54,11 @@ $daState = "Publics";
         <p>
             ThouSands Shores is part of the Project <span>ThouSands</span> series, made as foundation to have as much feedback for the next release.
         </p>
+    </section>
+    <section>
+        <h2>About ThouSands Forum & Library</h2>
+        <p>ThouSands Forum is a feedback and topic discussion forum where anyone can 
+        <br>ThouSands Library were a software distribution platform open for anyone to share their works and try others shared software too</p>
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
