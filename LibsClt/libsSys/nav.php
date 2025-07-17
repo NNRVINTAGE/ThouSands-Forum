@@ -24,7 +24,7 @@
         </div>
     </div>
     <!-- search panel -->
-    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'dashboard';?>.php">
+    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'softwarelist';?>.php">
         <input type="text" name="search" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
         <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>
         <button class="searchbtn" onclick="linker('dashboard')" tabindex="3">Clear</button>

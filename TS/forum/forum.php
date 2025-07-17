@@ -27,7 +27,7 @@ if ($result_check_forums->num_rows == 1) {
     $Hids = $value['ForumIds'];
     $Hcreators = $value['ForumCreator'];
     $Htitles = $value['ForumTitles'];
-    $Htopics = $value['Forumtopics'];
+    $Htopics = $value['ForumTopics'];
     $Hdates = $value['ForumDates'];
     $Hdescs = $value['ForumContents'];
     $Hattachs = $value['ForumAttachment'];

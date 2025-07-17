@@ -14,6 +14,7 @@ $page = "dashboard";
 $UploadEnabled = "yes";
 $ForumState = "Publics";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,7 @@ $ForumState = "Publics";
                 if (!in_array($ids, $uniqueItem)) {
         ?>
         <div class="mini-topic-list">
-            <a href="viewtopic.php?topicIds=<?php echo $titles;?>" class="mitol-title"><?php echo $titles;?></a>
+            <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="mitol-title"><?php echo $titles;?></a>
         </div>
         <?php
                 }
@@ -69,7 +70,7 @@ $ForumState = "Publics";
                 $Hids = $value['ForumIds'];
                 $Hcreators = $value['ForumCreator'];
                 $Htitles = $value['ForumTitles'];
-                $Htopics = $value['Forumtopics'];
+                $Htopics = $value['ForumTopics'];
                 $Hdates = $value['ForumDates'];
                 $Hcontents = $value['ForumContents'];
                 if (!in_array($Hids, $uniqueItem)) {
@@ -83,7 +84,7 @@ $ForumState = "Publics";
             </div>
             <p class="forum-content"><?php echo $Hcontents;?>
             </p>
-            <a href="forum.php?ids=<?php echo $Hids;?>" class="forum-link">Open Forum</a>
+            <a href="forum.php?ids=<?php echo $Hids;?>" class="forum-link">.</a>
         </div>
         <?php
                 }
@@ -103,7 +104,7 @@ $ForumState = "Publics";
                 $ids = $value['ForumIds'];
                 $creators = $value['ForumCreator'];
                 $titles = $value['ForumTitles'];
-                $topics = $value['Forumtopics'];
+                $topics = $value['ForumTopics'];
                 $dates = $value['ForumDates'];
                 $contents = $value['ForumContents'];
                 if (!in_array($ids, $uniqueItem)) {
@@ -117,7 +118,7 @@ $ForumState = "Publics";
             </div>
             <p class="forum-content"><?php echo $contents;?>
             </p>
-            <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">Open Forums</a>
+            <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">.</a>
         </div>
         <?php
                 }

@@ -9,22 +9,21 @@ if (isset($_SESSION['thouSandsIds'])) {
     header ('location: ../../index.php');
     exit;
 }
-$page = "Topics";
+$page = "topic";
 $UploadEnabled = "no";
-$TopicState = "Publics";
+$State = "Publics";
 
 $topicIds = $_GET['topicIds'];
 $stmt_check_Topic = $connects->prepare("SELECT * FROM topics WHERE TopicState = ? AND TopicIds = ? ORDER BY TopicTitles ASC;");
-$stmt_check_Topic->bind_param("ss", $TopicState, $ids);
+$stmt_check_Topic->bind_param("ss", $State, $topicIds);
 $stmt_check_Topic->execute();
 $result_check_Topic = $stmt_check_Topic->get_result();
 if ($result_check_Topic->num_rows == 1) {
     $value = $result_check_Topic->fetch_assoc();
-    $ids = $value['TopicIds'];
-    $creators = $value['TopicCreator'];
-    $titles = $value['TopicTitles'];
-    $descs = $value['TopicContents'];
-    $attachs = $value['TopicAttachment'];
+    $ids = $value['topicIds'];
+    $titles = $value['topicTitles'];
+    $descs = $value['topicContents'];
+    $attachs = $value['topicAttachment'];
 }
 ?>
 <!DOCTYPE html>
@@ -35,17 +34,23 @@ if ($result_check_Topic->num_rows == 1) {
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
+    <style>
+        * {
+            color: black;
+        }
+    </style>
     <title><?php echo $titles;?></title>
 </head>
 <body>
 <?php include_once '../component/nav.php';?>
     <div class="topic-capsule">
+        <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="topic-img">
         <h1 class="topic-titles"><?php echo $titles;?></h1>
         <h2 class="topic-desc"><?php echo $descs;?></h2>
         <div class="forum-display">
         <?php
-        $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE topicIds = ? ORDER BY ForumDates DESC;");
-        $stmt_check_forumtopics->bind_param("s", $ids);
+        $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE ForumTopics = ? ORDER BY ForumDates DESC;");
+        $stmt_check_forumtopics->bind_param("s", $topicIds);
         $stmt_check_forumtopics->execute();
         $result_check_forumtopics = $stmt_check_forumtopics->get_result();
         if ($result_check_forumtopics->num_rows > 0) {
@@ -54,7 +59,7 @@ if ($result_check_Topic->num_rows == 1) {
                 $ids = $value['ForumIds'];
                 $creators = $value['ForumCreator'];
                 $titles = $value['ForumTitles'];
-                $topics = $value['Forumtopics'];
+                $topics = $value['ForumTopics'];
                 $dates = $value['ForumDates'];
                 $contents = $value['ForumContents'];
                 if (!in_array($ids, $uniqueItem)) {
@@ -68,14 +73,14 @@ if ($result_check_Topic->num_rows == 1) {
                 </div>
                 <p class="forum-content"><?php echo $contents;?>
                 </p>
-                <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">Open Forum</a>
+                <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">.</a>
             </div>
         <?php
                 }
             }
         }else{
         ?>
-                <h2 class="zthing">no forum post on the topic yet</h2>
+                <h2 class="zthing">no forum for the topic yet</h2>
         <?php
         }
         ?>

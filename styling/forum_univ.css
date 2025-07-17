@@ -18,6 +18,7 @@
 }
 .highligthed-forum-container,
 .forum-container {
+    position: relative;
     width: 48%;
     height: 50%;
     display: flex;
@@ -54,10 +55,15 @@
     overflow-y: auto;
 }
 .forum-link {
-    padding: 10px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    text-align: center;
-    border: var(--borderA);
+    height: 100%;
+    color: transparent;
+    z-index: 7;
 }
 
 /* for mini topics */
@@ -107,6 +113,13 @@
     display: flex;
     flex-direction: column;
     background: var(--primary);
+}
+.topic-banner {
+    margin: 5px auto;
+    aspect-ratio: 16/9;
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
 }
 .topic-title {
     margin: 5px auto 0 auto;

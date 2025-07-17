@@ -23,7 +23,7 @@ $page = 'topic';
     <title>Topics</title>
 </head>
 <body>
-    <!-- modular dnavbar -->
+    <!-- modular navbar -->
     <?php include_once '../component/nav.php';?>
     <section class="topic-lister">
         <?php

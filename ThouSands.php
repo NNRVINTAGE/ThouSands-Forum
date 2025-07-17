@@ -10,6 +10,7 @@ if (isset($_SESSION['thouSandsIds'])) {
 $raceds = "{[FATAL_ERR:0_]}";
 $daState = "Publics";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
