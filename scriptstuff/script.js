@@ -85,15 +85,15 @@ var loadFile = function(event) {
 };
 
 function LoadEditTopics(ReqstData) {
-    const form = document.forms.EDITALBUM;
+    const form = document.forms.EDITSTUFF;
     const values = ReqstData.dataset;
     Object.keys(values).forEach((key) => {
         if (form[key]) 
             form[key].value = values[key];
     });
 }
-function LoadDataPhoto(ReqstData) {
-    const form = document.forms.DATAPHOTO;
+function LoadDataAttaches(ReqstData) {
+    const form = document.forms.DATTACHS;
     const values = ReqstData.dataset;
     Object.keys(values).forEach((key) => {
         if (form[key]) 

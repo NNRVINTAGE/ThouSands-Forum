@@ -13,13 +13,16 @@ if (isset($_SESSION['thouSandsIds'])) {
     header ('location: libs.php');
     exit;
 };
-if (isset($_GET['state'])) {
-    if ($_GET['state'] === 'apps') {
-        $stateSFT = 'scapps';
-    } else if ($_GET['state'] === 'games') {
-        $stateSFT = 'ltgames';
+
+$requestedItem = $_GET['type'];
+$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+if (isset($requestedItem)) {
+    if ($requestedItem === 'apps') {
+        $stateSFT = 'sxapps';
+    } else if ($requestedItem === 'games') {
+        $stateSFT = 'lxgames';
     } else {
-        $stateSFT = 'ltgames';
+        $stateSFT = 'lxgames';
     }
 };
 ?>
@@ -31,7 +34,9 @@ if (isset($_GET['state'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
     <link rel="stylesheet" href="softwarelist.css">
-    <title>Library Collection</title>
+    <link rel="stylesheet" href="../../styling/nav.css">
+    <link rel="stylesheet" href="../../styling/pallate.css">
+    <title>Library List of Software</title>
 </head>
 <body>
 <!-- nav of course -->
@@ -41,7 +46,7 @@ if (isset($_GET['state'])) {
         <?php
         $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
         $stmt_check_category->bind_param("s", $State);
-        $stmt_check_category->execute();    
+        $stmt_check_category->execute();
         $result_check_category = $stmt_check_category->get_result();
         if ($result_check_category->num_rows > 0) {
             $uniqueItem = [];
@@ -129,6 +134,7 @@ if (isset($_GET['state'])) {
         <div id="borderanimate"></div>
     </div>
     <script src="../../scriptstuff/script.js"></script>
+    <script src="../libsSys/IntakeSFT.js"></script>
     <script src="../../scriptstuff/alert.js"></script>
     <?php
     if (!empty($errors)) {

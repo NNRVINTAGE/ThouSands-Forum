@@ -18,66 +18,76 @@ $UploadEnabled = "no";
 $ForumState = "Publics";
 
 $ids = $_GET['ids'];
+$ids = htmlspecialchars($ids, ENT_QUOTES, 'UTF-8');
 $stmt_check_forums = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumIds = ? ORDER BY ForumDates ASC;");
 $stmt_check_forums->bind_param("ss", $ForumState, $ids);
 $stmt_check_forums->execute();
 $result_check_forums = $stmt_check_forums->get_result();
 if ($result_check_forums->num_rows == 1) {
     $value = $result_check_forums->fetch_assoc();
-    $Hids = $value['ForumIds'];
-    $Hcreators = $value['ForumCreator'];
-    $Htitles = $value['ForumTitles'];
-    $Htopics = $value['ForumTopics'];
-    $Hdates = $value['ForumDates'];
-    $Hdescs = $value['ForumContents'];
-    $Hattachs = $value['ForumAttachment'];
+    $creators = $value['ForumCreator'];
+    $titles = $value['ForumTitles'];
+    $topics = $value['ForumTopics'];
+    $dates = $value['ForumDates'];
+    $descs = $value['ForumContents'];
+    $attachs = $value['ForumAttachment'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styling/pallate.css">
+    <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/forum_internal.css">
-    <title><?php echo $Htitles;?></title>
+    <title><?php echo $titles;?></title>
 </head>
 <body>
 <?php include_once '../component/nav.php';?>
     <div class="forum-capsule">
-        <h1 class="forum-titles"><?php echo $Htitles;?></h1>
+        <h1 class="forum-titles"><?php echo $titles;?></h1>
         <?php
-        $getUser = $connects->query("SELECT publicIds FROM user WHERE username = '$Hcreators'");
+        $getUser = $connects->query("SELECT publicIds FROM user WHERE username = '$creators'");
         if($getUser){
             $take = $getUser->fetch_assoc();
         ?>
-            <a href="profile.php?user=<?php echo $take['publicIds']; ?>" class="forum-starter"><?php echo $Hcreators;?> | <?php echo $Hdates; ?></a>
+            <a href="profile.php?user=<?php echo $take['publicIds']; ?>" class="forum-starter"><?php echo $creators;?> | <?php echo $dates; ?></a>
         <?php
         };
         ?>
-        <h2 class="forum-desc"><?php echo $Hdescs;?></h2>
+        <h2 class="forum-desc"><?php echo $descs;?></h2>
+        <?php
+        if ($attachs != "empty" && isset($attachs)) {    
+        ?>
+        <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="forum-banner">
+        <?php
+        };
+        ?>
         <div class="forum-comment">
         <?php
-        $stmt_check_forums = $connects->prepare("SELECT * FROM forumcomments WHERE ForumIds = ? ORDER BY CommentDates DESC;");
-        $stmt_check_forums->bind_param("s", $ids);
-        $stmt_check_forums->execute();
-        $result_check_forums = $stmt_check_forums->get_result();
-        if ($result_check_forums->num_rows > 0) {
+        $stmt_check_comments = $connects->prepare("SELECT * FROM forumcomments WHERE ForumIds = ? ORDER BY CommentDates DESC;");
+        $stmt_check_comments->bind_param("s", $ids);
+        $stmt_check_comments->execute();
+        $result_check_comments = $stmt_check_comments->get_result();
+        if ($result_check_comments->num_rows > 0) {
             $uniqueItem = [];
-            while ($value = $result_check_forums->fetch_assoc()) {
+            while ($value = $result_check_comments->fetch_assoc()) {
                 $Cids = $value['CommentIds'];
                 $Names = $value['CommentNames'];
                 $Comments = $value['Comments'];
-                $dates = $value['CommentDates'];
+                $Cdates = $value['CommentDates'];
                 if (!in_array($Cids, $uniqueItem)) {
         ?>
                 <div class="posted-comment">
                     <div class="comment-detail">
                         <a href="profl.php?dt=<?php echo $Names;?>"><?php echo $Names;?></a>
                         <span>|</span>
-                        <p><?php echo $dates;?></p>
+                        <p><?php echo $Cdates;?></p>
                     </div>
                     <p class="comment-content"><?php echo $Comments;?></p>
                 </div>
@@ -86,7 +96,7 @@ if ($result_check_forums->num_rows == 1) {
             }
         }else{
         ?>
-                <h2 class="zthing">be the first one to post</h2>
+                <h2 class="zthing">be the first one to reply</h2>
         <?php
         }
         ?>

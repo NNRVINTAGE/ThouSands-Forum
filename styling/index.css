@@ -8,21 +8,6 @@
     box-sizing: border-box;
     color: var(--text);
 }
-:root {
-    --text: black;
-    --primary: #35b189;
-    --secondary:#6bccac;
-    --highlight: #96d8c3;
-    --monochrome1: rgb(133, 129, 121);
-    --monochrome2: rgb(173, 173, 173);
-    --gradibg: linear-gradient(to bottom, var(--monochrome2), var(--monochrome1));
-    --footbg: black;
-    --alttext: white;
-    --graditext: linear-gradient(to right, rgb(48, 204, 0), rgb(224, 228, 27), gold);
-}
-html {
-    scroll-behavior: smooth;
-}
 body {
     width: 100%;
     display: flex;

@@ -8,6 +8,7 @@ if (isset($_SESSION['thouSandsIds'])) {
     $isLogged = false;
 };
 $raceds = "{[FATAL_ERR:0_]}";
+$raceds = htmlspecialchars($raceds, ENT_QUOTES, 'UTF-8');
 $daState = "Publics";
 ?>
 
@@ -17,6 +18,7 @@ $daState = "Publics";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/index.css">
     <title>ThouSands Forums</title>
 </head>
@@ -58,8 +60,8 @@ $daState = "Publics";
     </section>
     <section>
         <h2>About ThouSands Forum & Library</h2>
-        <p>ThouSands Forum is a feedback and topic discussion forum where anyone can 
-        <br>ThouSands Library were a software distribution platform open for anyone to share their works and try others shared software too</p>
+        <p>A Web App made originally focused for the Project ThouSands Game bug report and feedback forum, after some thought I've come to a realization that if the system extended beyond the goal this can be the opportunity for me to develop a software distribution and open forum for the other programmer.
+        <br>It's goal now are to be an open source software distribution platform for every software developer to publish their works, explore others published works, give and recieve feedback via their own bug reports forum. </p>
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>

@@ -9,6 +9,7 @@ if (isset($_SESSION['thouSandsIds'])) {
 };
 $daState = "Publics";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@ $daState = "Publics";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
     <link rel="stylesheet" href="libs.css">
+    <link rel="stylesheet" href="../../styling/pallate.css">
     <title>ThouSands Library</title>
 </head>
 <body>

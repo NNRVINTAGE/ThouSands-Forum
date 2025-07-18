@@ -127,6 +127,7 @@
     padding: 10px;
 }
 
+
 .Comment-Form {
     position: fixed;
     inset: calc(100vh - 73px) 1vw 10px calc(100vw - 34vw);

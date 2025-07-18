@@ -8,19 +8,20 @@
 
 .Hforum-display,
 .forum-display {
-    padding: 5px;
-    width: 74%;
-    height: 50%;
+    padding: 5px 2vw;
+    width: 80vw;
+    height: 50vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    gap: 1vw;
 }
 .highligthed-forum-container,
 .forum-container {
     position: relative;
-    width: 48%;
-    height: 50%;
+    margin: auto 0;
+    padding: 5px;
+    width: 32%;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     background: var(--padBG);
@@ -47,14 +48,15 @@
 .forum-content {
     margin: 2px auto 0 auto;
     width: 94%;
-    height: 24vh;
+    min-height: 14vh;
     font-size: 16px;
     border-radius: 6px;
     color: var(--subtletext);
     overflow-x: hidden;
     overflow-y: auto;
 }
-.forum-link {
+.forum-link,
+.topic-link {
     position: absolute;
     top: 0;
     left: 0;
@@ -72,7 +74,7 @@
     padding: 15px 5px;
     top: 0;
     right: 0;
-    width: 26%;
+    width: 20vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -93,26 +95,28 @@
     border-radius: 8px;
 }
 .mitol-title {
-    width: 94%;
+    width: 100%;
     font-size: 16px;
     font-weight: 600;
 }
 
 /* Topic Paging */
 .topic-lister {
-    padding: 5px;
+    padding: 8vh 7.5vw;
     width: 100%;
-    height: 80%;
+    height: max-content;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    gap: 3vw;
 }
 .topic-container {
-    width: calc(100%/3.5);
+    padding: 5px 0;
+    position: relative;
+    width: 25vw;
     display: flex;
     flex-direction: column;
-    background: var(--primary);
+    background: var(--LibsGrad1);
+    border-radius: 4px;
 }
 .topic-banner {
     margin: 5px auto;
@@ -142,13 +146,12 @@
     font-size: 14px;
 }
 .topic-desc {
-    margin: 2px auto 0 auto;
+    margin: 2px auto 10px auto;
     width: 94%;
-    height: 28vh;
+    height: 10vh;
     font-size: 16px;
     border-radius: 6px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 }
 .unknown {
     margin: auto;
@@ -157,6 +160,7 @@
 }
 
 .zthing {
+    padding: 5px;
     margin: auto;
     font-size: 17px;
 }
