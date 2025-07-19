@@ -1,16 +1,4 @@
-* {
-    font-family: Consolas, 'Courier New', monospace;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 550;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100vw;
-    color: var(--text);
-}
 body {
-    width: auto;
     height: 100%;
     max-height: 100vh;
     display: flex;
@@ -22,7 +10,7 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 .topic-banner {
     margin: 4px auto 3vh auto;

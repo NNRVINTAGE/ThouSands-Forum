@@ -16,8 +16,8 @@ $daState = "Publics";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
-    <link rel="stylesheet" href="libs.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
+    <link rel="stylesheet" href="libs.css">
     <title>ThouSands Library</title>
 </head>
 <body>
@@ -27,7 +27,7 @@ $daState = "Publics";
             <?php
             if ($isLogged == true) {
             ?>
-            <a href="../../TS/forum/dashboard.php" class="linkie dashb">Dashboard</a>
+            <a href="softwarelist.php" class="linkie dashb">Homepage</a>
             <?php
             } else {
             ?>

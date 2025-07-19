@@ -24,6 +24,7 @@
     height: 40vh;
     display: flex;
     flex-direction: column;
+    color: var(--alttext);
     background: var(--padBG);
     border: 1px solid var(--borderA);
     border-radius: 8px;
@@ -31,19 +32,23 @@
 .forum-title {
     margin: 14px auto 0 auto;
     width: 94%;
+    color: inherit;
     font-size: 20px;
     overflow: hidden;
 }
 .forum-username {
     margin: 0 auto;
     width: 94%;
-    color: var(--subtletext);
+    color: inherit;
 }
 .topic {
     max-width: 80%;
     font-size: 14px;
     overflow: hidden;
-    color: var(--subtletext);
+    color: inherit;
+}
+.dates {
+    color: inherit;
 }
 .forum-content {
     margin: 2px auto 0 auto;
@@ -51,7 +56,7 @@
     min-height: 14vh;
     font-size: 16px;
     border-radius: 6px;
-    color: var(--subtletext);
+    color: inherit;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -78,6 +83,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    color: var(--alttext);
     background: var(--listBG);
     border: 1px solid gray;
     overflow: auto;
@@ -90,6 +96,7 @@
     width: 94%;
     display: flex;
     flex-direction: column;
+    color: inherit;
     background: var(--padBG);
     border: 1px solid gray;
     border-radius: 8px;
@@ -98,6 +105,7 @@
     width: 100%;
     font-size: 16px;
     font-weight: 600;
+    color: inherit;
 }
 
 /* Topic Paging */
@@ -116,6 +124,7 @@
     display: flex;
     flex-direction: column;
     background: var(--LibsGrad1);
+    color: var(--alttext);
     border-radius: 4px;
 }
 .topic-banner {
@@ -129,6 +138,7 @@
     margin: 5px auto 0 auto;
     width: 94%;
     font-size: 20px;
+    color: inherit;
 }
 .detail-wrap {
     padding: 5px 0;
@@ -136,14 +146,17 @@
     width: 94%;
     display: flex;
     justify-content: space-between;
+    color: inherit;
 }
 .topic-id {
     max-width: 80%;
     font-size: 14px;
+    color: inherit;
     overflow: hidden;
 }
 .dates {
     font-size: 14px;
+    color: inherit;
 }
 .topic-desc {
     margin: 2px auto 10px auto;
@@ -151,16 +164,19 @@
     height: 10vh;
     font-size: 16px;
     border-radius: 6px;
+    color: inherit;
     overflow: hidden;
 }
 .unknown {
     margin: auto;
     width: 50%;
+    color: inherit;
     font-size: 18px;
 }
 
 .zthing {
     padding: 5px;
     margin: auto;
+    color: inherit;
     font-size: 17px;
 }

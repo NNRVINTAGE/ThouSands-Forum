@@ -13,6 +13,7 @@ if (isset($_SESSION['thouSandsIds'])) {
 $page = "dashboard";
 $UploadEnabled = "yes";
 $ForumState = "Publics";
+$topicState = "Publics";
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +34,9 @@ $ForumState = "Publics";
 <!-- topic on right of the page -->
     <section class="mitol-container">
         <?php
-        $topicState = "publics";
         $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
         $stmt_check_topic->bind_param("s", $topicState);
-        $stmt_check_topic->execute();    
+        $stmt_check_topic->execute();
         $result_check_topic = $stmt_check_topic->get_result();
 
         if ($result_check_topic->num_rows > 0) {
@@ -54,7 +54,7 @@ $ForumState = "Publics";
             }
         } else {
         ?>
-            <p class="unknown">No retrieved data</p>
+            <p class="unknown">No retrieved topic data</p>
         <?php
         }
         ?>

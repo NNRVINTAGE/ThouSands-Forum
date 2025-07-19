@@ -1,14 +1,3 @@
-* {
-    font-family: Consolas, 'Courier New', monospace;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 550;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100vw;
-    color: var(--text);
-}
 body {
     width: 100vw;
     max-width: 100vw;
@@ -19,11 +8,11 @@ body {
     background: var(--background);
     overflow-x: hidden;
     overflow-y: scroll;
+    z-index: 1;
 }
 
 
-
-/* other stuff */
+/* main content styling */
 .software-list,
 .banner-display {
     position: relative;
@@ -34,6 +23,7 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     gap: 10px;
+    z-index: 2;
 }
 
 .software-container {

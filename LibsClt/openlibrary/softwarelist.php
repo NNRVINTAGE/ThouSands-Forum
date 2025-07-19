@@ -14,9 +14,9 @@ if (isset($_SESSION['thouSandsIds'])) {
     exit;
 };
 
+if (isset($_GET['type'])) {
 $requestedItem = $_GET['type'];
 $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
-if (isset($requestedItem)) {
     if ($requestedItem === 'apps') {
         $stateSFT = 'sxapps';
     } else if ($requestedItem === 'games') {
@@ -36,7 +36,7 @@ if (isset($requestedItem)) {
     <link rel="stylesheet" href="softwarelist.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
-    <title>Library List of Software</title>
+    <title>Library</title>
 </head>
 <body>
 <!-- nav of course -->

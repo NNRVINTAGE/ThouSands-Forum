@@ -23,14 +23,14 @@ $page = 'topic';
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
-    <title>Topics list</title>
+    <title>Topics</title>
 </head>
 <body>
     <!-- modular navbar -->
     <?php include_once '../component/nav.php';?>
     <section class="topic-lister">
         <?php
-        $topicState = "publics";
+        $topicState = "Publics";
         $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
         $stmt_check_topic->bind_param("s", $topicState);
         $stmt_check_topic->execute();    

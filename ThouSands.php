@@ -20,11 +20,11 @@ $daState = "Publics";
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/index.css">
-    <title>ThouSands Forums</title>
+    <title>ThouSands Forum</title>
 </head>
 <body>
     <div class="bg">.</div>
-    <header>
+    <header>lowd
         <nav id="nav">
             <?php
             if ($isLogged == true) {
@@ -50,8 +50,8 @@ $daState = "Publics";
     </section>
     <section>
         <h2>About Project ThouSands</h2>
-        <P>In a strange place where the desert and the seas are all eyes can see.
-            an seemingly endless archaic tunnels appearing everywhere filled with frequent faint roar from the depth is yet to be investigated,
+        <P>In a strange place where the endless desert sand and sea waves are all the eyes can see.
+            an seemingly endless archaic tunnels opening appeared everywhere filled with frequent faint roar from the depth is yet to be investigated,
             it is an <?php echo $raceds;?> duty to uncover the source of the terror and ensuring the colony safety.
         </P>
         <p>
@@ -65,7 +65,7 @@ $daState = "Publics";
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
-        <p>displayed in here is timeline of the future goal for the project</p>
+        <p>the timeline of the future goal for the project</p>
         <div class="map-container">
             <div class="map-road"></div>
             <?php
@@ -94,7 +94,7 @@ $daState = "Publics";
             } else {
             ?>
             <div class="mile-container">
-                <p class="devlog-desc">No Achievement found, no way</p>
+                <p class="devlog-desc">Milestone data fetch failed</p>
             </div>
             <?php
             }
@@ -103,7 +103,7 @@ $daState = "Publics";
     </section>
     <section class="devlog_main_container">
         <h2>devlog</h2>
-        <p>an updated daily devlog of the project progress</p>
+        <p>an series of devlog about progress on the project</p>
         <div class="devlog-container">
             <?php
             $stmt_check_dvlog = $connects->prepare("SELECT * FROM dvlogs WHERE dvlogState = ? ORDER BY dvlogDates DESC LIMIT 4;");

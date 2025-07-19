@@ -96,7 +96,7 @@ if ($result_check_forums->num_rows == 1) {
             }
         }else{
         ?>
-                <h2 class="zthing">be the first one to reply</h2>
+                <h2 class="zthing">be the first one to reply this</h2>
         <?php
         }
         ?>
