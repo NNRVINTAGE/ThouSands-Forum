@@ -58,7 +58,7 @@ $daState = "Publics";
                 $uniques = [];
                 while ($value = $result_check_libs->fetch_assoc()) {
                     $libsIds = $value['libsIds'];
-                    $libsBannerDitc = $value['libsBannerDitc'];
+                    $libsBannerDitc = $value['libsAttachs'];
                     $libsTitles = $value['libsTitles'];
                     $libsDesc = $value['libsDesc'];
                     $addedDates = $value['addedDates'];
@@ -98,8 +98,8 @@ $daState = "Publics";
                     $libsids = $value['libsIds'];
                     $libstitles = $value['libsTitles'];
                     $addedDates = $value['addedDates'];
-                    $libsdesc = $value['libsdesc'];
-                    $libstags = $value['libstags'];
+                    $libsdesc = $value['libsDesc'];
+                    $libstags = $value['libsCategorys'];
                     if (!in_array($libsids, $uniques)) {
             ?>
             <div class="libs">
@@ -124,7 +124,7 @@ $daState = "Publics";
     </section>
     <footer>
         <div class="footer-group">
-            <h2 class="footer-title">Oplico</h2>
+            <h2 class="footer-title">ThouSands Library</h2>
             <h3 class="footer-subtitle">By Vintago<h3>
         </div>
         <div class="footer-group">
