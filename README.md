@@ -10,7 +10,7 @@
 </div>
 
 ## What is ThouSands Forum & ThouSands Library?
-A Web App made originally focused for the Project ThouSands Game bug report and feedback forum,
+This project originally focused for the Project ThouSands Game bug report and feedback forum,
 after some thought I've come to a realization that if the system extended beyond the goal this can be the opportunity for me to develop a software distribution and open forum for the other programmer.
 It's goal now are to be an open source software distribution platform for every software developer to publish their works, explore others published works, give and recieve feedback via their own bug reports forum. 
 
@@ -19,21 +19,22 @@ It's goal now are to be an open source software distribution platform for every 
 - [What is ThouSands Forum?](#What-is-ThouSands-Forums?)
 - [Table of Contents](#table-of-contents)
 - [Quick start](#Quick-start)
-- [QnA](#Q&A)
 - [Contributing](#Contributing)
+- [QnA](#Q&A)
 - [Documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/)
 
 ## Quick start
 To run ToFus in a development environment, follow the setup instructions in our [documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/).
 Current version of ToFus supported using Apache/2.4.58 (Win64), OpenSSL/3.1.3, PHP 8.2.12, & MariaDB 10.4.32
 
-## Q&A
-- whats the goal behind making this project?
-A: more of a learning foundation for me to implement a functioning web app, but also a platform in which anyone can share and discuss their own works.
-
 ## Contributing
 I do appreciate your helping to make the platform better for everyone but there are still a general rules for not creating development, though the said rules are yet to be made.
 
+## Q&A
+- whats the goal behind making this project?<br>
+A: As a learning deeper into php fundamental for making a frameworkless web app, but also making this as the open source platform alternative in which anyone can share, discuss their own works, and explore what others have published.
 
+- why did you use php?<br>
+A: Cuz i hate myself
 ## Credits
 much of part in this readme file were inspired by [HCB](https://github.com/hackclub/hcb) repository readme

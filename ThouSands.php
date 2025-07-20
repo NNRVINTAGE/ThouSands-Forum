@@ -24,7 +24,7 @@ $daState = "Publics";
 </head>
 <body>
     <div class="bg">.</div>
-    <header>lowd
+    <header>
         <nav id="nav">
             <?php
             if ($isLogged == true) {
@@ -179,7 +179,7 @@ $daState = "Publics";
     <script src="scriptstuff/thousandsStuff.js"></script>
     <footer>
         <div class="footer-group">
-            <h2 class="footer-title">ThouSands</h2>
+            <h2 class="footer-title">ThouSands Series</h2>
             <h3 class="footer-subtitle">by <img src="img/vdsl.png" alt="" class="footer_logo"><h3>
         </div>
         <div class="footer-group">
@@ -191,7 +191,7 @@ $daState = "Publics";
             </div>
         </div>
         <div class="copyright">
-            <p>© 2025 VODSOL - All right reserved</p>
+            <p>Copyright © 2025 VODSOL - All right reserved</p>
             <h2 class="things">VODSOL</h2>
         </div>
     </footer>

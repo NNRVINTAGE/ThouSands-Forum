@@ -1,6 +1,5 @@
 <?php
 require_once '../../processes/database.php';
-$errors = array();
 session_start();
 if (isset($_SESSION['thouSandsIds'])) {
     $aidis = $_SESSION['thouSandsIds'];
@@ -26,11 +25,61 @@ $topicState = "Publics";
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
-    <title>Dashboard</title>
+    <title>Dashboards</title>
 </head>
 <body class="container_again">
 <!-- nav get moved for modularity -->
 <?php include_once '../component/nav.php';?>
+<!-- forum create dialog -->
+    <dialog id="add-dialog">
+        <div class="dialog-nav"><h2>Create Forum</h2><p onclick="SetDialog('add')">X</p></div>
+        <form class="univ-form" action="../component/post_out.php" method="post" enctype="multipart/form-data">
+            <div class="special-form-input">
+                <img id="prev">
+                <input style="margin: 0 auto;" type="file" name="file" accept="image/*" onchange="loadFile(event)" required>
+            </div>
+            <div class="form-input-container">
+                <div class="form-input-row">
+                    <label for="ForumTitles">Forum Titles</label>
+                    <input type="text" name="ForumTitles" class="inptxt" placeholder="Make title for the forum" auto-complete="off" maxlength="255" required>
+                </div>
+                <div class="form-input-row">
+                    <label for="ForumDescription">Forum Description</label>
+                    <input type="text" name="ForumDescription" class="inptxt" placeholder="The description for the why or what start this forum " auto-complete="off" maxlength="255" required>
+                </div>
+                <div class="form-input-row">
+                    <label for="Forum">Forum </label>
+                    <input type="text" name="Forum" class="inptxt" placeholder="The description for the why or what start this forum " auto-complete="off" maxlength="255" required>
+                </div>
+                <div class="form-input-row">
+                    <label for="topicId">Topics</label>
+                    <select name="topicId" class="inpselect" required>
+                        <option value="" selected disabled>Select Topic</option>
+                        <?php
+                        $stmt_get_topics = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
+                        $stmt_get_topics->bind_param("s", $topicState);
+                        $stmt_get_topics->execute();
+                        $result_get_topics = $stmt_get_topics->get_result();
+                        if ($result_get_topics->num_rows > 0) {
+                            $uniqueT = [];
+                            while ($values =  $result_get_topics->fetch_assoc()) {
+                                $topicIds = $values['topicIds'];
+                                $topicTitles = $values['topicTitles'];
+                                if (!in_array($topicIds, $uniqueT)) {
+                                    echo "<option name='topicId' value='$topicIds' required>$topicTitles</option>";
+                                    $uniqueT[] = $topicIds;
+                                };
+                            };
+                        };
+                        ?>
+                    </select>
+                </div>
+                <div class="form-input-row">
+                    <input class="post-button" type="submit" name="submit" value="Upload">
+                </div>
+            </div>
+        </form>
+    </dialog>
 <!-- topic on right of the page -->
     <section class="mitol-container">
         <?php
@@ -38,7 +87,6 @@ $topicState = "Publics";
         $stmt_check_topic->bind_param("s", $topicState);
         $stmt_check_topic->execute();
         $result_check_topic = $stmt_check_topic->get_result();
-
         if ($result_check_topic->num_rows > 0) {
             $uniqueItem = [];
             while ($value = $result_check_topic->fetch_assoc()) {
@@ -84,14 +132,13 @@ $topicState = "Publics";
                 <p class="topic"><?php echo $Htopics;?></p>
                 <p class="dates"><?php echo $Hdates;?></p>
             </div>
-            <p class="forum-content"><?php echo $Hcontents;?>
-            </p>
+            <p class="forum-content"><?php echo $Hcontents;?></p>
             <a href="forum.php?ids=<?php echo $Hids;?>" class="forum-link">.</a>
         </div>
         <?php
                 }
             }
-        };
+        }
         ?>
     </section>
     <section class="forum-display">

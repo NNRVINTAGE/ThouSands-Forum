@@ -42,6 +42,8 @@ body {
     width: 60vw;
     height: 120vh;
     background: #04ffb42f;
+    object-fit: cover;
+    object-position: center;
     z-index: 3;
 }
 .TFS_LinkContainer .ContainerBanner {

@@ -52,9 +52,12 @@ if ($result_check_forums->num_rows == 1) {
     <div class="forum-capsule">
         <h1 class="forum-titles"><?php echo $titles;?></h1>
         <?php
-        $getUser = $connects->query("SELECT publicIds FROM user WHERE username = '$creators'");
-        if($getUser){
-            $take = $getUser->fetch_assoc();
+        $getUser = $connects->prepare("SELECT publicIds FROM user WHERE username = ?");
+        $getUser->bind_param("s", $creators);
+        $getUser->execute();
+        $resultGetUser = $getUser->get_result();
+        if($resultGetUser->num_rows == 1){
+            $take = $resultGetUser->fetch_assoc();
         ?>
             <a href="profile.php?user=<?php echo $take['publicIds']; ?>" class="forum-starter"><?php echo $creators;?> | <?php echo $dates; ?></a>
         <?php
@@ -64,7 +67,7 @@ if ($result_check_forums->num_rows == 1) {
         <?php
         if ($attachs != "empty" && isset($attachs)) {    
         ?>
-        <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="forum-banner">
+        <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $titles;?>" class="forum-banner">
         <?php
         };
         ?>
@@ -83,14 +86,14 @@ if ($result_check_forums->num_rows == 1) {
                 $Cdates = $value['CommentDates'];
                 if (!in_array($Cids, $uniqueItem)) {
         ?>
-                <div class="posted-comment">
-                    <div class="comment-detail">
-                        <a href="profl.php?dt=<?php echo $Names;?>"><?php echo $Names;?></a>
-                        <span>|</span>
-                        <p><?php echo $Cdates;?></p>
-                    </div>
-                    <p class="comment-content"><?php echo $Comments;?></p>
+            <div class="posted-comment">
+                <div class="comment-detail">
+                    <a href="profl.php?dt=<?php echo $Names;?>"><?php echo $Names;?></a>
+                    <span>|</span>
+                    <p><?php echo $Cdates;?></p>
                 </div>
+                <p class="comment-content"><?php echo $Comments;?></p>
+            </div>
         <?php
                 }
             }
@@ -101,6 +104,10 @@ if ($result_check_forums->num_rows == 1) {
         }
         ?>
         </div>
+        <form action="../component/post_out.php" method="post" class="comment-post-bar">
+            <input type="text" name="comment" class="comment-input" placeholder="Leave a Comment..." auto-complete="off" maxlength="255" required>
+            <input class="send-button" type="submit" name="submit" value="">
+        </form>
     </div>
 </div>
 <!-- lil bit of messages passer -->
