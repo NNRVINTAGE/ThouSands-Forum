@@ -174,7 +174,7 @@ $topicState = "Publics";
             }
         } else {
         ?>
-            <p class="unknown">No topic found, somethings wrong in there</p>
+            <p class="unknown">No topics found, something wrong in there</p>
         <?php
         }
         ?>

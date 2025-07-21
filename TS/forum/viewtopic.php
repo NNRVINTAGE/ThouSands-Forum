@@ -12,7 +12,6 @@ if (isset($_SESSION['thouSandsIds'])) {
 $page = "topic";
 $UploadEnabled = "no";
 $State = "Publics";
-
 $topicIds = $_GET['topicIds'];
 $topicIds = htmlspecialchars($topicIds, ENT_QUOTES, 'UTF-8');
 $stmt_check_Topic = $connects->prepare("SELECT * FROM topics WHERE TopicState = ? AND TopicIds = ? ORDER BY TopicTitles ASC;");
@@ -40,11 +39,6 @@ if ($result_check_Topic->num_rows == 1) {
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/topic_internal.css">
-    <style>
-        * {
-            color: black;
-        }
-    </style>
     <title><?php echo $Ttitles;?></title>
 </head>
 <body>

@@ -1,3 +1,6 @@
+* {
+    color: var(--text);
+}
 body {
     height: 100%;
     max-height: 100vh;
@@ -80,7 +83,7 @@ h1 {
     border-radius: 6px;
     transition: all 1s;
     z-index: 999;
-    background: var(--background);
+    background: var(--libsBG5);
     color: var(--text);
 }
 #add-dialog::-webkit-scrollbar,
