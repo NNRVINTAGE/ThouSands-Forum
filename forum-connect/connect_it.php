@@ -3,12 +3,7 @@ require_once "../processes/database.php";
 $state = $_GET['state'];
 $errors = array();
 session_start();
-// if (isset($_SESSION['state']) === 'login' || isset($_SESSION['state']) === 'register') {
-//   $states = $_SESSION['state'];
-//   header ('location: connect_it.php?state=' . $states);
-//   $_SESSION['state'] = '.';
-// };
-if (isset($_SESSION['thouSandsIds'])) {
+if (isset($_SESSION['profileTags'])) {
     header ('location: ../TS/forum/dashboard.php');
     exit;
 };
@@ -55,22 +50,26 @@ if ($state === 'login') {
     <form class="EntryPanel" action="../processes/connect_regist.php" method="post">
         <h1 class="EntryPanelTitle">Connect Register</h1>
         <div class="form-input-row">
-        <label for="Email">Email</label>
-        <input class="inptxt" type="text" id="Email" name="Email" placeholder="Your Email for validation" autocomplete="off" tabindex="1" required>
+          <label for="email">Email</label>
+          <input class="inptxt" type="text" id="email" name="email" placeholder="Your mail for validation" autocomplete="off" tabindex="1" required>
         </div>
         <div class="form-input-row">
-        <label for="username">Username</label>
-        <input class="inptxt" type="text" id="username" name="username" placeholder="Write the desired username" autocomplete="off" tabindex="2" required>
+          <label for="tags">Profile Tags</label>
+          <input class="inptxt" type="text" id="tags" name="tags" placeholder="for your profile tags" autocomplete="off" tabindex="1" required>
         </div>
         <div class="form-input-row">
-        <label for="password">Password</label>
+          <label for="username">Username</label>
+          <input class="inptxt" type="text" id="username" name="username" placeholder="Write the desired username" autocomplete="off" tabindex="2" required>
+        </div>
+          <div class="form-input-row">
+          <label for="password">Password</label>
         <input class="inptxt" type="password" id="password" name="password" placeholder="Choose a good password" autocomplete="off" tabindex="3" required>
         </div>
-        <div class="form-input-row">
-        <button type="submit" class="ActionButton" name="Register" tabindex="4">Register</button>
+          <div class="form-input-row">
+          <button type="submit" class="ActionButton" name="Register" tabindex="4">Register</button>
         </div>
         <div class="form-input-row">
-        <p class="promptText">Already have Account? <a href="connect_it.php?state=login" class="LRredirect" tabindex="7">Login here</a></p>
+          <p class="promptText">Already have Account? <a href="connect_it.php?state=login" class="LRredirect" tabindex="7">Login here</a></p>
         </div>
     </form>
 <?php

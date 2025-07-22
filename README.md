@@ -11,8 +11,8 @@
 
 ## What is ThouSands Forum & ThouSands Library?
 This project originally focused for the Project ThouSands Game bug report and feedback forum,
-after some thought I've come to a realization that if the system extended beyond the goal this can be the opportunity for me to develop a software distribution and open forum for the other programmer.
-It's goal now are to be an open source software distribution platform for every software developer to publish their works, explore others published works, give and recieve feedback via their own bug reports forum. 
+after some thought I've come to a realization that if the system extended beyond the goal this can be an opportunity for me to develop software distribution system and open forum community for the other developer.<br>
+It's goal now are to be an open source software distribution platform for everyone to publish their works, explore others software, give and recieve feedback with the community.
 
 ## Table of Contents
 
@@ -24,8 +24,12 @@ It's goal now are to be an open source software distribution platform for every 
 - [Documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/)
 
 ## Quick start
-To run ToFus in a development environment, follow the setup instructions in our [documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/).
-Current version of ToFus supported using Apache/2.4.58 (Win64), OpenSSL/3.1.3, PHP 8.2.12, & MariaDB 10.4.32
+To run TFLs in a local machine, follow the setup instructions in the [documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/).<br>
+Current version of TFL developed within the development enviroment below:
+- Apache/2.4.58(Win64)
+- OpenSSL/3.1.3
+- PHP 8.2.12
+- MariaDB 10.4.32
 
 ## Contributing
 I do appreciate your helping to make the platform better for everyone but there are still a general rules for not creating development, though the said rules are yet to be made.
@@ -37,4 +41,4 @@ A: As a learning deeper into php fundamental for making a frameworkless web app,
 - why did you use php?<br>
 A: Cuz i hate myself
 ## Credits
-much of part in this readme file were inspired by [HCB](https://github.com/hackclub/hcb) repository readme
+much of part in this readme were inspired from [HCB](https://github.com/hackclub/hcb) readme

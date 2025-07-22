@@ -5,8 +5,8 @@ $page = "softwarelist";
 $State = "publics";
 $errors = array();
 session_start();
-if (isset($_SESSION['thouSandsIds'])) {
-    $aidis = $_SESSION['thouSandsIds'];
+if (isset($_SESSION['profileTags'])) {
+    $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
     $UploadEnabled = "yes";
 } else {

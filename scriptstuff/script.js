@@ -10,7 +10,7 @@ function linker(reqstate) {
             window.location.replace('topic.php');
             break;
         case 'profile':
-            window.location.replace('profile.php');
+            window.location.replace('profile.php?user=self');
             break;
         case 'logout':
             window.location.replace('../../processes/logout.php');

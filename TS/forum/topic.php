@@ -2,14 +2,14 @@
 require_once '../../processes/database.php';
 $errors = array();
 session_start();
-if (isset($_SESSION['thouSandsIds'])) {
-    $aidis = $_SESSION['thouSandsIds'];
+if (isset($_SESSION['profileTags'])) {
+    $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
 } else {
     header ('location: ../../index.php');
     exit;
 };
-$UploadEnabled = 'no';
+$UploadEnabled = 'yes';
 $page = 'topic';
 ?>
 

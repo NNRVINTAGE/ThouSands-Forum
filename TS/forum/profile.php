@@ -2,21 +2,25 @@
 require_once '../../processes/database.php';
 $errors = array();
 session_start();
-if (isset($_SESSION['thouSandsIds'])) {
-    $aidis = $_SESSION['thouSandsIds'];
+$uDs = $_GET['user'];
+if (isset($_SESSION['profileTags'])) {
+    $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
     if (!isset($_GET['user'])) {
+        $_SESSION['corsmsg'] = "user account does not exist";
         header ('location: dashboard.php');
         exit;
-    }
+    } 
 } else {
     header ('location: ../../index.php');
     exit;
 }
+if ($uDs === "self") {
+    $uDs = $_SESSION['profileTags'];
+}
 $page = "profiles";
 $UploadEnabled = "no";
-$uDs = $_GET['user'];
-$uDs = htmlspecialchars($ids, ENT_QUOTES, 'UTF-8');
+$uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -27,41 +31,40 @@ $uDs = htmlspecialchars($ids, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/forum_univ.css">
-    <link rel="stylesheet" href="../../styling/profl_internal.css">
-    <title><?php echo $Ttitles;?></title>
+    <link rel="stylesheet" href="../../styling/prfl_extra.css">
+    <title>Profile</title>
 </head>
 <body>
-<!-- da navbar -->
+<!-- navbar -->
 <?php include_once '../component/nav.php';?>
 <!-- the main stuff -->
     <div class="profile-display">
         <?php
         // some profile data fetch
-        $stmt_check_profile = $connects->prepare("SELECT * FROM profiles WHERE profileTags = ? AND ;");
+        $stmt_check_profile = $connects->prepare("SELECT * FROM profiles WHERE profileTags = ? ;");
         $stmt_check_profile->bind_param("s", $uDs);
         $stmt_check_profile->execute();
         $result_check_profile = $stmt_check_profile->get_result();
         if ($result_check_profile->num_rows == 1) {
             while ($value = $result_check_profile->fetch_assoc()) {
-                $Ids = $value['profileIds'];
+                $Tags = $value['profileTags'];
                 $Names = $value['profileNames'];
                 $Bios = $value['profileBios'];
                 $JDates = $value['profileJDates'];
                 $uFolws = $value['uFolw'];
-                $Publishes = $value['Publishes'];
         ?>
             <div class="profile-container">
                 <h2 class="profile-names"><?php echo $Names;?></h2>
                 <div class="detail-wrap">
-                    <p class="uFolws"><?php echo $uFolws;?></p>
-                    <p class="JDates"><?php echo $JDates;?></p>
+                    <p class="uFolws">Nums: <?php echo $uFolws;?></p>
+                    <p class="JDates">Joined Since: <?php echo $JDates;?></p>
                 </div>
                 <h2 class="profile-bios"><?php echo $Bios;?></h2>
             </div>
         <?php
             };
-        }else{
-            $_SESSION['corsmsg'] = "user account doesn't exist or on a temporary ban";
+        } else {
+            $_SESSION['corsmsg'] = "user account does not exist or on a temporary ban";
             header ('location: dashboard.php');
             exit;
         };
@@ -85,7 +88,7 @@ $uDs = htmlspecialchars($ids, ENT_QUOTES, 'UTF-8');
                 $addedDates = $value['addedDates'];
                 if (!in_array($Ids, $uniqueItem)) {
         ?>
-            <div class="user-publishes">
+            <div class="publishes">
                 <img src="../ArchFiles/<?php echo $lAttachs;?>" class="publish-attachs">
                 <h2 class="libs-titles"><?php echo $libsTitles;?></h2>
                 <div class="detail-wrap">
@@ -99,7 +102,9 @@ $uDs = htmlspecialchars($ids, ENT_QUOTES, 'UTF-8');
             };
         }else{
         ?>
+            <div class="publishes">
                 <h2 class="zthing">no project publishes found</h2>
+            </div>
         <?php
         };
         ?>

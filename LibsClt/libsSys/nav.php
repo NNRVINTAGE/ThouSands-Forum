@@ -9,7 +9,7 @@
         <?php
             }
         ?>
-        <img src="../../img/category.png" alt="" class="Navigation_Button" onclick="linker('category')">
+        <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('category')">
         <img src="../../img/settings.png" alt="" class="Navigation_Button" onclick="settings()">
     </div>
     <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">

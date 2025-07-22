@@ -3,7 +3,6 @@ body {
     max-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: var(--background);
 }
 .forum-capsule {
     width: 100%;

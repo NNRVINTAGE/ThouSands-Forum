@@ -2,7 +2,7 @@
 require_once "processes/database.php";
 $errors = array();
 session_start();
-if (isset($_SESSION['thouSandsIds'])) {
+if (isset($_SESSION['profileTags'])) {
     $isLogged = true;
 } else {
     $isLogged = false;

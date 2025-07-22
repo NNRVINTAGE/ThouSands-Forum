@@ -2,9 +2,14 @@
 require_once '../../processes/database.php';
 $errors = array();
 session_start();
-if (isset($_SESSION['thouSandsIds'])) {
-    $aidis = $_SESSION['thouSandsIds'];
+if (isset($_SESSION['profileTags'])) {
+    $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
+    if (!isset($_GET['topicIds'])) {
+        $_SESSION['corsmsg'] = "the topic you opened does not exist";
+        header ('location: dashboard.php');
+        exit;
+    } 
 } else {
     header ('location: ../../index.php');
     exit;
@@ -35,9 +40,6 @@ if ($result_check_Topic->num_rows == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/nav.css">
-    <link rel="stylesheet" href="../../styling/forum_univ.css">
-    <link rel="stylesheet" href="../../styling/connect_univ.css">
-    <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/topic_internal.css">
     <title><?php echo $Ttitles;?></title>
 </head>
@@ -106,14 +108,14 @@ if ($result_check_Topic->num_rows == 1) {
     <script src="../../scriptstuff/alert.js"></script>
     <?php
     if (!empty($errors)) {
-        echo "<script> ";
+        echo "<script>";
         echo "alerter('"; foreach ($errors as $error) {echo $error .";";} echo "')";
         echo "</script>";
     }
     if (!empty($_SESSION['corsmsg'])) {
         $corsmsg = $_SESSION['corsmsg'];
-        echo "<script> ";
-        echo "alerter('" . $corsmsg . "')";
+        echo "<script>";
+        echo "alerter(' " . $corsmsg . " ')";
         echo "</script>";
         $_SESSION['corsmsg'] = "";
     }

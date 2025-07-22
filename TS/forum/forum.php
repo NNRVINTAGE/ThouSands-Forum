@@ -2,8 +2,8 @@
 require_once '../../processes/database.php';
 $errors = array();
 session_start();
-if (isset($_SESSION['thouSandsIds'])) {
-    $aidis = $_SESSION['thouSandsIds'];
+if (isset($_SESSION['profileTags'])) {
+    $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
     if (!isset($_GET['ids'])) {
         header ('location: dashboard.php');
@@ -52,14 +52,14 @@ if ($result_check_forums->num_rows == 1) {
     <div class="forum-capsule">
         <h1 class="forum-titles"><?php echo $titles;?></h1>
         <?php
-        $getUser = $connects->prepare("SELECT publicIds FROM user WHERE username = ?");
+        $getUser = $connects->prepare("SELECT profileTags FROM user WHERE username = ?");
         $getUser->bind_param("s", $creators);
         $getUser->execute();
         $resultGetUser = $getUser->get_result();
         if($resultGetUser->num_rows == 1){
             $take = $resultGetUser->fetch_assoc();
         ?>
-            <a href="profile.php?user=<?php echo $take['publicIds']; ?>" class="forum-starter"><?php echo $creators;?> | <?php echo $dates; ?></a>
+            <a href="profile.php?user=<?php echo $take['profileTags']; ?>" class="forum-starter"><?php echo $creators;?> | <?php echo $dates; ?></a>
         <?php
         };
         ?>
@@ -88,7 +88,7 @@ if ($result_check_forums->num_rows == 1) {
         ?>
             <div class="posted-comment">
                 <div class="comment-detail">
-                    <a href="profl.php?dt=<?php echo $Names;?>"><?php echo $Names;?></a>
+                    <a href="profile.php?user=<?php echo $Names;?>"><?php echo $Names;?></a>
                     <span>|</span>
                     <p><?php echo $Cdates;?></p>
                 </div>
