@@ -40,6 +40,7 @@ if ($result_check_Topic->num_rows == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/nav.css">
+    <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/topic_internal.css">
     <title><?php echo $Ttitles;?></title>
 </head>

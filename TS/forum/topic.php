@@ -47,7 +47,7 @@ $page = 'topic';
         ?>
         <div class="topic-container">
                     <?php
-                    if ($attachs != "empty" && isset($attachs)) {    
+                    if ($attachs != "empty" && isset($attachs)) {
                     ?>
             <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="topic-banner">
                     <?php

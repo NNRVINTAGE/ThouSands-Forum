@@ -8,7 +8,11 @@ body {
 .profile-display,
 .publication-display
 {
-    padding: 10px 4vw;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 92vw;
+    height: 50vh;
+    display: flex;
 }
 .profile-names,
 .detail-wrap,
@@ -17,12 +21,6 @@ body {
 .publishes
 {
     width: 100%;
-}
-
-.profile-display {
-    height: 50vh;
-    display: flex;
-
 }
 .profile-icon {
     width: 30%;
@@ -72,17 +70,31 @@ body {
     width: 50%;
 }
 .profile-bios {
-    margin-bottom: auto;
     padding: 5px 7px;
     min-height: 20vh;
-    text-align: justify;
+    max-height: 25vh;
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid var(--borderA);
+    border-radius: 4px;
+    overflow-y: scroll;
+}
+.edit-button {
+    padding: 5px calc(1vw + 1vh);
+    margin: 3px auto auto 0;
+    width: max-content;
+    font-size: 14px;
+    background: var(--LibsBG1);
     border-radius: 4px;
 }
 
 .publication-display {
-    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 92vw;
     height: 50vh;
+    display: flex;
+    justify-content: end;
 }
 .publishes {
     padding: 6px;
@@ -98,5 +110,33 @@ body {
     aspect-ratio: 16/9;
 }
 .libs-titles {
+    font-size: 17px;
+}
+
+#edit-dialog {
+    top: 15vh;
+    left: 27.5vw;
+    width: 45vw;
+    height: auto;
+    max-height: 70vh;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dialog-nav {
+    margin: 0 5px 0 0;
+}
+.univ-form {
+    height: auto;
+    overflow: hidden;
+}
+.form-input-row .inptxt {
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    resize: none;
+}
+.edit-submit {
+    margin: 5px auto;
     font-size: 17px;
 }

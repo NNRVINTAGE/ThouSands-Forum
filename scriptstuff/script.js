@@ -98,8 +98,8 @@ function LoadEditTopics(ReqstData) {
             form[key].value = values[key];
     });
 }
-function LoadDataAttaches(ReqstData) {
-    const form = document.forms.DATTACHS;
+function LoadBios(ReqstData) {
+    const form = document.forms.BIOS;
     const values = ReqstData.dataset;
     Object.keys(values).forEach((key) => {
         if (form[key]) 

@@ -161,53 +161,6 @@
     background-color: white;
 }
 
-.Like-Form {
-    position: fixed;
-    inset: calc(100vh - 70px) calc(100vh - 70px) 20px 20px;
-    width: 50px;
-    height: 50px;
-    background: var(--secondary);
-    border: none;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.LikeButton {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 15px;
-    background: url(../img/Like.png);
-    background-position: 40% 60%;
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    cursor: pointer;
-}
-.LikeButton:hover {
-    animation: rotates 0.6s forwards;
-}
-@keyframes rotates {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-.DisLikeButton {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border: none;
-    border-radius: 15px;
-    background: url(../img/DisLike.png);
-    background-position: 40% 60%;
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-}
 
 
 /* mobile styling adjustment */

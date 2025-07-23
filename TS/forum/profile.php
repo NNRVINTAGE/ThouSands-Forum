@@ -3,6 +3,7 @@ require_once '../../processes/database.php';
 $errors = array();
 session_start();
 $uDs = $_GET['user'];
+$setBios = false;
 if (isset($_SESSION['profileTags'])) {
     $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
@@ -16,6 +17,7 @@ if (isset($_SESSION['profileTags'])) {
     exit;
 }
 if ($uDs === "self") {
+    $setBios = true;
     $uDs = $_SESSION['profileTags'];
 }
 $page = "profiles";
@@ -31,12 +33,26 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/forum_univ.css">
+    <link rel="stylesheet" href="../../styling/connect_univ.css">
+    <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/prfl_extra.css">
     <title>Profile</title>
 </head>
 <body>
 <!-- navbar -->
 <?php include_once '../component/nav.php';?>
+<!-- bio dialog-->
+    <dialog id="edit-dialog">
+        <div class="dialog-nav"><h2>Edit Bio</h2><p onclick="SetDialog('edit')">X</p></div>
+        <form class="univ-form" name="BIOS" action="../component/bionic.php" method="post">
+            <div class="form-input-row">
+                <textarea type="text" name="bioedits" class="inptxt" placeholder="" auto-complete="off" maxlength="2000" required></textarea>
+            </div>
+            <div class="form-input-row">
+                <input class="edit-button edit-submit" type="submit" name="submit" value="submit">
+            </div>
+        </form>
+    </dialog>
 <!-- the main stuff -->
     <div class="profile-display">
         <?php
@@ -74,7 +90,14 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
                 <p class="uFolws">Following: <?php echo $uFolws;?></p>
                 <p class="JDates">Joined in <?php echo $JDates;?></p>
             </div>
-            <h2 class="profile-bios"><?php echo $Bios;?></h2>
+            <div class="profile-bios"><?php echo $Bios;?></div>
+            <?php
+            if ($setBios = true) {
+            ?>
+            <button class="edit-button" onclick="SetDialog('edit'); LoadBios(this);" data-bioedits="<?php echo $Bios;?>">Edit Bio</button>
+            <?php
+            }
+            ?>
         </div>
         <?php
         } else {

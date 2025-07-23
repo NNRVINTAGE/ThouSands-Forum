@@ -65,7 +65,7 @@ if ($result_check_forums->num_rows == 1) {
         ?>
         <h2 class="forum-desc"><?php echo $descs;?></h2>
         <?php
-        if ($attachs != "empty" && isset($attachs)) {    
+        if ($attachs != "empty" && isset($attachs)) {
         ?>
         <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $titles;?>" class="forum-banner">
         <?php

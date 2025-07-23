@@ -48,12 +48,12 @@ if (isset($_GET['requestInit'])) {
                     };
                     $stmt_frmPost->close();
                 } else {
-                    $_SESSION['corsmsg'] = 'An error occured when uploading the attachment';
+                    $_SESSION['corsmsg'] = 'An error occured when uploading forum attachment';
                     header ('location: ../forum/dashboard.php');
                     exit;
                 };
             } else {
-                $_SESSION['corsmsg'] = 'only jpg, jpeg, png, webp, & gif format that are allowed';
+                $_SESSION['corsmsg'] = 'only jpg, jpeg, png, webp, & gif format allowed for the forum attachment';
                 header ('location: ../forum/dashboard.php');
                 exit;
             };

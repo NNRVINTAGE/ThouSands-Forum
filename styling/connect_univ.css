@@ -107,7 +107,7 @@ h1 {
     margin: 0 0 50px 0;
     width: 100%;
     height: auto;
-    background: var(--primary);
+    background: var(--LibsBG1);
     display: flex;
 }
 .dialog-nav h2 {
@@ -118,7 +118,7 @@ h1 {
 .dialog-nav p {
     padding: 6px 12px;
     font-size: 24px;
-    background: var(--primary);
+    background: var(--LibsBG1);
     margin: auto 0 auto auto;
     transition: all 0.2s;
     cursor: pointer;
