@@ -56,7 +56,6 @@
     max-width: 70vw;
     height: 40vh;
     background: var(--LibsGrad2);
-    border: 2px solid rgb(182, 182, 182);
     border-radius: 10px;
     z-index: 900;
 }

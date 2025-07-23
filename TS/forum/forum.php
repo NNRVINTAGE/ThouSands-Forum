@@ -110,8 +110,7 @@ if ($result_check_forums->num_rows == 1) {
         </form>
     </div>
 </div>
-<!-- lil bit of messages passer -->
-    <div class="extraBanner"></div>
+<!-- lil bit of messages passer --> 
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>

@@ -9,14 +9,16 @@
 
 </div>
 
-## What is ThouSands Forum & ThouSands Library?
-This project originally focused for the Project ThouSands Game bug report and feedback forum,
-after some thought I've come to a realization that if the system extended beyond the goal this can be an opportunity for me to develop software distribution system and open forum community for the other developer.<br>
-It's goal now are to be an open source software distribution platform for everyone to publish their works, explore others software, give and recieve feedback with the community.
+## What is ThouSands Site?
+ThouSands Site originally focused for the Project ThouSands Series dedicated bug report and feedback forum website but now are set for a bigger goal, an open source platform alternative where any developer can publish their work and share feedback with the community.
+<br>ThouSands Forum and ThouSands Library are two webapp synch together into one thus it called the ThouSands Site.<br>
+ThouSands Forum pretty much is self-explanatory, a forum platform where everyone can share their works and feeback with other other dev and user.<br>
+While ThouSands Library are an software distribution platform for the developer publish their software wether it apps, games,mods, script(BUT NOT MALWARE) can be downloaded for others to try out.
+
 
 ## Table of Contents
 
-- [What is ThouSands Forum?](#What-is-ThouSands-Forums?)
+- [What is ThouSands Site?](#What-is-ThouSands-Site?)
 - [Table of Contents](#table-of-contents)
 - [Quick start](#Quick-start)
 - [Contributing](#Contributing)

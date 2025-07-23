@@ -1,6 +1,6 @@
     <!-- nav panel -->
     <div id="Navigation_Panel">
-        <img src="../../img/home.png" alt="" class="Navigation_Button" onclick="linker('dashboard')">
+        <img src="../../img/home.png" alt="" class="Navigation_Button" onclick="linker('home')">
         <?php
             if ($UploadEnabled === "yes") {
         ?>
@@ -10,7 +10,7 @@
             }
         ?>
         <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('category')">
-        <img src="../../img/settings.png" alt="" class="Navigation_Button" onclick="settings()">
+        <img src="../../img/grid.svg" alt="" class="Navigation_Button" onclick="settings()">
     </div>
     <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">
     <div id="Settings_Panel" style="transform: translateY(100vh) translateX(-50%);">
@@ -24,8 +24,8 @@
         </div>
     </div>
     <!-- search panel -->
-    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'softwarelist';?>.php">
+    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : ' home';?>.php">
         <input type="text" name="search" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
         <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>
-        <button class="searchbtn" onclick="linker('dashboard')" tabindex="3">Clear</button>
+        <button class="searchbtn" onclick="linker('home')" tabindex="3">Clear</button>
     </form>

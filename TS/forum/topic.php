@@ -71,8 +71,7 @@ $page = 'topic';
         }
         ?>
     </section>
-<!-- another messages passer -->
-    <div class="extraBanner"></div>
+<!-- another messages passer --> 
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>

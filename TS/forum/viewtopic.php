@@ -98,8 +98,7 @@ if ($result_check_Topic->num_rows == 1) {
         </div>
     </div>
 </div>
-<!-- lil bit of messages passer -->
-    <div class="extraBanner"></div>
+<!-- lil bit of messages passer --> 
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>

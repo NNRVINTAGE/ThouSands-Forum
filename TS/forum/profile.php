@@ -7,7 +7,7 @@ if (isset($_SESSION['profileTags'])) {
     $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
     if (!isset($_GET['user'])) {
-        $_SESSION['corsmsg'] = "user account does not exist";
+        $_SESSION['corsmsg'] = "no user tag were present";
         header ('location: dashboard.php');
         exit;
     } 
@@ -40,29 +40,43 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
 <!-- the main stuff -->
     <div class="profile-display">
         <?php
-        // some profile data fetch
+        // some profile data fetching
         $stmt_check_profile = $connects->prepare("SELECT * FROM profiles WHERE profileTags = ? ;");
         $stmt_check_profile->bind_param("s", $uDs);
         $stmt_check_profile->execute();
         $result_check_profile = $stmt_check_profile->get_result();
         if ($result_check_profile->num_rows == 1) {
-            while ($value = $result_check_profile->fetch_assoc()) {
-                $Tags = $value['profileTags'];
-                $Names = $value['profileNames'];
-                $Bios = $value['profileBios'];
-                $JDates = $value['profileJDates'];
-                $uFolws = $value['uFolw'];
+            $value = $result_check_profile->fetch_assoc();
+            $Tags = $value['profileTags'];
+            $pfAttachs = $value['profileAttachs'];
+            $Names = $value['profileNames'];
+            $Bios = $value['profileBios'];
+            $JDates = $value['profileJDates'];
+            $uFolws = $value['uFolw'];
+            $iconAlt = ucfirst(substr($Names, 0, 1));
         ?>
-            <div class="profile-container">
-                <h2 class="profile-names"><?php echo $Names;?></h2>
-                <div class="detail-wrap">
-                    <p class="uFolws">Nums: <?php echo $uFolws;?></p>
-                    <p class="JDates">Joined Since: <?php echo $JDates;?></p>
-                </div>
-                <h2 class="profile-bios"><?php echo $Bios;?></h2>
-            </div>
-        <?php
+        <div class="profile-icon">
+            <?php
+            if ($pfAttachs === "empty") {
+            ?>
+            <h2 class="profile-icon-replacement"><?php echo $iconAlt;?></h2>
+            <?php
+            } else {
+            ?>
+            <img src="<?php echo $pfAttachs;?>" alt="<?php echo $Names;?>" class="profile-image">
+            <?php
             };
+            ?>
+        </div>
+        <div class="profile-container">
+            <h2 class="profile-names"><?php echo $Names;?></h2>
+            <div class="detail-wrap">
+                <p class="uFolws">Following: <?php echo $uFolws;?></p>
+                <p class="JDates">Joined in <?php echo $JDates;?></p>
+            </div>
+            <h2 class="profile-bios"><?php echo $Bios;?></h2>
+        </div>
+        <?php
         } else {
             $_SESSION['corsmsg'] = "user account does not exist or on a temporary ban";
             header ('location: dashboard.php');
@@ -80,13 +94,13 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
         if ($result_check_publishes->num_rows > 0) {
             $uniqueItem = [];
             while ($value = $result_check_publishes->fetch_assoc()) {
+                $libsIds = $value['libsIds'];
                 $lAttachs = $value['libsAttachs'];
-                $libsIds = $value['libsIds '];
                 $libsTitles = $value['libsTitles'];
-                $libsDescs = $value['libsDescs'];
+                $libsDescs = $value['libsDesc'];
                 $libsCategorys = $value['libsCategorys'];
                 $addedDates = $value['addedDates'];
-                if (!in_array($Ids, $uniqueItem)) {
+                if (!in_array($libsIds, $uniqueItem)) {
         ?>
             <div class="publishes">
                 <img src="../ArchFiles/<?php echo $lAttachs;?>" class="publish-attachs">
@@ -100,7 +114,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
         <?php
                 };
             };
-        }else{
+        } else {
         ?>
             <div class="publishes">
                 <h2 class="zthing">no project publishes found</h2>
@@ -109,8 +123,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
         };
         ?>
     </div>
-<!-- lil bit of messages passer -->
-    <div class="extraBanner"></div>
+<!-- just messages passer -->
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>

@@ -10,7 +10,8 @@
     color: var(--text);
 }
 :root {
-    --text: black;
+    --text: white;
+    --background: rgb(22, 22, 22);
     --primary: #35b189;
     --secondary:#6bccac;
     --highlight: #96d8c3;
@@ -36,4 +37,5 @@
 }
 html {
     scroll-behavior: smooth;
+    background-color: var(--background);
 }

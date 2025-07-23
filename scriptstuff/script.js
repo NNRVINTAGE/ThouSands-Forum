@@ -3,14 +3,20 @@ function linker(reqstate) {
         case 'login':
             window.location.replace('login.php');
             break;
+        case 'home':
+            window.location.replace('home.php');
+            break; 
         case 'dashboard':
             window.location.replace('dashboard.php');
             break; 
         case 'topic':
             window.location.replace('topic.php');
             break;
+        case 'category':
+            window.location.replace('category.php');
+            break;
         case 'profile':
-            window.location.replace('profile.php?user=self');
+            window.location.replace('../../TS/forum/profile.php?user=self');
             break;
         case 'logout':
             window.location.replace('../../processes/logout.php');

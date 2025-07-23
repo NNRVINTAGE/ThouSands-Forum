@@ -10,7 +10,7 @@
             }
         ?>
         <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('topic')">
-        <img src="../../img/settings.png" alt="" class="Navigation_Button" onclick="settings()">
+        <img src="../../img/grid.svg" alt="" class="Navigation_Button" onclick="settings()">
     </div>
     <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">
     <div id="Settings_Panel" style="transform: translateY(100vh) translateX(-50%);">

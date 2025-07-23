@@ -1,7 +1,7 @@
 <?php
 require_once '../../processes/database.php';
 $UploadEnabled = "nope";
-$page = "softwarelist";
+$page = "home";
 $State = "publics";
 $errors = array();
 session_start();
@@ -23,7 +23,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         $stateSFT = 'lxgames';
     } else {
         $stateSFT = 'lxgames';
-    }
+    };
 };
 ?>
 
@@ -33,13 +33,13 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
-    <link rel="stylesheet" href="softwarelist.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
     <title>Library</title>
 </head>
 <body>
-<!-- nav of course -->
+<!-- the nav of course -->
 <?php include_once '../libsSys/nav.php';?>
 <!-- category on the right of the page -->
     <section class="category-container">
@@ -63,7 +63,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             }
         } else {
         ?>
-            <p class="zthing">category fetching is broken somehow</p>
+            <p class="zthing">category list got broken somehow</p>
         <?php
         };
         ?>
@@ -84,7 +84,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         ?>
         <div class="banner-container">
             <img src="../libsImg/<?php echo $bannerRefImg;?>" alt="<?php echo $bannerRefImg;?>" class="banner-img">
-            <a href="softwarelist.php?RefIds=<?php echo $Bids;?>" class="banner-link">.</a>
+            <a href=" home.php?RefIds=<?php echo $Bids;?>" class="banner-link">.</a>
         </div>
         <?php
                 }
@@ -127,8 +127,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         }
         ?>
     </section>
-<!-- another messages passer -->
-    <div class="extraBanner"></div>
+<!-- another messages passer --> 
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>

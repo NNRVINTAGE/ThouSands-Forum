@@ -27,7 +27,7 @@ $daState = "Publics";
             <?php
             if ($isLogged == true) {
             ?>
-            <a href="softwarelist.php" class="linkie dashb">Homepage</a>
+            <a href=" home.php" class="linkie dashb">Homepage</a>
             <?php
             } else {
             ?>
@@ -42,8 +42,8 @@ $daState = "Publics";
         <h1>ThouSands Library</h1>
         <h2>Open library collection platform of software & games</h2>
         <div class="linkie-button">
-            <a href="softwarelist.php?type=apps" class="Apps">Search Apps</a>
-            <a href="softwarelist.php?type=games" class="Games">Discover Games</a>
+            <a href=" home.php?type=apps" class="Apps">Search Apps</a>
+            <a href=" home.php?type=games" class="Games">Discover Games</a>
         </div>
     </section>
     <section class="map_main_container">
@@ -107,7 +107,7 @@ $daState = "Publics";
                 <p class="libs-dates"><?php echo $addedDates;?></p>
                 <p class="libs-desc"><?php echo $libsdesc;?></p>
                 <p class="libs-tag"><?php echo $libstags;?></p>
-                <a class="libs-link" href="softwarelist.php?viewID=<?php echo $Dids;?>">.</a>
+                <a class="libs-link" href=" home.php?viewID=<?php echo $Dids;?>">.</a>
             </div>
             <?php
                     }
