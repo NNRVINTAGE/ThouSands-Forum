@@ -1,8 +1,5 @@
 <?php
 require_once '../../processes/database.php';
-$UploadEnabled = "nope";
-$page = "home";
-$State = "publics";
 $errors = array();
 session_start();
 if (isset($_SESSION['profileTags'])) {
@@ -13,17 +10,16 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: libs.php');
     exit;
 };
-
+$UploadEnabled = "nope";
+$page = "home";
+$State = "publics";
+$requestedItem = "empty";
 if (isset($_GET['type'])) {
-$requestedItem = $_GET['type'];
-$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
-    if ($requestedItem === 'apps') {
-        $stateSFT = 'sxapps';
-    } else if ($requestedItem === 'games') {
-        $stateSFT = 'lxgames';
-    } else {
-        $stateSFT = 'lxgames';
-    };
+    $requestedItem = $_GET['type'];
+    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+} else {
+    $requestedItem = "empty";
+    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 };
 ?>
 
@@ -36,7 +32,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
-    <title>Library</title>
+    <title>Library Homepage</title>
 </head>
 <body>
 <!-- the nav of course -->
@@ -97,7 +93,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         ?>
     </section>
 <!-- software list -->
-    <section class="software-list">
+    <section class="software-list" id="softwarelist">
         <?php
         $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
         $stmt_check_software->bind_param("s", $State);

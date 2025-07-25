@@ -9,8 +9,9 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: ../../index.php');
     exit;
 };
-$UploadEnabled = 'yes';
 $page = 'topic';
+$UploadEnabled = 'no';
+$SearchEnabled = "no";
 ?>
 
 <!DOCTYPE html>
@@ -28,12 +29,13 @@ $page = 'topic';
 <body>
     <!-- modular navbar -->
     <?php include_once '../component/nav.php';?>
+    <!-- the list goes on -->
     <section class="topic-lister">
         <?php
         $topicState = "Publics";
         $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
         $stmt_check_topic->bind_param("s", $topicState);
-        $stmt_check_topic->execute();    
+        $stmt_check_topic->execute();
         $result_check_topic = $stmt_check_topic->get_result();
         if ($result_check_topic->num_rows > 0) {
             $uniqueItem = [];
@@ -47,7 +49,7 @@ $page = 'topic';
         ?>
         <div class="topic-container">
                     <?php
-                    if ($attachs != "empty" && isset($attachs)) {
+                    if ($attachs != "empty.png" && isset($attachs)) {
                     ?>
             <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="topic-banner">
                     <?php
@@ -62,13 +64,13 @@ $page = 'topic';
             <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="topic-link">.</a>
         </div>
         <?php
-                }
-            }
+                };
+            };
         } else {
         ?>
             <h2 class="zthing">topic fetching failed</h2>
         <?php
-        }
+        };
         ?>
     </section>
 <!-- another messages passer --> 

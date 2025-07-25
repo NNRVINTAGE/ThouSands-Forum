@@ -9,13 +9,14 @@ if (isset($_SESSION['profileTags'])) {
         $_SESSION['corsmsg'] = "the topic you opened does not exist";
         header ('location: dashboard.php');
         exit;
-    } 
+    };
 } else {
     header ('location: ../../index.php');
     exit;
-}
+};
 $page = "topic";
 $UploadEnabled = "no";
+$SearchEnabled = "no";
 $State = "Publics";
 $topicIds = $_GET['topicIds'];
 $topicIds = htmlspecialchars($topicIds, ENT_QUOTES, 'UTF-8');
@@ -52,11 +53,11 @@ if ($result_check_Topic->num_rows == 1) {
         <h1 class="topic-titles"><?php echo $Ttitles;?></h1>
         <p class="topic-dates">last updated: <?php echo $dates;?></p>
         <?php
-        if($attachs != "empty" && isset($attachs)){
+        if($attachs != "empty.png" && isset($attachs)){
         ?>
         <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="topic-img">
         <?php
-        }
+        };
         ?>
         <h2 class="topic-desc"><?php echo $descs;?></h2>
         <div class="forum-display">
@@ -88,13 +89,13 @@ if ($result_check_Topic->num_rows == 1) {
                 <a href="forum.php?ids=<?php echo $ids;?>" class="forum-link">.</a>
             </div>
         <?php
-                }
-            }
-        }else{
+                };
+            };
+        } else {
         ?>
                 <h2 class="zthing">no forum for this topic yet</h2>
         <?php
-        }
+        };
         ?>
         </div>
     </div>

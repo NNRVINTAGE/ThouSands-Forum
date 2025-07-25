@@ -24,9 +24,9 @@ if (isset($_SESSION['profileTags'])) {
         $_SESSION['corsmsg'] = 'edited bio is empty';
         header ('location: ../forum/profile.php?user=' . $profileTags);
         exit;
-    }
+    };
 } else {
     header ('location: ../../index.php');
     exit;
-}
+};
 ?>

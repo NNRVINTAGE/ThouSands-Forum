@@ -7,7 +7,11 @@
                 <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
                 <img src="../../img/upload.png" alt="" class="Navigation_Button" onclick="SetDialog('add')">
         <?php
-            }
+            } elseif ($SearchEnabled) {
+        ?>
+                <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
+        <?php
+            };
         ?>
         <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('topic')">
         <img src="../../img/grid.svg" alt="" class="Navigation_Button" onclick="settings()">
@@ -25,7 +29,7 @@
     </div>
     <!-- search panel -->
     <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'dashboard';?>.php">
-        <input type="text" name="search" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
+        <input type="text" name="forum" placeholder="search forum..." id="searchbox" class="inputext" tabindex="1">
         <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>
-        <button class="searchbtn" onclick="linker('dashboard')" tabindex="3">Clear</button>
+        <a href="<?php echo isset($page) ? $page : 'dashboard';?>.php" class="searchbtn" tabindex="3">Clear</a>
     </form>

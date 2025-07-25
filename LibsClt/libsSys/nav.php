@@ -7,7 +7,11 @@
                 <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
                 <img src="../../img/upload.png" alt="" class="Navigation_Button" onclick="SetDialog('add')">
         <?php
-            }
+            } elseif ($SearchEnabled) {
+        ?>
+                <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
+        <?php
+            };
         ?>
         <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('category')">
         <img src="../../img/grid.svg" alt="" class="Navigation_Button" onclick="settings()">
@@ -24,8 +28,8 @@
         </div>
     </div>
     <!-- search panel -->
-    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : ' home';?>.php">
+    <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'home';?>.php">
         <input type="text" name="search" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
-        <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>
-        <button class="searchbtn" onclick="linker('home')" tabindex="3">Clear</button>
+        <button type="submit" name="onsearch" class="searchbtn" value="stuff"  tabindex="2">Search</button>
+        <a href="<?php echo isset($page) ? $page : 'home';?>.php" class="searchbtn" tabindex="3">Clear</a>
     </form>

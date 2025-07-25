@@ -8,11 +8,19 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: ../../index.php');
     exit;
 }
-
+$requestedItem = "empty";
 $page = "dashboard";
 $UploadEnabled = "yes";
 $ForumState = "Publics";
 $topicState = "Publics";
+if (isset($_GET['forum']) && isset($_GET['onsearch'])) {
+    $searchTrigger = $_GET['onsearch'];
+    $requestedItem = $_GET['forum'];
+    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+} else {
+    $requestedItem = "empty";
+    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+};
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +33,7 @@ $topicState = "Publics";
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
-    <title>Dashboards</title>
+    <title>Dashboard</title>
 </head>
 <body class="container_again">
 <!-- nav get moved for modularity -->
@@ -98,16 +106,19 @@ $topicState = "Publics";
             <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="mitol-title"><?php echo $titles;?></a>
         </div>
         <?php
-                }
-            }
+                };
+            };
         } else {
         ?>
-            <p class="unknown">No retrieved topic data</p>
+            <p class="unknown">No topic, somehow</p>
         <?php
-        }
+        };
         ?>
     </section>
-<!-- forum -->
+    <!-- forum there -->
+    <?php
+    if ($requestedItem === "empty") {
+    ?>
     <section class="Hforum-display">
         <?php
         $stmt_check_HForum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'YES' ORDER BY ForumDates ASC;");
@@ -136,15 +147,23 @@ $topicState = "Publics";
             <a href="forum.php?ids=<?php echo $Hids;?>" class="forum-link">.</a>
         </div>
         <?php
-                }
-            }
-        }
+                };
+            };
+        };
         ?>
     </section>
+    <?php
+    };
+    ?>
     <section class="forum-display">
         <?php
+        if (isset($requestedItem) && isset($searchTrigger)) {
+        $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumTitles LIKE '%$requestedItem%' ORDER BY ForumTitles DESC;");
+        $stmt_check_Forum->bind_param("s", $ForumState);
+        } else {
         $stmt_check_Forum = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumHighlight = 'NOs';");
         $stmt_check_Forum->bind_param("s", $ForumState);
+        };
         $stmt_check_Forum->execute();
         $result_check_Forum = $stmt_check_Forum->get_result();
         if ($result_check_Forum->num_rows > 0) {
@@ -174,7 +193,7 @@ $topicState = "Publics";
             }
         } else {
         ?>
-            <p class="unknown">No topics found, something wrong in there</p>
+            <p class="unknown">No forum got found, something wrong in there</p>
         <?php
         }
         ?>

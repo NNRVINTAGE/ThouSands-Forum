@@ -8,7 +8,7 @@ if (isset($_SESSION['profileTags'])) {
     $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
     if (!isset($_GET['user'])) {
-        $_SESSION['corsmsg'] = "no user tag were present";
+        $_SESSION['corsmsg'] = "no user tags found";
         header ('location: dashboard.php');
         exit;
     } 
@@ -39,21 +39,21 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
     <title>Profile</title>
 </head>
 <body>
-<!-- navbar -->
+<!-- just navbar -->
 <?php include_once '../component/nav.php';?>
 <!-- bio dialog-->
     <dialog id="edit-dialog">
         <div class="dialog-nav"><h2>Edit Bio</h2><p onclick="SetDialog('edit')">X</p></div>
         <form class="univ-form" name="BIOS" action="../component/bionic.php" method="post">
             <div class="form-input-row">
-                <textarea type="text" name="bioedits" class="inptxt" placeholder="" auto-complete="off" maxlength="2000" required></textarea>
+                <textarea type="text" name="bioedits" class="inptxt" placeholder="" auto-complete="off" maxlength="2500" required></textarea>
             </div>
             <div class="form-input-row">
                 <input class="edit-button edit-submit" type="submit" name="submit" value="submit">
             </div>
         </form>
     </dialog>
-<!-- the main stuff -->
+<!-- the profile content and other stuff -->
     <div class="profile-display">
         <?php
         // some profile data fetching
@@ -73,7 +73,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
         ?>
         <div class="profile-icon">
             <?php
-            if ($pfAttachs === "empty") {
+            if (empty($pfAttachs) || $pfAttachs === "empty") {
             ?>
             <h2 class="profile-icon-replacement"><?php echo $iconAlt;?></h2>
             <?php
@@ -88,7 +88,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
             <h2 class="profile-names"><?php echo $Names;?></h2>
             <div class="detail-wrap">
                 <p class="uFolws">Following: <?php echo $uFolws;?></p>
-                <p class="JDates">Joined in <?php echo $JDates;?></p>
+                <p class="JDates">Joined since <?php echo $JDates;?></p>
             </div>
             <div class="profile-bios"><?php echo $Bios;?></div>
             <?php
@@ -101,7 +101,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
         </div>
         <?php
         } else {
-            $_SESSION['corsmsg'] = "user account does not exist or on a temporary ban";
+            $_SESSION['corsmsg'] = "user account does not exists or on a temporary bans";
             header ('location: dashboard.php');
             exit;
         };
@@ -132,7 +132,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
                     <p class="libs-ctgry"><?php echo $libsCategorys;?></p>
                     <p class="libs-dates"><?php echo $addedDates;?></p>
                 </div>
-                <h2 class="libs-descs" onclick="expand('expandDescs')"><?php echo $libsDescs;?></h2>
+                <h2 class="libs-descs"><?php echo $libsDescs;?></h2>
             </div>
         <?php
                 };

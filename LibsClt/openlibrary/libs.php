@@ -34,7 +34,7 @@ $daState = "Publics";
             <a href="../../forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
             <a href="../../forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
             <?php
-            }
+            };
             ?>
             </nav>
         </header>
@@ -42,8 +42,8 @@ $daState = "Publics";
         <h1>ThouSands Library</h1>
         <h2>Open library collection platform of software & games</h2>
         <div class="linkie-button">
-            <a href=" home.php?type=apps" class="Apps">Search Apps</a>
-            <a href=" home.php?type=games" class="Games">Discover Games</a>
+            <a href=" home.php#softwarelist?type=apps" class="Apps">Search Apps</a>
+            <a href=" home.php#sofwarelist?type=games" class="Games">Discover Games</a>
         </div>
     </section>
     <section class="map_main_container">

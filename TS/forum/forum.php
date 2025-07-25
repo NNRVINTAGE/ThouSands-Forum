@@ -15,12 +15,12 @@ if (isset($_SESSION['profileTags'])) {
 }
 $page = "forums";
 $UploadEnabled = "no";
+$SearchEnabled = "no";
 $ForumState = "Publics";
-
-$ids = $_GET['ids'];
-$ids = htmlspecialchars($ids, ENT_QUOTES, 'UTF-8');
+$fids = $_GET['ids'];
+$fids = htmlspecialchars($fids, ENT_QUOTES, 'UTF-8');
 $stmt_check_forums = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumIds = ? ORDER BY ForumDates ASC;");
-$stmt_check_forums->bind_param("ss", $ForumState, $ids);
+$stmt_check_forums->bind_param("ss", $ForumState, $fids);
 $stmt_check_forums->execute();
 $result_check_forums = $stmt_check_forums->get_result();
 if ($result_check_forums->num_rows == 1) {
@@ -48,7 +48,9 @@ if ($result_check_forums->num_rows == 1) {
     <title><?php echo $titles;?></title>
 </head>
 <body>
+<!-- navbar -->
 <?php include_once '../component/nav.php';?>
+<!-- forum content -->
     <div class="forum-capsule">
         <h1 class="forum-titles"><?php echo $titles;?></h1>
         <?php
@@ -65,49 +67,53 @@ if ($result_check_forums->num_rows == 1) {
         ?>
         <h2 class="forum-desc"><?php echo $descs;?></h2>
         <?php
-        if ($attachs != "empty" && isset($attachs)) {
+        if ($attachs != "empty.png" && isset($attachs)) {
         ?>
         <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $titles;?>" class="forum-banner">
         <?php
         };
         ?>
+        <form action="../component/post_out.php" method="post" class="comment-post-bar">
+            <input type="text" name="fids" value="<?php echo $fids;?>" required hidden>
+            <input type="text" name="usrIds" value="<?php echo $aidis;?>" required hidden>
+            <input type="text" name="cmtUser" value="<?php echo $name;?>" required hidden>
+            <input type="text" name="cmtContnt" class="comment-input" placeholder="Leave a reply..." auto-complete="off" maxlength="2000" required>
+            <input class="send-button" type="submit" name="submit" value="comment">
+        </form>
         <div class="forum-comment">
         <?php
         $stmt_check_comments = $connects->prepare("SELECT * FROM forumcomments WHERE ForumIds = ? ORDER BY CommentDates DESC;");
-        $stmt_check_comments->bind_param("s", $ids);
+        $stmt_check_comments->bind_param("s", $fids);
         $stmt_check_comments->execute();
         $result_check_comments = $stmt_check_comments->get_result();
         if ($result_check_comments->num_rows > 0) {
             $uniqueItem = [];
             while ($value = $result_check_comments->fetch_assoc()) {
                 $Cids = $value['CommentIds'];
-                $Names = $value['CommentNames'];
+                $Tags = $value['profileTags'];
+                $Names = $value['profileNames'];
                 $Comments = $value['Comments'];
                 $Cdates = $value['CommentDates'];
                 if (!in_array($Cids, $uniqueItem)) {
         ?>
             <div class="posted-comment">
                 <div class="comment-detail">
-                    <a href="profile.php?user=<?php echo $Names;?>"><?php echo $Names;?></a>
+                    <a href="profile.php?user=<?php echo $Tags;?>"><?php echo $Names;?></a>
                     <span>|</span>
                     <p><?php echo $Cdates;?></p>
                 </div>
                 <p class="comment-content"><?php echo $Comments;?></p>
             </div>
         <?php
-                }
-            }
+                };
+            };
         }else{
         ?>
                 <h2 class="zthing">be the first one to reply this</h2>
         <?php
-        }
+        };
         ?>
         </div>
-        <form action="../component/post_out.php" method="post" class="comment-post-bar">
-            <input type="text" name="comment" class="comment-input" placeholder="Leave a Comment..." auto-complete="off" maxlength="255" required>
-            <input class="send-button" type="submit" name="submit" value="">
-        </form>
     </div>
 </div>
 <!-- lil bit of messages passer --> 
@@ -122,14 +128,14 @@ if ($result_check_forums->num_rows == 1) {
         echo "<script> ";
         echo "alerter('"; foreach ($errors as $error) {echo $error .";";} echo "')";
         echo "</script>";
-    }
+    };
     if (!empty($_SESSION['corsmsg'])) {
         $corsmsg = $_SESSION['corsmsg'];
         echo "<script> ";
         echo "alerter('" . $corsmsg . "')";
         echo "</script>";
         $_SESSION['corsmsg'] = "";
-    }
+    };
     ?>
 </body>
 </html>

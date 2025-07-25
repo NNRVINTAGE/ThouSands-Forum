@@ -1,10 +1,11 @@
+// this makes everything much easier to debug
 document.addEventListener("DOMContentLoaded", function() {
     const borderAnimate = document.getElementById('borderanimate');
     setTimeout(() => {
-        borderAnimate.style.animation = 'none'; // Remove animation
-        void borderAnimate.offsetWidth; // Trigger reflow
-        borderAnimate.style.animation = 'ReverseTimer'; // Re-add animation
-    }, 100); // Delay to ensure the animation is restarted
+        borderAnimate.style.animation = 'none'; // Removing animation
+        void borderAnimate.offsetWidth; // Triggering reflow
+        borderAnimate.style.animation = 'ReverseTimer'; // Adding back animation
+    }, 100); // small delay to make sure the animation got added back
 });
 function alerter(content) {
     const alertcard = document.getElementById('alertcard');
@@ -15,5 +16,5 @@ function alerter(content) {
     }, 100);
     setTimeout(() => {
         alertcard.style.transform = "translateX(100vw)";
-    }, 4100);
-}
+    }, 5000);
+};
