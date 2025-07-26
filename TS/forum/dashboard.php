@@ -13,14 +13,13 @@ $page = "dashboard";
 $UploadEnabled = "yes";
 $ForumState = "Publics";
 $topicState = "Publics";
-if (isset($_GET['forum']) && isset($_GET['onsearch'])) {
+if (isset($_GET['item']) && isset($_GET['onsearch'])) {
     $searchTrigger = $_GET['onsearch'];
-    $requestedItem = $_GET['forum'];
-    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+    $requestedItem = $_GET['item'];
 } else {
     $requestedItem = "empty";
-    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 };
+$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +32,7 @@ if (isset($_GET['forum']) && isset($_GET['onsearch'])) {
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
-    <title>Dashboard</title>
+    <title>Dashboards</title>
 </head>
 <body class="container_again">
 <!-- nav get moved for modularity -->
@@ -110,7 +109,7 @@ if (isset($_GET['forum']) && isset($_GET['onsearch'])) {
             };
         } else {
         ?>
-            <p class="unknown">No topic, somehow</p>
+            <p class="unknown">No topic found from the list</p>
         <?php
         };
         ?>
@@ -195,7 +194,7 @@ if (isset($_GET['forum']) && isset($_GET['onsearch'])) {
         ?>
             <p class="unknown">No forum got found, something wrong in there</p>
         <?php
-        }
+        };
         ?>
     </section>
 <!-- lil bit of messages passer --> 

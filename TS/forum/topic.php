@@ -11,7 +11,14 @@ if (isset($_SESSION['profileTags'])) {
 };
 $page = 'topic';
 $UploadEnabled = 'no';
-$SearchEnabled = "no";
+$SearchEnabled = "yes";
+if (isset($_GET['item']) && isset($_GET['onsearch'])) {
+    $searchTrigger = $_GET['onsearch'];
+    $requestedItem = $_GET['item'];
+} else {
+    $requestedItem = "empty";
+};
+$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +40,13 @@ $SearchEnabled = "no";
     <section class="topic-lister">
         <?php
         $topicState = "Publics";
+        if (isset($requestedItem) && isset($searchTrigger)) {
+        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ? AND topicTitles LIKE '%$requestedItem%' ORDER BY topicDates DESC;");
+        $stmt_check_topic->bind_param("s", $topicState);
+        } else {
         $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
         $stmt_check_topic->bind_param("s", $topicState);
+        };
         $stmt_check_topic->execute();
         $result_check_topic = $stmt_check_topic->get_result();
         if ($result_check_topic->num_rows > 0) {
@@ -68,7 +80,7 @@ $SearchEnabled = "no";
             };
         } else {
         ?>
-            <h2 class="zthing">topic fetching failed</h2>
+            <h2 class="zthing">no topics found on the list</h2>
         <?php
         };
         ?>

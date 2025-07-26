@@ -7,7 +7,7 @@
                 <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
                 <img src="../../img/upload.png" alt="" class="Navigation_Button" onclick="SetDialog('add')">
         <?php
-            } elseif ($SearchEnabled) {
+            } elseif (isset($SearchEnabled) && $SearchEnabled === "yes") {
         ?>
                 <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
         <?php
@@ -29,7 +29,8 @@
     </div>
     <!-- search panel -->
     <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'dashboard';?>.php">
-        <input type="text" name="forum" placeholder="search forum..." id="searchbox" class="inputext" tabindex="1">
+        <?php if(isset($subpage) && isset($paramsubpage)){ ?><input type="text" name="<?php echo $paramsubpage;?>" value="<?php echo $subpage;?>" hidden tabindex="99"><?php };?>
+        <input type="text" name="item" placeholder="search stuff..." id="searchbox" class="inputext" tabindex="1">
         <button type="submit" name="onsearch" class="searchbtn" tabindex="2">Search</button>
-        <a href="<?php echo isset($page) ? $page : 'dashboard';?>.php" class="searchbtn" tabindex="3">Clear</a>
+        <a href="<?php echo isset($page) ? $page : 'dashboard';?>.php<?php if(isset($subpage) && isset($paramsubpage)){echo '?' . $paramsubpage . '=' . $subpage;};?>" class="searchbtn" tabindex="3">Clear</a>
     </form>

@@ -13,12 +13,21 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: ../../index.php');
     exit;
 }
-$page = "forums";
-$UploadEnabled = "no";
-$SearchEnabled = "no";
-$ForumState = "Publics";
 $fids = $_GET['ids'];
 $fids = htmlspecialchars($fids, ENT_QUOTES, 'UTF-8');
+$page = "forum";
+$paramsubpage = "ids";
+$subpage = $fids;
+$UploadEnabled = "no";
+$SearchEnabled = "yes";
+$ForumState = "Publics";
+if (isset($_GET['item']) && isset($_GET['onsearch'])) {
+    $searchTrigger = $_GET['onsearch'];
+    $requestedItem = $_GET['item'];
+} else {
+    $requestedItem = "empty";
+};
+$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 $stmt_check_forums = $connects->prepare("SELECT * FROM forums WHERE ForumState = ? AND ForumIds = ? ORDER BY ForumDates ASC;");
 $stmt_check_forums->bind_param("ss", $ForumState, $fids);
 $stmt_check_forums->execute();
@@ -58,7 +67,7 @@ if ($result_check_forums->num_rows == 1) {
         $getUser->bind_param("s", $creators);
         $getUser->execute();
         $resultGetUser = $getUser->get_result();
-        if($resultGetUser->num_rows == 1){
+        if ($resultGetUser->num_rows == 1) {
             $take = $resultGetUser->fetch_assoc();
         ?>
             <a href="profile.php?user=<?php echo $take['profileTags']; ?>" class="forum-starter"><?php echo $creators;?> | <?php echo $dates; ?></a>
@@ -82,8 +91,13 @@ if ($result_check_forums->num_rows == 1) {
         </form>
         <div class="forum-comment">
         <?php
+        if (isset($requestedItem) && isset($searchTrigger)) {
+        $stmt_check_comments = $connects->prepare("SELECT * FROM forumcomments WHERE ForumIds = ? AND Comments LIKE '%$requestedItem%' ORDER BY CommentDates DESC;");
+        $stmt_check_comments->bind_param("s", $fids);
+        } else {
         $stmt_check_comments = $connects->prepare("SELECT * FROM forumcomments WHERE ForumIds = ? ORDER BY CommentDates DESC;");
         $stmt_check_comments->bind_param("s", $fids);
+        };
         $stmt_check_comments->execute();
         $result_check_comments = $stmt_check_comments->get_result();
         if ($result_check_comments->num_rows > 0) {

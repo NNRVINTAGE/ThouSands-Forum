@@ -27,7 +27,7 @@ $daState = "Publics";
             <?php
             if ($isLogged == true) {
             ?>
-            <a href=" home.php" class="linkie dashb">Homepage</a>
+            <a href=" home.php" class="linkie dashb">Home</a>
             <?php
             } else {
             ?>

@@ -5,21 +5,30 @@ session_start();
 if (isset($_SESSION['profileTags'])) {
     $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
-    if (!isset($_GET['topicIds'])) {
-        $_SESSION['corsmsg'] = "the topic you opened does not exist";
-        header ('location: dashboard.php');
-        exit;
-    };
+    // if (!isset($_GET['topicIds'])) {
+    //     $_SESSION['corsmsg'] = "the topic you tried to open does not exists";
+    //     header ('location: topic.php');
+    //     exit;
+    // };
 } else {
     header ('location: ../../index.php');
     exit;
 };
-$page = "topic";
-$UploadEnabled = "no";
-$SearchEnabled = "no";
-$State = "Publics";
 $topicIds = $_GET['topicIds'];
 $topicIds = htmlspecialchars($topicIds, ENT_QUOTES, 'UTF-8');
+$page = "viewtopic";
+$paramsubpage = "topicIds";
+$subpage = $topicIds;
+$UploadEnabled = "no";
+$SearchEnabled = "yes";
+$State = "Publics";
+if (isset($_GET['item']) && isset($_GET['onsearch'])) {
+    $searchTrigger = $_GET['onsearch'];
+    $requestedItem = $_GET['item'];
+} else {
+    $requestedItem = "empty";
+};
+$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 $stmt_check_Topic = $connects->prepare("SELECT * FROM topics WHERE TopicState = ? AND TopicIds = ? ORDER BY TopicTitles ASC;");
 $stmt_check_Topic->bind_param("ss", $State, $topicIds);
 $stmt_check_Topic->execute();
@@ -31,7 +40,7 @@ if ($result_check_Topic->num_rows == 1) {
     $dates = $value['topicDates'];
     $descs = $value['topicContents'];
     $attachs = $value['topicAttachs'];
-}
+};
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +60,7 @@ if ($result_check_Topic->num_rows == 1) {
 <!-- topic container -->
     <div class="topic-capsule">
         <h1 class="topic-titles"><?php echo $Ttitles;?></h1>
-        <p class="topic-dates">last updated: <?php echo $dates;?></p>
+        <p class="topic-dates">last updated <?php echo $dates;?></p>
         <?php
         if($attachs != "empty.png" && isset($attachs)){
         ?>
@@ -62,8 +71,13 @@ if ($result_check_Topic->num_rows == 1) {
         <h2 class="topic-desc"><?php echo $descs;?></h2>
         <div class="forum-display">
         <?php
+        if (isset($requestedItem) && isset($searchTrigger)) {
+        $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE ForumTopics = ? AND ForumTitles LIKE '%$requestedItem%' ORDER BY ForumDates DESC;");
+        $stmt_check_forumtopics->bind_param("s", $Ttitles);
+        } else {
         $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE ForumTopics = ? ORDER BY ForumDates DESC;");
         $stmt_check_forumtopics->bind_param("s", $Ttitles);
+        };
         $stmt_check_forumtopics->execute();
         $result_check_forumtopics = $stmt_check_forumtopics->get_result();
         if ($result_check_forumtopics->num_rows > 0) {

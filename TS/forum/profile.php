@@ -19,7 +19,9 @@ if (isset($_SESSION['profileTags'])) {
 if ($uDs === "self") {
     $setBios = true;
     $uDs = $_SESSION['profileTags'];
-}
+} else {
+    $setBios = false;
+};
 $page = "profiles";
 $UploadEnabled = "no";
 $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
@@ -36,7 +38,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/prfl_extra.css">
-    <title>Profile</title>
+    <title>Profiles</title>
 </head>
 <body>
 <!-- just navbar -->

@@ -10,17 +10,16 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: libs.php');
     exit;
 };
-$UploadEnabled = "nope";
+$UploadEnabled = "yes";
 $page = "home";
 $State = "publics";
 $requestedItem = "empty";
-if (isset($_GET['type'])) {
-    $requestedItem = $_GET['type'];
-    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+if (isset($_GET['item'])) {
+    $requestedItem = $_GET['item'];
 } else {
     $requestedItem = "empty";
-    $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 };
+$requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -55,11 +54,11 @@ if (isset($_GET['type'])) {
             <a href="viewcategory.php?categoryIds=<?php echo $titles;?>" class="category-title"><?php echo $titles;?></a>
         </div>
         <?php
-                }
-            }
+                };
+            };
         } else {
         ?>
-            <p class="zthing">category list got broken somehow</p>
+            <p class="zthing">category list got broken</p>
         <?php
         };
         ?>

@@ -24,7 +24,7 @@ function linker(reqstate) {
         default:
             return;
     }
-}
+};
 
 function SetDialog(reqstate) {
     switch (reqstate) {
@@ -49,7 +49,7 @@ function SetDialog(reqstate) {
         default:
         return;
     }
-}
+};
 
 
 var nav = document.getElementById('Navigation_Panel');
@@ -65,21 +65,21 @@ function Navigation() {
         nav.style.transform = "translateY(81px) translateX(-50%)";
         navbtn.style.transform = "translateY(81px) translateX(-50%)";
     }
-}
+};
 function search() {
     if (searchpanel.style.transform === 'translateY(100vh) translateX(-50%)') {
         searchpanel.style.transform = "translateY(0) translateX(-50%)";
     } else {
         searchpanel.style.transform = "translateY(100vh) translateX(-50%)";
     }
-}
+};
 function settings() {
     if (settingspanel.style.transform === 'translateY(100vh) translateX(-50%)') {
         settingspanel.style.transform = "translateY(0) translateX(-50%)";
     } else {
         settingspanel.style.transform = "translateY(100vh) translateX(-50%)";
     }
-}
+};
 
 
 var loadFile = function(event) {
@@ -90,14 +90,14 @@ var loadFile = function(event) {
     }
 };
 
-function LoadEditTopics(ReqstData) {
+function LoadPublishs(ReqstData) {
     const form = document.forms.EDITSTUFF;
     const values = ReqstData.dataset;
     Object.keys(values).forEach((key) => {
         if (form[key]) 
             form[key].value = values[key];
     });
-}
+};
 function LoadBios(ReqstData) {
     const form = document.forms.BIOS;
     const values = ReqstData.dataset;
@@ -105,4 +105,4 @@ function LoadBios(ReqstData) {
         if (form[key]) 
             form[key].value = values[key];
     });
-}
+};
