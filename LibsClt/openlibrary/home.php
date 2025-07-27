@@ -10,7 +10,8 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: libs.php');
     exit;
 };
-$UploadEnabled = "yes";
+$UploadEnabled = "no";
+$SearchEnabled = "yes";
 $page = "home";
 $State = "publics";
 $requestedItem = "empty";
@@ -58,7 +59,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             };
         } else {
         ?>
-            <p class="zthing">category list got broken</p>
+            <p class="zthing">nothing found from the category list</p>
         <?php
         };
         ?>
@@ -82,11 +83,11 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             <a href=" home.php?RefIds=<?php echo $Bids;?>" class="banner-link">.</a>
         </div>
         <?php
-                }
-            }
+                };
+            };
         } else {
         ?>
-            <p class="zthing">No banner there, someone's hidin it :p</p>
+            <p class="zthing">No banner there, someone's hiding it :p</p>
         <?php
         };
         ?>
@@ -122,7 +123,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         }
         ?>
     </section>
-<!-- another messages passer --> 
+<!-- another messages passer -->
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>

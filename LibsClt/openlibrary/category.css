@@ -5,7 +5,7 @@ body {
     display: flex;
 }
 .category-list {
-    padding: 8vh 7.5vw;
+    padding: 8vh 6vw;
     width: 100%;
     height: max-content;
     display: flex;
@@ -13,9 +13,8 @@ body {
     gap: 3vw;
 }
 .category-container {
-    padding: 5px 0;
     position: relative;
-    width: 20vw;
+    width: 15vw;
     display: flex;
     flex-direction: column;
     background: var(--LibsGrad1);
@@ -23,8 +22,8 @@ body {
     border-radius: 4px;
 }
 .category-title {
-    margin: 10px auto;
-    font-size: 17px;
+    margin: 8px auto;
+    font-size: 15px;
 }
 .category-link {
     position: absolute;

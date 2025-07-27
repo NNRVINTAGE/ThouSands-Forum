@@ -32,14 +32,14 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
-    <title>Dashboards</title>
+    <title>Dashboard</title>
 </head>
 <body class="container_again">
 <!-- nav get moved for modularity -->
 <?php include_once '../component/nav.php';?>
 <!-- forum create dialog -->
     <dialog id="add-dialog">
-        <div class="dialog-nav"><h2>Create Forum</h2><p onclick="SetDialog('add')">X</p></div>
+        <div class="dialog-nav"><h2>Make New Forum</h2><p onclick="SetDialog('add')">X</p></div>
         <form class="univ-form" action="../component/post_out.php" method="post" enctype="multipart/form-data">
             <div class="special-form-input">
                 <img id="prev">
@@ -59,7 +59,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     <input type="text" name="Forum" class="inptxt" placeholder="The description for the why or what start this forum " auto-complete="off" maxlength="255" required>
                 </div>
                 <div class="form-input-row">
-                    <label for="topicId">Topics</label>
+                    <label for="topicId">Topic</label>
                     <select name="topicId" class="inpselect" required>
                         <option value="" selected disabled>Select Topic</option>
                         <?php

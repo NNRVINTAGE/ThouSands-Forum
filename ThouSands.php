@@ -45,7 +45,7 @@ $daState = "Publics";
         <h2>Thousand of journeys among the Desert Oasis</h2>
         <div class="linkie-button">
             <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum</a>
-            <a href="LibsClt/openlibrary/libs.php" class="Libs">Library Collection</a>
+            <a href="libs.php" class="Libs">Library Collection</a>
         </div>
     </section>
     <section>
@@ -57,11 +57,6 @@ $daState = "Publics";
         <p>
             ThouSands Shores is part of the Project <span>ThouSands</span> series, made as foundation to have as much feedback for the next release.
         </p>
-    </section>
-    <section>
-        <h2>About ThouSands Forum & Library</h2>
-        <p>A Web App made originally focused for the Project ThouSands Game bug report and feedback forum, after some thought I've come to a realization that if the system extended beyond the goal this can be the opportunity for me to develop a software distribution and open forum for the other programmer.
-        <br>It's goal now are to be an open source software distribution platform for every software developer to publish their works, explore others published works, give and recieve feedback via their own bug reports forum. </p>
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>

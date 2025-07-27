@@ -62,7 +62,7 @@ if ($result_check_Topic->num_rows == 1) {
         <h1 class="topic-titles"><?php echo $Ttitles;?></h1>
         <p class="topic-dates">last updated <?php echo $dates;?></p>
         <?php
-        if($attachs != "empty.png" && isset($attachs)){
+        if ($attachs != "empty.png" && isset($attachs)) {
         ?>
         <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="topic-img">
         <?php

@@ -34,7 +34,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <title>Topics</title>
 </head>
 <body>
-    <!-- modular navbar -->
+    <!-- navbar -->
     <?php include_once '../component/nav.php';?>
     <!-- the list goes on -->
     <section class="topic-lister">

@@ -16,7 +16,7 @@ if (isset($_SESSION['profileTags'])) {
             $stmt_cmtPost = $connects->prepare("INSERT INTO forumcomments (CommentIds, ForumIds, profileTags, profileNames, Comments, CommentDates, CmVs) VALUES (?, ?, ?, ?, ?, NOW(), 0)");
             $stmt_cmtPost->bind_param("sssss", $cmids, $fids, $cmterTags, $commenter, $comment);
             if($stmt_cmtPost->execute()){
-                $_SESSION['corsmsg'] = 'Yo comment get posted';
+                $_SESSION['corsmsg'] = 'comment got posted';
                 header ('location: ../forum/forum.php?ids=' . $fids);
                 exit;
             }else{

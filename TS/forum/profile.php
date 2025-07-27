@@ -19,9 +19,7 @@ if (isset($_SESSION['profileTags'])) {
 if ($uDs === "self") {
     $setBios = true;
     $uDs = $_SESSION['profileTags'];
-} else {
-    $setBios = false;
-};
+}
 $page = "profiles";
 $UploadEnabled = "no";
 $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
