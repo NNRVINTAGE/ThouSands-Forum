@@ -7,7 +7,7 @@ if (isset($_SESSION['profileTags'])) {
     $name = $_SESSION['username'];
     $UploadEnabled = "yes";
 } else {
-    header ('location: libs.php');
+    header ('location: ../../libs.php');
     exit;
 };
 $UploadEnabled = "no";
@@ -114,13 +114,13 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             <a href="viewsoftware.php?softwareTitles=<?php echo $titles;?>" class="software-link">.</a>
         </div>
         <?php
-                }
-            }
+                };
+            };
         } else {
         ?>
             <p class="zthing">No software on the list</p>
         <?php
-        }
+        };
         ?>
     </section>
 <!-- another messages passer -->

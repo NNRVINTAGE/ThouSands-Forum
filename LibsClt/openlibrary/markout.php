@@ -7,7 +7,7 @@ if (isset($_SESSION['profileTags'])) {
     $name = $_SESSION['username'];
     $UploadEnabled = "yes";
 } else {
-    header ('location: libs.php');
+    header ('location: ../../libs.php');
     exit;
 };
 $UploadEnabled = "nope";

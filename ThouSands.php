@@ -20,7 +20,7 @@ $daState = "Publics";
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/index.css">
-    <title>ThouSands Forum</title>
+    <title>ThouSands Forums</title>
 </head>
 <body>
     <div class="bg">.</div>
@@ -36,31 +36,31 @@ $daState = "Publics";
             <a href="forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
             <a href="forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
             <?php
-            }
+            };
             ?>
             </nav>
         </header>
     <section class="sect_1">
         <h1>Project <span>ThouSands</span></h1>
-        <h2>Thousand of journeys among the Desert Oasis</h2>
+        <h2>Thousand of journeys among the Endless Shores</h2>
         <div class="linkie-button">
-            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum</a>
+            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forums</a>
             <a href="libs.php" class="Libs">Library Collection</a>
         </div>
     </section>
     <section>
         <h2>About Project ThouSands</h2>
-        <P>In a strange place where the endless desert sand and sea waves are all the eyes can see.
-            an seemingly endless archaic tunnels opening appeared everywhere filled with frequent faint roar from the depth is yet to be investigated,
-            it is an <?php echo $raceds;?> duty to uncover the source of the terror and ensuring the colony safety.
+        <P>In a strange place where the endless desert and sea waves are all the eyes can see,
+            <br>Endless archaic tunnels opening appeared everywhere filled with frequent faint roar from the depthgujcv.
+            Your journey will shape the future of the world, whichever direction it will lead into.
         </P>
         <p>
-            ThouSands Shores is part of the Project <span>ThouSands</span> series, made as foundation to have as much feedback for the next release.
+            ThouSands Shores is part of the Project <span>ThouSands</span> series, the foundation that will shape the story of the other series.
         </p>
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
-        <p>the timeline of the future goal for the project</p>
+        <p>the timeline of the future goal for the projects</p>
         <div class="map-container">
             <div class="map-road"></div>
             <?php
@@ -84,15 +84,15 @@ $daState = "Publics";
                 <a class="acv-link" href="TS/forum/ThouSands.php?milestones=<?php echo $acvIds;?>">.</a>
             </div>
             <?php
-                    }
-                }
+                    };
+                };
             } else {
             ?>
             <div class="mile-container">
-                <p class="devlog-desc">Milestone data fetch failed</p>
+                <p class="devlog-desc">Data fetch failed</p>
             </div>
             <?php
-            }
+            };
             ?>
         </div>
     </section>
@@ -123,15 +123,15 @@ $daState = "Publics";
                 <a class="devlog-link" href="TS/forum/ThouSands.php?devlog=<?php echo $Dids;?>">.</a>
             </div>
             <?php
-                    }
-                }
+                    };
+                };
             } else {
             ?>
             <div class="devlog">
                 <p class="devlog-desc">No devlog found, somethings wrong in there</p>
             </div>
             <?php
-            }
+            };
             ?>
         </div>
     </section>

@@ -7,7 +7,7 @@ if (isset($_SESSION['profileTags'])) {
 } else {
     $isLogged = false;
 };
-$daState = "Publics";
+$State = "Publics";
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ $daState = "Publics";
             <?php
             if ($isLogged == true) {
             ?>
-            <a href=" home.php" class="linkie dashb">Home</a>
+            <a href="home.php" class="linkie dashb">Library</a>
             <?php
             } else {
             ?>
@@ -40,18 +40,18 @@ $daState = "Publics";
         </header>
     <section class="sect_1">
         <h1>ThouSands Library</h1>
-        <h2>Open library collection platform of software & games</h2>
+        <h2>Open library collection platform of software & game</h2>
         <div class="linkie-button">
-            <a href=" home.php#softwarelist?type=apps" class="Apps">Search Apps</a>
-            <a href=" home.php#sofwarelist?type=games" class="Games">Discover Games</a>
+            <a href="home.php#softwarelist?type=apps" class="Apps">Search Apps</a>
+            <a href="home.php#sofwarelist?type=games" class="Games">Discover Games</a>
         </div>
     </section>
     <section class="map_main_container">
         <h2>Recently Added to Library</h2>
-        <div class="map-container">
+        <div class="map-container"> 
             <?php
             $stmt_check_libs = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? ORDER BY addedDates DESC LIMIT 8;");
-            $stmt_check_libs->bind_param("s", $daState);
+            $stmt_check_libs->bind_param("s", $State);
             $stmt_check_libs->execute();
             $result_check_libs = $stmt_check_libs->get_result();
             if ($result_check_libs->num_rows > 0) {
@@ -89,7 +89,7 @@ $daState = "Publics";
         <div class="libs-container">
             <?php
             $stmt_check_libs = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? ORDER BY cltNumbs DESC LIMIT 8;");
-            $stmt_check_libs->bind_param("s", $daState);
+            $stmt_check_libs->bind_param("s", $State);
             $stmt_check_libs->execute();
             $result_check_libs = $stmt_check_libs->get_result();
             if ($result_check_libs->num_rows > 0) {

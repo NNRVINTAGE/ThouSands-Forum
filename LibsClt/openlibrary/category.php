@@ -7,7 +7,7 @@ if (isset($_SESSION['profileTags'])) {
     $name = $_SESSION['username'];
     $UploadEnabled = "no";
 } else {
-    header ('location: libs.php');
+    header ('location: ../../libs.php');
     exit;
 };
 $UploadEnabled = "nope";
@@ -36,7 +36,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 <body>
     <!-- navbar -->
     <?php include_once '../libsSys/nav.php';?>
-    <!-- the category listing -->
+    <!-- the category list -->
     <section class="category-list">
         <?php
         if (isset($requestedItem) && isset($searchTrigger)) {
@@ -45,7 +45,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         } else {
         $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
         $stmt_check_category->bind_param("s", $State);
-        };
+        }
         $stmt_check_category->execute();
         $result_check_category = $stmt_check_category->get_result();
         if ($result_check_category->num_rows > 0) {
