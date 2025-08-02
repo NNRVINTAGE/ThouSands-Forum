@@ -35,11 +35,11 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <title>Dashboard</title>
 </head>
 <body class="container_again">
-<!-- nav get moved for modularity -->
+<!-- nav get moved since the day it become generic -->
 <?php include_once '../component/nav.php';?>
 <!-- forum create dialog -->
     <dialog id="add-dialog">
-        <div class="dialog-nav"><h2>Make New Forum</h2><p onclick="SetDialog('add')">X</p></div>
+        <div class="dialog-nav"><h2>Add New Forum</h2><p onclick="SetDialog('add')">X</p></div>
         <form class="univ-form" action="../component/post_out.php" method="post" enctype="multipart/form-data">
             <div class="special-form-input">
                 <img id="prev">

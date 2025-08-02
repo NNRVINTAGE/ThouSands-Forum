@@ -41,8 +41,8 @@ $daState = "Publics";
             </nav>
         </header>
     <section class="sect_1">
-        <h1>Project <span>ThouSands</span></h1>
-        <h2>Thousand of journeys among the Endless Shores</h2>
+        <h1>ThouSands Forums</h1>
+        <h2>Thousand of journey among the Endless Shores</h2>
         <div class="linkie-button">
             <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forums</a>
             <a href="libs.php" class="Libs">Library Collection</a>
@@ -50,9 +50,10 @@ $daState = "Publics";
     </section>
     <section>
         <h2>About Project ThouSands</h2>
+        <h2>Thousand of journey among the Endless Shores</h2>
         <P>In a strange place where the endless desert and sea waves are all the eyes can see,
-            <br>Endless archaic tunnels opening appeared everywhere filled with frequent faint roar from the depthgujcv.
-            Your journey will shape the future of the world, whichever direction it will lead into.
+            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent faint roar from the depth.
+            Your journey will shape the future of the world, whichever direction will it lead
         </P>
         <p>
             ThouSands Shores is part of the Project <span>ThouSands</span> series, the foundation that will shape the story of the other series.
@@ -60,7 +61,7 @@ $daState = "Publics";
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
-        <p>the timeline of the future goal for the projects</p>
+        <p>the timeline of Project ThouSands: Shores development</p>
         <div class="map-container">
             <div class="map-road"></div>
             <?php
@@ -98,7 +99,7 @@ $daState = "Publics";
     </section>
     <section class="devlog_main_container">
         <h2>devlog</h2>
-        <p>an series of devlog about progress on the project</p>
+        <p>an series of devlog about progress on the projects</p>
         <div class="devlog-container">
             <?php
             $stmt_check_dvlog = $connects->prepare("SELECT * FROM dvlogs WHERE dvlogState = ? ORDER BY dvlogDates DESC LIMIT 4;");

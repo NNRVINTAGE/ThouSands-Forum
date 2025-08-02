@@ -1,11 +1,9 @@
 body {
     width: 100%;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: transparent;
-    overflow: hidden;
     z-index: 1;
 }
 
@@ -21,7 +19,7 @@ header {
 }
 nav {
     padding: 8px 2vw;
-    width: 80%;
+    width: 84%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -34,17 +32,16 @@ nav {
 }
 
 .linkie-button {
-    padding: 8px 6vw 8px 0;
-    width: 20%;
+    padding: 8px 2vw 8px 6vw;
+    width: 16%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: end;
     gap: 10px;
     z-index: 30;
 }
 .linkie-button .linkie {
-    margin: 0;
     padding: 8px;
     font-size: 18px;
     width: max-content;
@@ -58,7 +55,7 @@ nav {
 
 /* general stylized content */
 section {
-    padding: 10px;
+    padding: 10px 0;
     width: 88%;
     min-height: 20vh;
     height: max-content;
@@ -71,7 +68,7 @@ section {
 }
 h1 {
     margin-top: auto;
-    font-size: 34px;
+    font-size: 29px;
     width: 90%;
 }
 h2 {
@@ -97,4 +94,36 @@ span {
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
+.desc {
+    font-size: 15px;
+}
+
+.connected-unit {
+    width: 88%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+.software {
+    padding: 10px 6px;
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.attachs {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid white;
+}
+.titles {
+    padding: 6px 0;
+    width: 90%;
+    font-size: 17px;
+    text-align: center;
 }

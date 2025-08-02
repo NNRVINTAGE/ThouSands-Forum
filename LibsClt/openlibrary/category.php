@@ -45,7 +45,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         } else {
         $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
         $stmt_check_category->bind_param("s", $State);
-        }
+        };
         $stmt_check_category->execute();
         $result_check_category = $stmt_check_category->get_result();
         if ($result_check_category->num_rows > 0) {

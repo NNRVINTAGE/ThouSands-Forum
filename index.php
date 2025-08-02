@@ -51,9 +51,27 @@ $State = "Publics";
         </div>
     </header>
     <section id="about">
-        <h2 class="titles">ThouSands Gateways</h2>
-        <p class="desc">Gateway to ThouSands Ecosystem, Opening the Endless Potential.
-            <br>ThouSands Gateway act as an central hub for every Project ThouSands software and games</p>
+        <h1 class="title">ThouSands Gateway</h1>
+        <p class="desc">Gateway to the endless potential for every developer.
+            <br>ThouSands Gateway act as the central hub connecting every developer along with the potential fans alike to not only discuss and communicate but also contribute directly on the project development</p>
+    </section>
+    <section class="connected-unit">
+        <div class="software">
+            <img src="" alt="" class="attachs">
+            <h2 class="titles">Alcyoneus Sueno Alcy</h2>
+        </div>
+        <div class="software">
+            <img src="" alt="" class="attachs">
+            <h2 class="titles">ThouSands Forum</h2>
+        </div>
+        <div class="software">
+            <img src="" alt="" class="attachs">
+            <h2 class="titles">ThouSands Library</h2>
+        </div>
+        <div class="software">
+            <img src="" alt="" class="attachs">
+            <h2 class="titles">CrossGate</h2>
+        </div>
     </section>
     <script src="scriptstuff/Mindex.js"></script>
 </body>

@@ -76,7 +76,7 @@ $State = "Publics";
             } else {
             ?>
             <div class="mile-container">
-                <p class="libs-desc">We have some problem retrieving data</p>
+                <p class="libs-desc">there's a problem retrieving data</p>
             </div>
             <?php
             }
