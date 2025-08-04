@@ -20,7 +20,7 @@ $daState = "Publics";
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/index.css">
-    <title>Project ThouSands</title>
+    <title>ThouSands Forums</title>
 </head>
 <body>
     <div class="bg">.</div>
@@ -41,64 +41,14 @@ $daState = "Publics";
             </nav>
         </header>
     <section class="sect_1">
-        <h1>Project ThouSands: Shores</h1>
-        <h2>Thousand of journey among the Endless Shores</h2>
+        <h1>ThouSands Forums</h1>
+        <h2>Community Forum for everyone</h2>
         <div class="linkie-button">
             <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forums</a>
-            <a href="libs.php" class="Libs">Library Collection</a>
-        </div>
-    </section>
-    <section>
-        <h2>About Project ThouSands</h2>
-        <h2>Thousand of journey among the Endless Shores</h2>
-        <P>In a strange place where the endless desert and sea waves are all the eyes can see,
-            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent faint roar from the depth.
-            Your journey will shape the future of the world, whichever direction will it lead
-        </P>
-        <p>
-            ThouSands Shores is part of the Project <span>ThouSands</span> series, the foundation that will shape the story of the other series.
-        </p>
-    </section>
-    <section class="map_main_container">
-        <h2>the roadmap</h2>
-        <p>the timeline of Project ThouSands: Shores development</p>
-        <div class="map-container">
-            <div class="map-road"></div>
-            <?php
-            $stmt_check_dvlog = $connects->prepare("SELECT * FROM acvs WHERE acvState = ? ORDER BY acvDates DESC LIMIT 4;");
-            $stmt_check_dvlog->bind_param("s", $daState);
-            $stmt_check_dvlog->execute();
-            $result_check_dvlog = $stmt_check_dvlog->get_result();
-            if ($result_check_dvlog->num_rows > 0) {
-                $uniqueItem = [];
-                while ($value = $result_check_dvlog->fetch_assoc()) {
-                    $acvIds = $value['acvIds'];
-                    $acvBannerDitc = $value['acvBannerDitc'];
-                    $acvTitles = $value['acvTitles'];
-                    $acvDates = $value['acvDates'];
-                    if (!in_array($acvIds, $uniqueItem)) {
-            ?>
-            <div class="mile-container">
-                <img class="acv-banner" src="TS/achvs/<?php echo $acvBannerDitc;?>" alt="logos_banner">
-                <h3 class="acv-title"><?php echo $acvTitles;?></h3>
-                <p class="acv-dates"><?php echo $acvDates;?></p>
-                <a class="acv-link" href="TS/forum/ThouSands.php?milestones=<?php echo $acvIds;?>">.</a>
-            </div>
-            <?php
-                    };
-                };
-            } else {
-            ?>
-            <div class="mile-container">
-                <p class="devlog-desc">Data fetch failed</p>
-            </div>
-            <?php
-            };
-            ?>
         </div>
     </section>
     <section class="devlog_main_container">
-        <h2>devlog</h2>
+        <h2>Trending Forums & Topics</h2>
         <p>an series of devlog about progress on the projects</p>
         <div class="devlog-container">
             <?php
@@ -137,42 +87,9 @@ $daState = "Publics";
         </div>
     </section>
     <section>
-        <h2>Downloads</h2>
-        <div class="os_container">
-            <div class="os selected">
-                <img src="" alt="" class="logo">
-                <h2 class="os_name">Windows</h2>
-            </div>
-            <div class="os">
-                <img src="" alt="" class="logo">
-                <h2 class="os_name">Linux(Unavailable)</h2>
-            </div>
-        </div>
-        <div class="download_container">
-            <table class="downloadlist">
-                <tr>
-                    <td>batch</td>
-                    <td>version</td>
-                    <td>release</td>
-                    <td>date</td>
-                    <td>key</td>
-                </tr>
-                <tr>
-                    <td>ThouSands_Shores_20J7AS.rar</td>
-                    <td>20J7AS</td>
-                    <td>Stable-Alpha</td>
-                    <td>20-7-2025</td>
-                    <td>901yfu82mj-c814tgx5-92j52fd3269</td>
-                </tr>
-            </table>
-            <div class="detail_info">
-                <img src="#" alt="#" class="banners">
-                <h2>Windows</h2>
-                <p>Tested in windows 10 & 11</p>
-            </div>
-        </div>
+        <h2>ThouSands Forums Background</h2> 
+        <h2>Thousand of journey among the Endless Shores</h2>
     </section>
-    <script src="scriptstuff/thousandsStuff.js"></script>
     <footer>
         <div class="footer-group">
             <h2 class="footer-title">ThouSands Series</h2>
