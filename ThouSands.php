@@ -40,20 +40,18 @@ $daState = "Publics";
             ?>
             </nav>
         </header>
-    <section class="sect_1">
-        <h1>Project ThouSands: Shores</h1>
-        <h2>Thousand of journey among the Endless Shores</h2>
+    <section class="landing-banner">
+        <h1 class="title">Project ThouSands: Shores</h1>
+        <h2 class="desc">Thousand of journey among the Endless Shores</h2>
         <div class="linkie-button">
-            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forums</a>
-            <a href="libs.php" class="Libs">Library Collection</a>
+            <a href="forum-connect/connect_it.php?state=login" class="uni-button-1"></a>
         </div>
     </section>
     <section>
         <h2>About Project ThouSands</h2>
-        <h2>Thousand of journey among the Endless Shores</h2>
         <P>In a strange place where the endless desert and sea waves are all the eyes can see,
-            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent faint roar from the depth.
-            Your journey will shape the future of the world, whichever direction will it lead
+            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent distant roar from the depth.
+            Every journey will changes the fates and shape the world whichever direction it will lead into 
         </P>
         <p>
             ThouSands Shores is part of the Project <span>ThouSands</span> series, the foundation that will shape the story of the other series.
@@ -82,7 +80,7 @@ $daState = "Publics";
                 <img class="acv-banner" src="TS/achvs/<?php echo $acvBannerDitc;?>" alt="logos_banner">
                 <h3 class="acv-title"><?php echo $acvTitles;?></h3>
                 <p class="acv-dates"><?php echo $acvDates;?></p>
-                <a class="acv-link" href="TS/forum/ThouSands.php?milestones=<?php echo $acvIds;?>">.</a>
+                <a class="acv-link" href="progression.php?pgid=<?php echo $acvIds;?>">.</a>
             </div>
             <?php
                     };

@@ -27,13 +27,12 @@ $State = "Publics";
             if ($isLogged != true) {
             ?>
             <a href="libs.php" class="nav-button">Library</a>
-            <a href="ThouSands.php" class="nav-button">Forums</a>
+            <a href="Forum.php" class="nav-button">Forums</a>
             <?php
             };
             ?>
             <a href="#about" class="nav-button">About</a>
-            <a href="gatewayclient.php" class="nav-button">Project</a>
-            <a href="gatewayclient.php" class="nav-button">Shores</a>
+            <a href="thousands.php" class="nav-button">Shores</a>
         </nav>
         <div class="linkie-button">
             <?php
