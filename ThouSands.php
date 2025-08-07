@@ -50,16 +50,16 @@ $daState = "Publics";
     <section>
         <h2>About Project ThouSands</h2>
         <P>In a strange place where the endless desert and sea waves are all the eyes can see,
-            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent distant roar from the depth.
-            Every journey will changes the fates and shape the world whichever direction it will lead into 
+            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent distant roar from the far depth.
+            Every journey will changes the fates and shape the world whichever direction it will be lead into
         </P>
         <p>
-            ThouSands Shores is part of the Project <span>ThouSands</span> series, the foundation that will shape the story of the other series.
+            ThouSands Shores is part of the Project <span>ThouSands</span> series, in which you and the other player can shape the world as the time progress.
         </p>
     </section>
     <section class="map_main_container">
         <h2>the roadmap</h2>
-        <p>the timeline of Project ThouSands: Shores development</p>
+        <p>the timeline of Project ThouSands Shores development</p>
         <div class="map-container">
             <div class="map-road"></div>
             <?php

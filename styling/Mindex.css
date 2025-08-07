@@ -127,3 +127,71 @@ span {
     font-size: 17px;
     text-align: center;
 }
+
+/* le footer */
+footer {
+    padding: 10px 6vw;
+    width: 100%;
+    min-height: 100vh;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: var(--footbg);
+    color: var(--alttext);
+    z-index: 2;
+}
+.footer-group {
+    padding: 30px;
+    width: 40vw;
+    height: 66%;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+}
+.footer-group:nth-child(2) {
+    align-items: end;
+}
+.footer-title, .footer-subtitle,
+.footer-menu_group, .menu_button,
+.copyright, .copyright p {
+    color: inherit;
+}
+
+.footer-title {
+    font-size: 32px;
+}
+.footer-group:nth-child(2) .footer-title {
+    text-align: right;
+}
+.footer-subtitle {
+    font-size: 20px;
+}
+
+.footer-menu_group {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+.copyright {
+    margin: auto 0 0 0;
+    width: 100vw;
+    max-width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.things {
+    color: inherit;
+    width: 100%;
+    height: min-content;
+    text-align: center;
+    font-size: calc(90vw/7);
+}

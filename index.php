@@ -32,7 +32,7 @@ $State = "Publics";
             };
             ?>
             <a href="#about" class="nav-button">About</a>
-            <a href="thousands.php" class="nav-button">Shores</a>
+            <a href="thousands.php" class="nav-button">:Shores</a>
         </nav>
         <div class="linkie-button">
             <?php
@@ -54,23 +54,27 @@ $State = "Publics";
         <h1 class="title">ThouSands Gateway</h1>
         <p class="desc">Gateway to the endless potential for every developer.
             <br>ThouSands Gateway act as the central hub connecting every developer along with the potential enjoyer alike to not only discuss and communicate feedback but also contribute directly on their project development</p>
-    </section>
+    </section>Alcyoneus Sueno Alcye
     <section class="connected-unit">
         <div class="software">
             <img src="" alt="" class="attachs">
-            <h2 class="titles">Alcyoneus Sueno Alcy</h2>
-        </div>
-        <div class="software">
-            <img src="" alt="" class="attachs">
             <h2 class="titles">ThouSands Forum</h2>
+            <a href="Forum.php" class="link-cover">.</a>
         </div>
         <div class="software">
             <img src="" alt="" class="attachs">
             <h2 class="titles">ThouSands Library</h2>
+            <a href="libs.php" class="link-cover">.</a>
         </div>
         <div class="software">
             <img src="" alt="" class="attachs">
             <h2 class="titles">CrossGate</h2>
+            <a href="CrossGate.php#client" class="link-cover">.</a>
+        </div>
+        <div class="software">
+            <img src="" alt="" class="attachs">
+            <h2 class="titles">SandBridges</h2>
+            <a href="CrossGate.php#sandbridges" class="link-cover">.</a>
         </div>
     </section>
     <script src="scriptstuff/Mindex.js"></script>
