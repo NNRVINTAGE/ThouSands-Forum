@@ -40,7 +40,7 @@ $State = "Publics";
         </header>
     <section class="sect_1">
         <h1>ThouSands Library</h1>
-        <h2>Open library collection platform of software & game</h2>
+        <h2>Open library collection platform for softwares & games</h2>
         <div class="linkie-button">
             <a href="home.php#softwarelist?type=apps" class="Apps">Search Apps</a>
             <a href="home.php#sofwarelist?type=games" class="Games">Discover Games</a>

@@ -49,9 +49,10 @@ $daState = "Publics";
     </section>
     <section>
         <h2>About Project ThouSands</h2>
-        <P>In a strange place where the endless desert and sea waves are all the eyes can see,
-            <br>Endless archaic tunnels opening appeared out of nowhere filled with frequent distant roar from the far depth.
-            Every journey will changes the fates and shape the world whichever direction it will be lead into
+        <P>In a place where the endless desert and sea waves are all the eyes can see,
+            <br>Endless tunnels opening appeared out of nowhere filled with frequent distant roar from the far underground depth.
+            <br>from the past have written the sounds belong to an archaic entitys in whichsa sealed beneath by colonist to ensure it's genocidal act never repeat again but every since that time the entity start to break the seal and the faint roar becoming more louder,
+            <br>Every journey will changes the fates and shape the world whichever direction it will be lead into
         </P>
         <p>
             ThouSands Shores is part of the Project <span>ThouSands</span> series, in which you and the other player can shape the world as the time progress.

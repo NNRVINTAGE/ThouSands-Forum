@@ -42,13 +42,13 @@ $daState = "Publics";
         </header>
     <section class="sect_1">
         <h1>ThouSands Forums</h1>
-        <h2>Open Source community forum for everyone </h2>
+        <h2>Open Source community forum connecting developer sharing work with everyone</h2>
         <div class="linkie-button">
-            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forums</a>
+            <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum Tabs</a>
         </div>
     </section>
     <section class="devlog_main_container">
-        <h2>Trending Forums & Topics</h2>
+        <h2>Trending Forum & Topic</h2>
         <div class="devlog-container">
             <?php
             $stmt_check_dvlog = $connects->prepare("SELECT * FROM dvlogs WHERE dvlogState = ? ORDER BY dvlogDates DESC LIMIT 4;");

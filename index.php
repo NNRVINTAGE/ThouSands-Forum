@@ -18,6 +18,7 @@ $State = "Publics";
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/Mindex.css">
+    <link rel="stylesheet" href="styling/footer.css">
     <title>ThouSands Gateway</title>
 </head>
 <body>
@@ -31,7 +32,7 @@ $State = "Publics";
             <?php
             };
             ?>
-            <a href="#about" class="nav-button">About</a>
+            <a href="CrossGate.php" class="nav-button">CrossGate</a>
             <a href="thousands.php" class="nav-button">:Shores</a>
         </nav>
         <div class="linkie-button">
@@ -50,11 +51,11 @@ $State = "Publics";
             ?>
         </div>
     </header>
-    <section id="about">
+    <section class="section-type-1">
         <h1 class="title">ThouSands Gateway</h1>
-        <p class="desc">Gateway to the endless potential for every developer.
-            <br>ThouSands Gateway act as the central hub connecting every developer along with the potential enjoyer alike to not only discuss and communicate feedback but also contribute directly on their project development</p>
-    </section>Alcyoneus Sueno Alcye
+        <p class="desc">Gateway to the endless potential for every developer
+            <br>ThouSands Gateway is an central hub connecting every developer along with the potential enjoyer alike to not only discuss and communicate feedback but also contribute directly on their project development</p>
+    </section>Alcyoneus Sueno Alcy
     <section class="connected-unit">
         <div class="software">
             <img src="" alt="" class="attachs">
@@ -73,7 +74,7 @@ $State = "Publics";
         </div>
         <div class="software">
             <img src="" alt="" class="attachs">
-            <h2 class="titles">SandBridges</h2>
+            <h2 class="titles">SandBridges Plugin</h2>
             <a href="CrossGate.php#sandbridges" class="link-cover">.</a>
         </div>
     </section>

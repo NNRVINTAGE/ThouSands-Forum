@@ -32,7 +32,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
-    <title>CrossGate</title>
+    <title>Library Homepage</title>
 </head>
 <body>
 <!-- the nav of course -->
