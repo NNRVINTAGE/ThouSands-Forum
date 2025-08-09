@@ -33,7 +33,7 @@ $State = "Publics";
             };
             ?>
             <a href="CrossGate.php" class="nav-button">CrossGate</a>
-            <a href="thousands.php" class="nav-button">:Shores</a>
+            <a href="thousands.php" class="nav-button">Shores</a>
         </nav>
         <div class="linkie-button">
             <?php
@@ -53,10 +53,10 @@ $State = "Publics";
     </header>
     <section class="section-type-1">
         <h1 class="title">ThouSands Gateway</h1>
-        <p class="desc">Gateway to the endless potential for every developer
-            <br>ThouSands Gateway is an central hub connecting every developer along with the potential enjoyer alike to not only discuss and communicate feedback but also contribute directly on their project development</p>
-    </section>Alcyoneus Sueno Alcy
-    <section class="connected-unit">
+        <p class="desc">Gateway to the endless potential for every developer</p>
+    </section>
+    <section class="connected-unit acjc">
+        <h2 class="title-2 w100 txtc">Connecting software and service in one platform</h2>
         <div class="software">
             <img src="" alt="" class="attachs">
             <h2 class="titles">ThouSands Forum</h2>
@@ -78,24 +78,12 @@ $State = "Publics";
             <a href="CrossGate.php#sandbridges" class="link-cover">.</a>
         </div>
     </section>
+    <section class="section-type-2">
+        <h2 class="title-2">About Gateway</h2>
+        <p>ThouSands Gateway is an central hub connecting every developer along with the potential enjoyer alike to 
+            not only discuss and communicate feedback but also contribute directly on their project development</p>
+    </section>
     <script src="scriptstuff/Mindex.js"></script>
-    <footer>
-        <div class="footer-group">
-            <h2 class="footer-title">ThouSands Series</h2>
-            <h3 class="footer-subtitle">by <img src="img/vdsl.png" alt="" class="footer_logo"><h3>
-        </div>
-        <div class="footer-group">
-            <h2 class="footer-title">Menus</h2>
-            <div class="footer-menu_group">
-                <a href="#" class="menu_button">Documentation</a>
-                <a href="https://github.com/NNRVINTAGE" class="menu_button">Github</a>
-                <a href="forum-connect/connect_it.php?state=login" class="menu_button">Forum</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © 2025 VODSOL - All right reserved</p>
-            <h2 class="things">VODSOL</h2>
-        </div>
-    </footer>
+    <?php include_once 'footer.php';?>
 </body>
 </html>

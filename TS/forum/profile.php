@@ -49,7 +49,7 @@ $uDs = htmlspecialchars($uDs, ENT_QUOTES, 'UTF-8');
                 <textarea type="text" name="bioedits" class="inptxt" placeholder="" auto-complete="off" maxlength="2500" required></textarea>
             </div>
             <div class="form-input-row">
-                <input class="edit-button edit-submit" type="submit" name="submit" value="submit">
+                <input class="edit-button edit-submit" type="submit" name="submit" value="change bio">
             </div>
         </form>
     </dialog>

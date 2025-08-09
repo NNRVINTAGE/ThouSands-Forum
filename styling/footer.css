@@ -9,7 +9,7 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     background: var(--footbg);
-    color: var(--alttext);
+    color: var(--text);
     z-index: 2;
 }
 .footer-group {

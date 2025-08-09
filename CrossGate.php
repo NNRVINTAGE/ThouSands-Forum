@@ -1,3 +1,15 @@
+<?php
+require_once "processes/database.php";
+$errors = array();
+session_start();
+if (isset($_SESSION['profileTags'])) {
+    $isLogged = true;
+} else {
+    $isLogged = false;
+};
+$State = "Publics";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +32,7 @@
             };
             ?>
             <a href="index.php" class="nav-button">Gateways</a>
-            <a href="thousands.php" class="nav-button">:Shores</a>
+            <a href="thousands.php" class="nav-button">Shores</a>
         </nav>
         <div class="linkie-button">
             <?php
@@ -41,8 +53,9 @@
     <section class="section-type-1">
         <h1 class="title">CrossGate</h1>
         <p class="desc">an desktop client software designed to organize ThouSands Library software & games
-            <br>an interactive enviroment for user and developer receive convinience whether for productivity or gaming 
+            <br>an interactive enviroment made for user and developer receive convinience of productivity or gaming 
         </p>
     </section>
-</body>\
+    <?php include_once 'footer.php';?>
+</body>
 </html>

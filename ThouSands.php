@@ -19,7 +19,9 @@ $daState = "Publics";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
+    <link rel="stylesheet" href="styling/Mindex.css">
     <link rel="stylesheet" href="styling/index.css">
+    <link rel="stylesheet" href="styling/footer.css">
     <title>Project ThouSands</title>
 </head>
 <body>
@@ -50,7 +52,7 @@ $daState = "Publics";
     <section>
         <h2>About Project ThouSands</h2>
         <P>In a place where the endless desert and sea waves are all the eyes can see,
-            <br>Endless tunnels opening appeared out of nowhere filled with frequent distant roar from the far underground depth.
+            <br>Multiple tunnels opening appeared out of nowhere filled with frequent distant roar from the depth.
             <br>from the past have written the sounds belong to an archaic entitys in whichsa sealed beneath by colonist to ensure it's genocidal act never repeat again but every since that time the entity start to break the seal and the faint roar becoming more louder,
             <br>Every journey will changes the fates and shape the world whichever direction it will be lead into
         </P>
@@ -135,9 +137,8 @@ $daState = "Publics";
             ?>
         </div>
     </section>
-    <section>
-        <h2>Downloads</h2>
-        <div class="os_container">
+    <section class="section-type-2">
+        <div class="container-type-1 w100">
             <div class="os selected">
                 <img src="" alt="" class="logo">
                 <h2 class="os_name">Windows</h2>
@@ -147,8 +148,8 @@ $daState = "Publics";
                 <h2 class="os_name">Linux(Unavailable)</h2>
             </div>
         </div>
-        <div class="download_container">
-            <table class="downloadlist">
+        <div class="container-type-2">
+            <table class="table-type-1">
                 <tr>
                     <td>batch</td>
                     <td>version</td>
@@ -164,31 +165,14 @@ $daState = "Publics";
                     <td>901yfu82mj-c814tgx5-92j52fd3269</td>
                 </tr>
             </table>
-            <div class="detail_info">
+            <div class="container-type-2">
                 <img src="#" alt="#" class="banners">
                 <h2>Windows</h2>
-                <p>Tested in windows 10 & 11</p>
+                <p>Tested in windows 10</p>
             </div>
         </div>
     </section>
     <script src="scriptstuff/thousandsStuff.js"></script>
-    <footer>
-        <div class="footer-group">
-            <h2 class="footer-title">ThouSands Series</h2>
-            <h3 class="footer-subtitle">by <img src="img/vdsl.png" alt="" class="footer_logo"><h3>
-        </div>
-        <div class="footer-group">
-            <h2 class="footer-title">Menus</h2>
-            <div class="footer-menu_group">
-                <a href="#" class="menu_button">Documentation</a>
-                <a href="https://github.com/NNRVINTAGE" class="menu_button">Github</a>
-                <a href="forum-connect/connect_it.php?state=login" class="menu_button">Forum</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © 2025 VODSOL - All right reserved</p>
-            <h2 class="things">VODSOL</h2>
-        </div>
-    </footer>
+    <?php include_once 'footer.php';?>
 </body>
 </html>

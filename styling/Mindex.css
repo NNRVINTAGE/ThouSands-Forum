@@ -68,11 +68,9 @@ section {
 }
 h1 {
     margin-top: auto;
-    font-size: 29px;
     width: 90%;
 }
 h2 {
-    font-size: 20px;
     width: 90%;
 }
 p {
@@ -88,6 +86,25 @@ span {
     -webkit-text-fill-color: transparent;
 }
 
+/* uni param */
+.w100 {
+    width: 100vw;
+}
+.h100 {
+    height: 100vh;
+}
+.flex {
+    display: flex;
+}
+.acjc {
+    align-items: center;
+    justify-content: center;
+}
+.txtc {
+    text-align: center;
+}
+
+/* uni section */
 .section-type-1 {
     padding: 4vh 0;
     width: 88%;
@@ -96,17 +113,39 @@ span {
     flex-direction: column;
     justify-content: end;
 }
+
+/* uni container */
+.container-type-1,
+.container-type-2,
+.container-type-3 {
+    display: flex;
+}
+.container-type-1 {
+    width: 50%;
+}
+.container-type-2 {
+    width: 100%;
+    flex-direction: column;
+}
+
+
+.title {
+    font-size: 29px;
+}
+.title-2 {
+    font-size: 20px;
+}
+
 .desc {
     font-size: 15px;
 }
 
 .connected-unit {
+    margin: 5vh auto;
     width: 88%;
-    height: 80vh;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 2vw;
 }
 .software {
@@ -128,3 +167,4 @@ span {
     font-size: 17px;
     text-align: center;
 }
+/* Alcyoneus Sueno Alcy */

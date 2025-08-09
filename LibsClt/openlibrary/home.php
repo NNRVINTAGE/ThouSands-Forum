@@ -123,6 +123,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         };
         ?>
     </section>
+    <?php include_once '../../footer.php';?>
 <!-- another messages passer -->
     <div id="alertcard">
         <p id="alertcontent"></p>
