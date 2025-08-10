@@ -27,31 +27,35 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../pallate.css">
-    <link rel="stylesheet" href="../../nav.css">
+    <link rel="stylesheet" href="../../styling/nav.css">
+    <link rel="stylesheet" href="../../styling/pallate.css">
+    <link rel="stylesheet" href="../../styling/Mindex.css">
+    <link rel="stylesheet" href="../../styling/footer.css">
     <title>MarkOut Software</title>
 </head>
-<body>
+<body class="w100p flex">
 <!-- the nav -->
 <?php include_once '../libsSys/nav.php';?>
-    <section class="marked-software-container">
-        <div class="markout-software">
-            <h2 class="software-title"></h2>
-            <p class="software-desc"></p>
+    <section class="posf lt0 pad-s h100 flex fld gap-s marked-software-container">
+        <div class="flex fld markout-software">
+            <h2 class="txt-n software-title">test</h2>
+            <p class="txt-n software-desc">test</p>
         </div>
     </section>
-    <section class="recently-used-software">
-        <div class="generic-container">
-            <h2 class="software-title"></h2>
-            <p class="software-desc"></p>
+    <section class="pad-s w88 h60 flex recently-used-software">
+        <div class="autoMg h100p bg-1 flex fld  gap-s generic-container">
+            <img src="" alt="" class="icon-b">
+            <h2 class="sideMg software-title">test</h2>
+            <p class="sideMg bottomMg software-desc">test</p>
         </div>
     </section>
-    <section class="achievement-container">
-        <div class="generic-container">
+    <section class="w88 flex achievement-container">
+        <div class="autoMg h100p bg-1 flex generic-container">
             <h2 class="titles"></h2>
             <p class="acheived-dataes"></p>
         </div>
     </section>
+    <?php include_once '../../footer.php';?>
 <!-- messages passer --> 
     <div id="alertcard">
         <p id="alertcontent"></p>

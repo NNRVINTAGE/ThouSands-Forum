@@ -70,12 +70,6 @@ h1 {
     margin-top: auto;
     width: 90%;
 }
-h2 {
-    width: 90%;
-}
-p {
-    width: 90%;
-}
 a {
     transition: all 0.4s;
 }
@@ -86,22 +80,9 @@ span {
     -webkit-text-fill-color: transparent;
 }
 
-/* uni param */
-.w100 {
-    width: 100vw;
-}
-.h100 {
-    height: 100vh;
-}
-.flex {
-    display: flex;
-}
-.acjc {
-    align-items: center;
-    justify-content: center;
-}
-.txtc {
-    text-align: center;
+/* bg */
+.bg-1 {
+    background: var(--LibsBG1);
 }
 
 /* uni section */
@@ -113,6 +94,10 @@ span {
     flex-direction: column;
     justify-content: end;
 }
+.section-type-2 {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* uni container */
 .container-type-1,
@@ -120,13 +105,140 @@ span {
 .container-type-3 {
     display: flex;
 }
-.container-type-1 {
-    width: 50%;
-}
 .container-type-2 {
     width: 100%;
     flex-direction: column;
 }
+
+/* tables */
+.table-type-1 {
+    width: 70%;
+}
+
+/* uni param */
+.posf {
+    position: fixed;
+}
+.lt0 {
+    top: 0;
+    left: 0;
+}
+.pad-s {
+    padding: 10px;
+}
+.autoMg {
+    margin: auto;
+}
+.sideMg {
+    margin: 0 auto;
+}
+.vertiMg {
+    margin: auto 0;
+}
+.topMg {
+    margin-top: auto;
+}
+.leftMg {
+    margin-left: auto;
+}
+.rightMg {
+    margin-right: auto;
+}
+.bottomMg {
+    margin-bottom: auto;
+}
+.w30 {
+    width: 30vw;
+}
+.w30p {
+    width: 30%;
+}
+.w88 {
+    width: 88vw;
+}
+.w88p {
+    width: 88%;
+}
+.w100 {
+    width: 100vw;
+}
+.w100p {
+    width: 100%;
+}
+.h40 {
+    height: 40vh;
+}
+.h40p {
+    height: 40%;
+}
+.h50 {
+    height: 50vh;
+}
+.h50p {
+    height: 50%;
+}
+.h60 {
+    height: 60vh;
+}
+.h60p {
+    height: 60%;
+}
+.h100 {
+    height: 100vh;
+}
+.h100p {
+    height: 100%;
+}
+.flex {
+    display: flex;
+}
+.fld {
+    flex-direction: column;
+}
+.acjc {
+    align-items: center;
+    justify-content: center;
+}
+.highlighted {
+    background-color: rgba(255, 255, 255, 0.26);
+}
+.gap {
+    gap: 2vw;
+}
+.gap-s {
+    gap: 0.8vw;
+}
+.gap-b {
+    gap: 4vw;
+}
+
+/* text param */
+.txtc {
+    text-align: center;
+}
+.txtr {
+    text-align: right;
+}
+.txt-s {
+    font-size: 14px;
+}
+.txt-n {
+    font-size: 18px;
+}
+.txt-b {
+    font-size: 20px;
+}
+
+/* uni icon */
+.icon-s {
+    width: 10vh;
+    height: 10vh;
+}
+.icon-b {
+    width: 40vh;
+    height: 40vh;
+}
+
 
 
 .title {

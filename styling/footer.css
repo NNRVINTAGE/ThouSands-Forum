@@ -3,19 +3,19 @@
 footer {
     padding: 10px 6vw;
     width: 100%;
-    min-height: 100vh;
+    min-height: 60vh;
     height: max-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background: var(--footbg);
     color: var(--text);
-    z-index: 2;
+    z-index: 100;
 }
 .footer-group {
     padding: 30px;
     width: 40vw;
-    height: 66%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     color: inherit;
@@ -49,7 +49,7 @@ footer {
 }
 
 .copyright {
-    margin: auto 0 0 0;
+    margin: auto 0;
     width: 100vw;
     max-width: 100vw;
     height: max-content;

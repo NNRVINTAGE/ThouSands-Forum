@@ -137,18 +137,18 @@ $daState = "Publics";
             ?>
         </div>
     </section>
-    <section class="section-type-2">
-        <div class="container-type-1 w100">
-            <div class="os selected">
-                <img src="" alt="" class="logo">
+    <section class="section-type-2 w88p gap">
+        <div class="flex w100p gap">
+            <div class="flex fld acjc leftMg highlighted">
+                <img src="" alt="" class="icon-s">
                 <h2 class="os_name">Windows</h2>
             </div>
-            <div class="os">
-                <img src="" alt="" class="logo">
+            <div class="flex fld acjc rightMg">
+                <img src="" alt="" class="icon-s">
                 <h2 class="os_name">Linux(Unavailable)</h2>
             </div>
         </div>
-        <div class="container-type-2">
+        <div class="flex">
             <table class="table-type-1">
                 <tr>
                     <td>batch</td>
@@ -162,13 +162,14 @@ $daState = "Publics";
                     <td>20J7AS</td>
                     <td>Stable-Alpha</td>
                     <td>20-7-2025</td>
-                    <td>901yfu82mj-c814tgx5-92j52fd3269</td>
+                    <td>901yfu82mj-c814t98e9o5-92j52fd3269</td>
                 </tr>
             </table>
-            <div class="container-type-2">
-                <img src="#" alt="#" class="banners">
-                <h2>Windows</h2>
-                <p>Tested in windows 10</p>
+            <div class="container-type-2 w30p gap-s vertiMg">
+                <img src="#" class="icon-s sideMg">
+                <h2 class="w100p txtc">Windows</h2>
+                <p class="w100p txtc">Tested in windows 10</p>
+                <a href="" class="w100p txtc">Download</a>
             </div>
         </div>
     </section>
