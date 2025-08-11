@@ -33,26 +33,27 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/footer.css">
     <title>MarkOut Software</title>
 </head>
-<body class="w100p flex">
+<body class="wh100p flex fld">
+    <!-- https://www.youtube.com/watch?v=sgZjbk9eH6g -->
 <!-- the nav -->
 <?php include_once '../libsSys/nav.php';?>
-    <section class="posf lt0 pad-s h100 flex fld gap-s marked-software-container">
+    <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s marked-software-container">
         <div class="flex fld markout-software">
-            <h2 class="txt-n software-title">test</h2>
-            <p class="txt-n software-desc">test</p>
+            <h2 class="txt-ms software-title">marked software</h2>
         </div>
     </section>
-    <section class="pad-s w88 h60 flex recently-used-software">
-        <div class="autoMg h100p bg-1 flex fld  gap-s generic-container">
-            <img src="" alt="" class="icon-b">
-            <h2 class="sideMg software-title">test</h2>
-            <p class="sideMg bottomMg software-desc">test</p>
+    <section class="leftMg pad-s w75 h50 flex recently-used-software">
+        <div class="posr rightMg vertiMg pad-s icon-b bg-1 flex fld border-1 gap10 generic-container">
+            <img src="" alt="" class="posa ins0 wh100p bg-3 z1">
+            <h2 class="topMg sideMg z2">title</h2>
+            <p class="sideMg z2">short desc for it</p>
+            <p class="sideMg z2">total playtime</p>
         </div>
     </section>
-    <section class="w88 flex achievement-container">
-        <div class="autoMg h100p bg-1 flex generic-container">
-            <h2 class="titles"></h2>
-            <p class="acheived-dataes"></p>
+    <section class="leftMg pad-s w75 h40 flex achievement-container">
+        <div class="posr rightMg vertiMg pad-s bg-1 flex border-2 generic-container">
+            <h2 class="titles">Recent Publisher Announcement</h2>
+            <p class="acheived-dates"></p>
         </div>
     </section>
     <?php include_once '../../footer.php';?>
