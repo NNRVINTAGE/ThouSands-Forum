@@ -34,26 +34,28 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <title>MarkOut Software</title>
 </head>
 <body class="wh100p flex fld">
-    <!-- https://www.youtube.com/watch?v=sgZjbk9eH6g -->
 <!-- the nav -->
 <?php include_once '../libsSys/nav.php';?>
     <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s marked-software-container">
         <div class="flex fld markout-software">
             <h2 class="txt-ms software-title">marked software</h2>
+            <a href="view.php?idSft=" class="link-cover">.</a>
         </div>
     </section>
     <section class="leftMg pad-s w75 h50 flex recently-used-software">
-        <div class="posr rightMg vertiMg pad-s icon-b bg-1 flex fld border-1 gap10 generic-container">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z1">
-            <h2 class="topMg sideMg z2">title</h2>
-            <p class="sideMg z2">short desc for it</p>
-            <p class="sideMg z2">total playtime</p>
+        <div class="posr rightMg vertiMg pad-s icon-b bg-1 flex fld border-1 gap10 z1 generic-container">
+            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+            <h2 class="topMg sideMg z3">title</h2>
+            <p class="sideMg z3">short desc for it</p>
+            <p class="sideMg z3">total playtime</p>
+            <a href="view.php?idSft=" class="link-cover">.</a>
         </div>
     </section>
     <section class="leftMg pad-s w75 h40 flex achievement-container">
-        <div class="posr rightMg vertiMg pad-s bg-1 flex border-2 generic-container">
-            <h2 class="titles">Recent Publisher Announcement</h2>
-            <p class="acheived-dates"></p>
+        <div class="posr rightMg vertiMg pad-s r16-9 bg-1 flex fld border-2 z1 generic-container">
+            <h2 class="txt-n z2">Recent Publisher Announcement</h2>
+            <p class="txt-s z2">the actual Announcement text put and cut there</p>
+            <a href="../../TS/forum/viewtopic.php?topicIds=" class="link-cover">.</a>
         </div>
     </section>
     <?php include_once '../../footer.php';?>

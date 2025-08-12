@@ -57,24 +57,24 @@ $State = "Publics";
     </section>
     <section class="connected-unit acjc">
         <h2 class="title-2 w100 txtc">Connecting software and service in one platform</h2>
-        <div class="software">
+        <div class="software posr">
             <img src="" alt="" class="attachs">
             <h2 class="titles">ThouSands Forum</h2>
             <a href="Forum.php" class="link-cover">.</a>
         </div>
-        <div class="software">
+        <div class="software posr">
             <img src="" alt="" class="attachs">
             <h2 class="titles">ThouSands Library</h2>
             <a href="libs.php" class="link-cover">.</a>
         </div>
-        <div class="software">
+        <div class="software posr">
             <img src="" alt="" class="attachs">
             <h2 class="titles">CrossGate</h2>
             <a href="CrossGate.php#client" class="link-cover">.</a>
         </div>
-        <div class="software">
+        <div class="software posr">
             <img src="" alt="" class="attachs">
-            <h2 class="titles">SandBridges Plugin</h2>
+            <h2 class="titles">SandBridges</h2>
             <a href="CrossGate.php#sandbridges" class="link-cover">.</a>
         </div>
     </section>

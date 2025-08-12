@@ -50,7 +50,7 @@ $State = "Publics";
             ?>
         </div>
     </header>
-    <section class="section-type-1">
+    <section class="section-type-1 fld">
         <h1 class="title">CrossGate</h1>
         <p class="desc">an desktop client software designed to organize ThouSands Library software & games
             <br>an interactive enviroment made for user and developer receive convinience of productivity or gaming 
