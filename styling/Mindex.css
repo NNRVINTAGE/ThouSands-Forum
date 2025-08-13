@@ -60,11 +60,6 @@ section {
     min-height: 20vh;
     height: max-content;
     display: flex;
-    flex-direction: column;
-    background: transparent;
-    border-radius: 7px;
-    gap: 8px;
-    z-index: 2;
 }
 h1 {
     margin-top: auto;
@@ -84,8 +79,14 @@ span {
 .bg-1 {
     background: var(--LibsBG1);
 }
+.bg-2 {
+    background: linear-gradient(to bottom, var(--monochrome1), rgb(57, 69, 77));
+}
 .bg-3 {
     background: #00000068;
+}
+.bg-4 {
+    background: linear-gradient(to bottom, var(--monochrome1), rgb(93, 111, 123));
 }
 
 /* uni section */
@@ -204,6 +205,12 @@ span {
 .w75p {
     width: 75%;
 }
+.w79 {
+    width: 79vw;
+}
+.w79p {
+    width: 79%;
+}
 .w88 {
     width: 88vw;
 }
@@ -234,6 +241,12 @@ span {
 .h60p {
     height: 60%;
 }
+.h80 {
+    height: 80vh;
+}
+.h80p {
+    height: 80%;
+}
 .h100 {
     height: 100vh;
 }
@@ -253,13 +266,22 @@ span {
 .fld {
     flex-direction: column;
 }
+.wrap {
+    flex-wrap: wrap;
+}
 .acjc {
     align-items: center;
     justify-content: center;
 }
+
+.ovs {
+    overflow: scroll;
+}
+
 .highlighted {
     background-color: rgba(255, 255, 255, 0.26);
 }
+
 .gap {
     gap: 2vw;
 }
@@ -313,6 +335,12 @@ span {
 /* uni border */
 .border-1 {
     border: 1px solid var(--borderA);
+}
+.border-r {
+    border-right: 1px solid var(--borderA);
+}
+.border-l {
+    border-left: 1px solid var(--LibsBG2);
 }
 
 /* uni zindex */

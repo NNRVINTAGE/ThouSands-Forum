@@ -20,7 +20,7 @@
     --borderA: #818181;
     --accent: rgb(236, 178, 4);
     --subtletext : rgb(235, 235, 235);
-    --monochrome1: rgb(133, 129, 121);
+    --monochrome1: rgb(121, 128, 133);
     --monochrome2: rgb(173, 173, 173);
     --gradibg: linear-gradient(to bottom, var(--monochrome2), var(--monochrome1));
     --footbg: black;
