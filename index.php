@@ -40,7 +40,7 @@ $State = "Publics";
             if ($isLogged == true) {
             ?>
             <a href="TS/forum/dashboard.php" class="linkie dashb">Forum</a>
-            <a href="LibsClt/openlibrary/home.php" class="linkie dashb">Library</a>
+            <a href="Library/core/home.php" class="linkie dashb">Library</a>
             <?php
             } else {
             ?>

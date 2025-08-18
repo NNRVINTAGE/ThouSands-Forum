@@ -39,7 +39,7 @@ $State = "Publics";
             if ($isLogged == true) {
             ?>
             <a href="TS/forum/dashboard.php" class="linkie dashb">Forum</a>
-            <a href="LibsClt/openlibrary/home.php" class="linkie dashb">Library</a>
+            <a href="Library/core/home.php" class="linkie dashb">Library</a>
             <?php
             } else {
             ?>
@@ -53,8 +53,21 @@ $State = "Publics";
     <section class="section-type-1 fld">
         <h1 class="title">CrossGate</h1>
         <p class="desc">an desktop client software designed to organize ThouSands Library software & games
-            <br>an interactive enviroment made for user and developer receive convinience of productivity or gaming 
+            <br>an interactive enviroment made for user and developer
         </p>
+    </section>
+    <section id="features" class="flex">
+        <div class="flex fld">
+            <h2 class="txt-n">Feature</h2>
+            <p class="txt-s"></p>
+        </div>
+    </section>
+    <section id="sandbridges" class="flex">
+        <h2 class="txt-b">SandBridges Plugin</h2>
+        <p class="txt-s">For the developer to integrate CrossGate achievement system with an easy to use setup</p>
+        <a href="https://github.com/NNRVINTAGE/SandBridges" class="sideMg w50 txt-n button">Download</a>
+        <a href="https://github.com/NNRVINTAGE/SandBridges" class="sideMg w50 txt-n button">Source</a>
+        <p class="sideMg txt-ms">Current version only supported & tested in Godot</p>
     </section>
     <?php include_once 'footer.php';?>
 </body>
