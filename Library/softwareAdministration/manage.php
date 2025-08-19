@@ -11,6 +11,7 @@ if (isset($_SESSION['profileTags']) && isset($_SESSION['TmpKeys'])) {
     exit;
 };
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@ if (isset($_SESSION['profileTags']) && isset($_SESSION['TmpKeys'])) {
 <body class="w100p flex fld gap10">
     <section class="posf lt0 pad-s w20 flex fld"></section>
     <section class="leftMg w75p flex gap-s">
-        <div class="flex"></div>
+        <div class="flex fld"></div>
     </section>
     <section class="w75p flex fld gap-s">
         <div class="w100p flex ovs"></div>
