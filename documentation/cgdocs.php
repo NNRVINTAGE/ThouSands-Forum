@@ -23,6 +23,7 @@
         <div class="leftMg flex w100p">
             <h2 class="txt-b">Introduction</h2>
             <p class="txt-n">CrossGate is a desktop client software</p>
+            <p>CrossGate currently only supported in windows 10 & 11, but a compatible community published software still be available to download via ThouSands Gateways Library</p>
         </div>
     </section>
     <section class="leftMg w100p flex">
