@@ -88,6 +88,9 @@ span {
 .bg-4 {
     background: linear-gradient(to bottom, var(--monochrome1), rgb(93, 111, 123));
 }
+.bg-5 {
+    background: var(--primary);
+}
 
 /* uni section */
 .section-type-1 {
@@ -139,9 +142,17 @@ span {
     top: 0;
     left: 0;
 }
+
 .pad-s {
     padding: 10px;
 }
+.pad-n {
+    padding: 15px;
+}
+.pad-b {
+    padding: 5vw;
+}
+
 .autoMg {
     margin: auto;
 }
@@ -222,6 +233,24 @@ span {
 }
 .w100p {
     width: 100%;
+}
+.h20 {
+    height: 20vh;
+}
+.h20p {
+    height: 20%;
+}
+.h25 {
+    height: 25vh;
+}
+.h25p {
+    height: 25%;
+}
+.h30 {
+    height: 30vh;
+}
+.h30p {
+    height: 30%;
 }
 .h40 {
     height: 40vh;
@@ -341,6 +370,14 @@ span {
 }
 .border-l {
     border-left: 1px solid var(--LibsBG2);
+}
+
+/* border radius */
+.bora-s {
+    border-radius: 5px;
+}
+.bora-n {
+    border-radius: 12px;
 }
 
 /* uni zindex */
