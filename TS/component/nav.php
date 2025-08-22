@@ -5,7 +5,7 @@
             if ($UploadEnabled === "yes") {
         ?>
                 <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
-                <img src="../../img/upload.png" alt="" class="Navigation_Button" onclick="SetDialog('add')">
+                <img src="../../img/add-circle.svg" alt="" class="Navigation_Button" onclick="SetDialog('add')">
         <?php
             } elseif (isset($SearchEnabled) && $SearchEnabled === "yes") {
         ?>

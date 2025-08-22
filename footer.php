@@ -4,7 +4,7 @@
             <h3 class="footer-subtitle">by <img src="img/vdsl.png" alt="" class="footer_logo"><h3>
         </div>
         <div class="footer-group">
-            <h2 class="footer-title">Menu</h2>
+            <h2 class="footer-title">Reference</h2>
             <div class="footer-menu_group">
                 <a href="#" class="menu_button">Documentation</a>
                 <a href="CrossGate.php#SandBridges" class="menu_button">SandBridges</a>

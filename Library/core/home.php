@@ -32,13 +32,15 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
+    <link rel="stylesheet" href="../../styling/footer.css">
+    <link rel="stylesheet" href="../../styling/Mindex.css">
     <title>Library Homepage</title>
 </head>
-<body>
+<body class="h100p">
 <!-- the nav of course -->
 <?php include_once '../libsSys/nav.php';?>
 <!-- category on the right of the page -->
-    <section class="category-container">
+    <section class="category-container h100">
         <?php
         $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
         $stmt_check_category->bind_param("s", $State);
@@ -65,7 +67,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         ?>
     </section>
 <!-- banner stuff -->
-    <section class="banner-display">
+    <section class="banner-display h40">
         <?php
         $stmt_check_banner = $connects->prepare("SELECT * FROM banners WHERE bannerState = ? ORDER BY bannerDates ASC;");
         $stmt_check_banner->bind_param("s", $State);
@@ -93,7 +95,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         ?>
     </section>
 <!-- software list -->
-    <section class="software-list" id="softwarelist">
+    <section class="software-list h50" id="softwarelist">
         <?php
         $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
         $stmt_check_software->bind_param("s", $State);

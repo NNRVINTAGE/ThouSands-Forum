@@ -92,6 +92,22 @@ span {
     background: var(--primary);
 }
 
+.bg-semiwhite {
+    background: rgba(255, 255, 255, 0.541);
+}
+.bg-red {
+    background: red;
+}
+.bg-blue {
+    background: rgb(4, 125, 182);
+}
+.bg-green {
+    background: rgb(4, 182, 81);
+}
+.bg-yellow {
+    background: rgb(220, 232, 4);
+}
+
 /* uni section */
 .section-type-1 {
     padding: 4vh 0;
@@ -146,8 +162,20 @@ span {
 .pad-s {
     padding: 10px;
 }
+.pad-st {
+    padding-top: 10px;
+}
+.pad-sb {
+    padding-bottom: 10px;
+}
 .pad-n {
     padding: 15px;
+}
+.pad-nt {
+    padding-top: 15px;
+}
+.pad-nb {
+    padding-bottom: 15px;
 }
 .pad-b {
     padding: 5vw;
@@ -203,6 +231,12 @@ span {
 }
 .w30p {
     width: 30%;
+}
+.w40 {
+    width: 40vw;
+}
+.w40p {
+    width: 40%;
 }
 .w65 {
     width: 65vw;
@@ -379,6 +413,15 @@ span {
 .bora-n {
     border-radius: 12px;
 }
+
+/* decors */
+.points {
+    cursor: pointer;
+}
+.undline {
+    text-decoration: underline;
+}
+
 
 /* uni zindex */
 .z1 {
