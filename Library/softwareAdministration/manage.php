@@ -24,13 +24,19 @@ if (isset($_SESSION['profileTags'])) {
     <title>Management Dashboard</title>
 </head>
 <body class="h100 flex fld gap10 z1">
-    <section class="posf lt0 pad-s w20 h100 bg-semiwhite flex fld z2">
-        <h2 class="pad-s txt-b">Management Tab</h2>
-        <div class="pad-s w100p flex fld">
-            <h2 class="w100p txt-n">your software</h2>
-            <a href="#" class="pad-s txt-s">Published</a>
-            <a href="#" class="pad-s txt-s">Statistic</a>
-            <a href="#" class="pad-s txt-s">Feedbacks</a>
+    <section class="posf lt0 w20 h100 bg-semiwhite flex fld z2">
+        <h2 class="pad-n txt-b border-b">Management Tab</h2>
+        <div class="pad-n w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n">production</h2>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Published</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Statistic</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Feedbacks</a>
+        </div>
+        <div class="pad-n w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n">utility</h2>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Achievement</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Registry</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">CG Connect</a>
         </div>
     </section>
     <section class="leftMg pad-nt pad-nb w75p h20 flex fld gap-s z2">

@@ -93,7 +93,7 @@ span {
 }
 
 .bg-semiwhite {
-    background: rgba(255, 255, 255, 0.541);
+    background: rgb(87, 97, 104);
 }
 .bg-red {
     background: red;
@@ -161,6 +161,9 @@ span {
 
 .pad-s {
     padding: 10px;
+}
+.pad-s-s {
+    padding: 0 10px;
 }
 .pad-st {
     padding-top: 10px;
@@ -404,6 +407,9 @@ span {
 }
 .border-l {
     border-left: 1px solid var(--LibsBG2);
+}
+.border-b {
+    border-bottom: 1px solid rgb(164, 164, 164);
 }
 
 /* border radius */
