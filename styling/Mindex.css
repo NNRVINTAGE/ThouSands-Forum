@@ -165,14 +165,29 @@ span {
 .pad-s-s {
     padding: 0 10px;
 }
-.pad-st {
-    padding-top: 10px;
-}
-.pad-sb {
-    padding-bottom: 10px;
+.pad-s-v {
+    padding: 10px 0;
 }
 .pad-n {
     padding: 15px;
+}
+.pad-n-s {
+    padding: 0 15px;
+}
+.pad-n-v {
+    padding: 15px 0;
+}
+.pad-st {
+    padding-top: 10px;
+}
+.pad-sl {
+    padding-left: 10px;
+}
+.pad-sr {
+    padding-right: 10px;
+}
+.pad-sb {
+    padding-bottom: 10px;
 }
 .pad-nt {
     padding-top: 15px;

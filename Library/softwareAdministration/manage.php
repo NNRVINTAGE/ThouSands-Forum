@@ -26,25 +26,26 @@ if (isset($_SESSION['profileTags'])) {
 <body class="h100 flex fld gap10 z1">
     <section class="posf lt0 w20 h100 bg-semiwhite flex fld z2">
         <h2 class="pad-n txt-b border-b">Management Tab</h2>
-        <div class="pad-n w100p flex fld border-b">
-            <h2 class="pad-sb w100p txt-n">production</h2>
+        <div class="pad-n-s pad-st w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n">product</h2>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Published</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Annoucement</a>
+        </div>
+        <div class="pad-n-s pad-st w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n">record</h2>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Statistic</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Feedbacks</a>
         </div>
-        <div class="pad-n w100p flex fld border-b">
+        <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">utility</h2>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Achievement</a>
-            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Registry</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">CG Connect</a>
         </div>
     </section>
-    <section class="leftMg pad-nt pad-nb w75p h20 flex fld gap-s z2">
-        <div class="rightMg pad-s w33p h100p bg-5 flex fld acjc bora-n">
-            <h2 class="">Add Collection</h2>
-        </div>
-    </section>
-    <section class="leftMg w75p flex gap-s z2">
+    <section class="leftMg w79p flex gap-s z2">
+    <?php
+    // 
+    ?>
         <div class="rightMg w30p flex fld bg-5 bora-s gap-s">
             <img src="" alt="" class="w100p r16-9">
             <h2 class="pad-s txt-n">Published Software</h2>
