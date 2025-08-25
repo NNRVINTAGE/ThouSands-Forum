@@ -10,6 +10,7 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: ../../libs.php');
     exit;
 };
+$State = "publics";
 ?>
 
 <!DOCTYPE html>
@@ -45,16 +46,36 @@ if (isset($_SESSION['profileTags'])) {
     <section class="leftMg w79p flex gap-s z2">
     <?php
     // 
+    $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsPublisher = ? AND libsState = ?;");
+    $stmt_check_software->bind_param("ss", $aidis, $State);
+    $stmt_check_software->execute();
+    $result_check_software = $stmt_check_software->get_result();
+    if ($result_check_software->num_rows > 0) {
+        $uniqueItem = [];
+        while ($value = $result_check_software->fetch_assoc()) {
+            $ids = $value['libsIds'];
+            $attachs = $value['libsAttachs'];
+            $titles = $value['libsTitles'];
+            if (!in_array($ids, $uniqueItem)) {
     ?>
         <div class="rightMg w30p flex fld bg-5 bora-s gap-s">
-            <img src="" alt="" class="w100p r16-9">
-            <h2 class="pad-s txt-n">Published Software</h2>
+            <img src="../libsImg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="w100p r16-9">
+            <h2 class="pad-s txt-n"><?php echo $titles;?></h2>
             <div class="sideMg w100p flex">
                 <a href="#" class="autoMg pad-s w40p txt-s txtc bg-blue points z4">View</a>
                 <a href="#" class="autoMg pad-s w40p txt-s txtc bg-red points z4">Edit</a>
                 <a href="#" class="autoMg pad-s w40p txt-s txtc bg-green points z4">Archive</a>
             </div>
         </div>
+    <?php
+            };
+        };
+    } else {
+    ?>
+        <p class="w100p txtn txt-n">Publish software & games now!</p>
+    <?php
+    };
+    ?>
     </section>
     <script src="../libsSys/mng7.js"></script>
 </body>

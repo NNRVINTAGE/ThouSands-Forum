@@ -94,7 +94,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         };
         ?>
     </section>
-<!-- software list -->
+<!-- good old software list -->
     <section class="software-list h50" id="softwarelist">
         <?php
         $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
