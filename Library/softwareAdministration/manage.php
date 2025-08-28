@@ -106,7 +106,7 @@ $State = "publics";
                     <div class="form-input-row sideMg w88p flex fld">
                         <label for="categoryids">category</label>
                         <select name="categoryids" class="inpselect" required>
-                            <option value="" selected disabled>Select category</option>
+                            <option value="" selected disabled>Select one category</option>
                             <?php
                             $stmt_get_categoryss = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
                             $stmt_get_categoryss->bind_param("s", $State);
@@ -132,7 +132,7 @@ $State = "publics";
                 </div>
             </form>
         </dialog>
-    <!-- the edit publication dialog -->
+    <!-- the edit publishes dialog -->
         <dialog id="edit-dialog" class="posr w100p h80 flex fld acjc bg-semiwhite">
             <div class="posa lt0 w100p flex"><h2 class="rightMg pad-s txt-b">Edit Publish</h2><p class="pad-s-v pad-n-s txt-b red-hover" onclick="SetDialog('edit')">X</p></div>
             <form class="w100p flex flex-r wrap" name="EDITSTUFF" action="../component/post_out.php" method="post" enctype="multipart/form-data">
@@ -178,7 +178,7 @@ $State = "publics";
                 </div>
             </form>
         </dialog>
-    <!-- the archiving dialog -->
+    <!-- the archiving publish dialog -->
         <dialog id="update-dialog" class="posf ins0 wh100 flex fld acjc bg-semiwhite z15">
             <div class="posa lt0 w100p flex"><h2 class="rightMg pad-s txt-b">Archive it?</h2><p class="pad-s-v pad-n-s txt-b red-hover" onclick="SetDialog('update')">X</p></div>
             <form class="w100p flex flex-r wrap" name="EDITSTUFF" action="../component/post_out.php" method="post" enctype="multipart/form-data">

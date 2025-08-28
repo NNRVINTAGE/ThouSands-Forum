@@ -36,7 +36,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/Mindex.css">
     <title>Library Homepage</title>
 </head>
-<body class="h100p">
+<body class="h100p gap-s">
 <!-- the nav of course -->
 <?php include_once '../libsSys/nav.php';?>
 <!-- category on the right of the page -->
@@ -67,7 +67,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         ?>
     </section>
 <!-- banner stuff -->
-    <section class="banner-display h40">
+    <section class="banner-display w79">
         <?php
         $stmt_check_banner = $connects->prepare("SELECT * FROM banners WHERE bannerState = ? ORDER BY bannerDates ASC;");
         $stmt_check_banner->bind_param("s", $State);
@@ -80,7 +80,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                 $bannerRefImg = $value['bannerRefImg'];
                 if (!in_array($ids, $uniqueItem)) {
         ?>
-        <div class="banner-container">
+        <div class="banner-container w40 r16-9">
             <img src="../libsImg/<?php echo $bannerRefImg;?>" alt="<?php echo $bannerRefImg;?>" class="banner-img">
             <a href=" home.php?RefIds=<?php echo $Bids;?>" class="banner-link">.</a>
         </div>
