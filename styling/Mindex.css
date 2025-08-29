@@ -304,6 +304,12 @@ span {
 .w100p {
     width: 100%;
 }
+.h10 {
+    height: 10vh;
+}
+.h10p {
+    height: 10%;
+}
 .h20 {
     height: 20vh;
 }
@@ -419,6 +425,9 @@ span {
 .txt-b {
     font-size: 20px;
 }
+.txt-30 {
+    font-size: 30px;
+}
 
 /* uni icon */
 .icon-s {
@@ -446,6 +455,10 @@ span {
 }
 .border-l {
     border-left: 1px solid var(--LibsBG2);
+}
+
+.border-t {
+    border-top: 1px solid rgb(164, 164, 164);
 }
 .border-b {
     border-bottom: 1px solid rgb(164, 164, 164);

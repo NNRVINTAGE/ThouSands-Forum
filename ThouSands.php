@@ -140,11 +140,11 @@ $daState = "Publics";
     <section class="section-type-2 w88p gap">
         <div class="flex w100p gap">
             <div class="flex fld acjc leftMg highlighted">
-                <img src="" alt="" class="icon-s">
+                <img src="img/logo-windows.svg" alt="" class="icon-s">
                 <h2 class="os_name">Windows</h2>
             </div>
             <div class="flex fld acjc rightMg">
-                <img src="" alt="" class="icon-s">
+                <img src="img/logo-tux.svg" alt="" class="icon-s">
                 <h2 class="os_name">Linux(Unavailable)</h2>
             </div>
         </div>

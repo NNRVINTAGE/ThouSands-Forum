@@ -38,7 +38,7 @@ $State = "publics";
         </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">utility</h2>
-            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Statistic</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">Statistics</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Feedbacks</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Achievement</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">CG Connect</a>
