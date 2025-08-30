@@ -9,7 +9,7 @@
     <title>CrossGate Documentation</title>
 </head>
 <body class="h100p flex fld gap10 z1">
-    <section class="posf lt0 w20 h100 bg-semiwhite flex fld z2">
+    <section class="posf lt0 w20 h100 bg-semiwhite flex fld z15">
         <h2 class="pad-n txt-b border-b">Documentation</h2>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">introduction</h2>

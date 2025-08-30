@@ -107,6 +107,9 @@ span {
 .bg-yellow {
     background: rgb(220, 232, 4);
 }
+.bg-gold {
+    background: rgb(232, 213, 4);
+}
 
 /* color */
 .c-black {

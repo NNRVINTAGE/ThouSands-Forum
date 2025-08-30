@@ -37,28 +37,32 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 <!-- the nav -->
 <?php include_once '../libsSys/nav.php';?>
     <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s">
-        <div class="w100p ">
-
+        <h2 class="pad-n txt-b border-b">MarkOut</h2>
+        <div class="pad-n-s pad-s-v w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-s">Search</h2>
         </div>
-        <div class="posr w100p flex fld">
-            <h2 class="w100p txt-s software-title">another game</h2>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr w100p flex fld">
-            <h2 class="w100p txt-s software-title">games title</h2>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr w100p flex fld">
-            <h2 class="w100p txt-s software-title">nice</h2>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr w100p flex fld">
-            <h2 class="w100p txt-s software-title">software stuff</h2>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr w100p flex fld">
-            <h2 class="w100p txt-s software-title">tf3</h2>
-            <a href="view.php?idSft=" class="link-cover">.</a>
+        <div class="pad-n-s pad-st w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n">Titles</h2>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">another game</h2>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">games title</h2>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">nice</h2>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">software stuff</h2>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">tf3</h2>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
         </div>
     </section>
     <section class="leftMg pad-s w79 h40 bg-4 flex fld">

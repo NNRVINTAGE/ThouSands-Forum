@@ -25,10 +25,10 @@ $State = "publics";
     <title>Management Dashboard</title>
 </head>
 <body class="h100p flex fld gap10 z1">
-    <section class="posf lt0 w20 h100 bg-semiwhite flex fld z2">
+    <section class="posf lt0 w20 h100 bg-semiwhite flex fld z15">
         <h2 class="pad-n txt-b border-b">Management Tab</h2>
         <div class="pad-n-s pad-s-v w100p flex fld border-b">
-            <button onclick="SetDialog('add');" class="pad-s w100p txtc txt-s bg-yellow c-black">New Publish</button>
+            <button onclick="SetDialog('add');" class="pad-s w100p txtc txt-s bg-gold c-black">New Publish</button>
         </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">product</h2>

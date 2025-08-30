@@ -33,8 +33,8 @@ $State = "Publics";
             <?php
             } else {
             ?>
-            <a href="../../forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
-            <a href="../../forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
+            <a href="forum-connect/connect_it.php?state=login" class="linkie">LOGIN</a>
+            <a href="forum-connect/connect_it.php?state=register" class="linkie">JOIN</a>
             <?php
             };
             ?>
