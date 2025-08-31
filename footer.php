@@ -6,7 +6,7 @@
         <div class="footer-group">
             <h2 class="footer-title">Reference</h2>
             <div class="footer-menu_group">
-                <a href="#" class="menu_button">Documentation</a>
+                <a href="documentation/e-docs.php" class="menu_button">Documentation</a>
                 <a href="CrossGate.php#SandBridges" class="menu_button">SandBridges</a>
                 <a href="CrossGate.php" class="menu_button">CrossGate</a>
                 <a href="libs.php" class="menu_button">Library</a>

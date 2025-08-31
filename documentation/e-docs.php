@@ -25,12 +25,11 @@
     </section>
     <section class="leftMg pad-l w79p flex fld acjc gap-s">
         <div class="pad-n-v w100p flex fld border-b">
-            <p class="txt-30">CrossGate Documentation</p>
+            <p class="txt-30">Gateways Documentation</p>
         </div>
         <div class="pad-s-v leftMg w100p flex fld">
             <h2 class="txt-b">Introduction</h2>
-            <p class="txt-n">CrossGate is a desktop client software</p>
-            <p>CrossGate currently only supported in windows 10 & 11, but a compatible community published software still be available to download via ThouSands Gateways Library</p>
+            <p class="txt-n">Gateways is an central hub connecting every ThouSands software and service, to be honest i'm not sure this documentation will get finished or not</p>
         </div>
     </section>
     <section class="leftMg w79p flex fld acjc gap5">
