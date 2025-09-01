@@ -15,6 +15,9 @@ function linker(reqstate) {
         case 'category':
             window.location.replace('category.php');
             break;
+        case 'markout':
+            window.location.replace('markout.php');
+            break;
         case 'profile':
             window.location.replace('../../TS/forum/profile.php?user=self');
             break;
@@ -90,6 +93,22 @@ var loadFile = function(event) {
     }
 };
 
+
+var loadFiles = function(event) {
+    var output = document.getElementById('prevs');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src)
+    }
+};
+function reloadFile(imgObj) {
+    var output = document.getElementById('prevs');
+    output.src = imgObj;
+    output.onload = function() {
+      URL.revokeObjectURL(output.src)
+    }
+}
+
 function LoadPublishs(ReqstData) {
     const form = document.forms.EDITSTUFF;
     const values = ReqstData.dataset;
@@ -98,6 +117,7 @@ function LoadPublishs(ReqstData) {
             form[key].value = values[key];
     });
 };
+
 function LoadBios(ReqstData) {
     const form = document.forms.BIOS;
     const values = ReqstData.dataset;

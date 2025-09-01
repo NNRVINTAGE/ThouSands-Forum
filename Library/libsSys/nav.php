@@ -2,18 +2,14 @@
     <div id="Navigation_Panel">
         <img src="../../img/home.png" alt="" class="Navigation_Button" onclick="linker('home')">
         <?php
-            if ($UploadEnabled === "yes") {
-        ?>
-                <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
-                <img src="../../img/add-circle.svg" alt="" class="Navigation_Button" onclick="SetDialog('add')">
-        <?php
-            } elseif ($SearchEnabled === "yes") {
+            if ($SearchEnabled === "yes") {
         ?>
                 <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
         <?php
             };
         ?>
-        <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('category')">
+        <img src="../../img/library.svg" alt="" class="Navigation_Button" onclick="linker('markout')">
+        <img src="../../img/album.png" alt="" class="Navigation_Button" onclick="linker('category')">
         <img src="../../img/grid.svg" alt="" class="Navigation_Button" onclick="settings()">
     </div>
     <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">

@@ -41,7 +41,7 @@ $State = "publics";
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Statistics</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Feedbacks</a>
             <a href="#" class="pad-s-s pad-r pad-sb txt-s">Achievement</a>
-            <a href="#" class="pad-s-s pad-r pad-sb txt-s">CG Connect</a>
+            <a href="#" class="pad-s-s pad-r pad-sb txt-s">CrossGate Connect</a>
         </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">Links</h2>
@@ -71,7 +71,7 @@ $State = "publics";
             <h2 class="pad-s txt-n"><?php echo $titles;?></h2>
             <div class="sideMg w100p flex">
                 <button onclick="" class="autoMg pad-s w40p txt-s txtc bg-blue points z4">View</button>
-                <button onclick="SetDialog('edit'); LoadPublishs(this);" class="autoMg pad-s w40p txt-s txtc bg-red points z4" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $categorys;?>">Edit</button>
+                <button onclick="SetDialog('edit'); reloadFile('../libsImg/<?php echo $attachs;?>'); LoadPublishs(this);" class="autoMg pad-s w40p txt-s txtc bg-red points z4" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $categorys;?>">Edit</button>
                 <button onclick="SetDialog('update');" class="autoMg pad-s w40p txt-s txtc bg-green points z4">Archive</button>
             </div>
         </div>
@@ -80,7 +80,7 @@ $State = "publics";
         };
     } else {
     ?>
-        <p class="w100p txtn txt-n">Publish software & games now!</p>
+        <p class="w100p txtn txt-n">Publish your software/games now!</p>
     <?php
     };
     ?>
@@ -137,8 +137,8 @@ $State = "publics";
             <div class="posa lt0 w100p flex"><h2 class="rightMg pad-s txt-b">Edit Publish</h2><p class="pad-s-v pad-n-s txt-b red-hover" onclick="SetDialog('edit')">X</p></div>
             <form class="w100p flex flex-r wrap" name="EDITSTUFF" action="../component/post_out.php" method="post" enctype="multipart/form-data">
                 <div class="special-form-input w50p flex fld acjc gap5">
-                    <img id="prev" name="prev" class="icon-b sideMg">
-                    <input class="sideMg" type="file" name="file" accept="image/*" onchange="loadFile(event)" required>
+                    <img id="prevs" name="prevs" class="icon-b sideMg">
+                    <input class="sideMg" type="file" name="file" accept="image/*" onchange="loadFiles(event)" required>
                 </div>
                 <div class="form-input-container pad-s-v w50p flex fld gap5">
                     <div class="form-input-row sideMg w88p flex fld">

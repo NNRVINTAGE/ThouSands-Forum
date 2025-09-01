@@ -10,7 +10,6 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: ../../libs.php');
     exit;
 };
-$UploadEnabled = "nope";
 $SearchEnabled = "yes";
 $page = "category";
 $State = "publics";
@@ -31,9 +30,10 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="category.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
+    <link rel="stylesheet" href="../../styling/Mindex.css">
     <title>Category list</title>
 </head>
-<body>
+<body class="bg-2">
     <!-- navbar -->
     <?php include_once '../libsSys/nav.php';?>
     <!-- the category list -->

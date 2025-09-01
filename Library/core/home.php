@@ -10,7 +10,6 @@ if (isset($_SESSION['profileTags'])) {
     header ('location: ../../libs.php');
     exit;
 };
-$UploadEnabled = "no";
 $SearchEnabled = "yes";
 $page = "home";
 $State = "publics";
@@ -29,73 +28,61 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../libsImg/libs.ico" type="image/x-icon">
-    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/footer.css">
     <link rel="stylesheet" href="../../styling/Mindex.css">
-    <title>Library Homepage</title>
+    <link rel="stylesheet" href="../../styling/slides.css">
+    <title>CrossGate Library</title>
 </head>
-<body class="h100p gap-s">
+<body class="wh100p bg-2 gap-s flex fld ovh-s ovs-v">
 <!-- the nav of course -->
 <?php include_once '../libsSys/nav.php';?>
 <!-- category on the right of the page -->
-    <section class="category-container h100">
-        <?php
-        $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
-        $stmt_check_category->bind_param("s", $State);
-        $stmt_check_category->execute();
-        $result_check_category = $stmt_check_category->get_result();
-        if ($result_check_category->num_rows > 0) {
-            $uniqueItem = [];
-            while ($value = $result_check_category->fetch_assoc()) {
-                $ids = $value['categoryIds'];
-                $titles = $value['categoryTitles'];
-                if (!in_array($ids, $uniqueItem)) {
-        ?>
-        <div class="category-unit">
-            <a href="viewcategory.php?categoryIds=<?php echo $titles;?>" class="category-title"><?php echo $titles;?></a>
-        </div>
-        <?php
+    <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s z2">
+        <h2 class="pad-n txt-b border-b semibold">CrossGate Library</h2>
+        <div class="pad-n-s pad-st w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n semibold">Categories</h2>
+            <?php
+            $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
+            $stmt_check_category->bind_param("s", $State);
+            $stmt_check_category->execute();
+            $result_check_category = $stmt_check_category->get_result();
+            if ($result_check_category->num_rows > 0) {
+                $uniqueItem = [];
+                while ($value = $result_check_category->fetch_assoc()) {
+                    $ids = $value['categoryIds'];
+                    $titles = $value['categoryTitles'];
+                    if (!in_array($ids, $uniqueItem)) {
+            ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s"><?php echo $titles;?></h2>
+                <a href="viewcategory.php?categoryIds=<?php echo $titles;?>" class="link-cover">.</a>
+            </div>
+            <?php
+                    };
                 };
+            } else {
+            ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">Error retrieving</h2>
+                <a href="#" class="link-cover">.</a>
+            </div>
+            <?php
             };
-        } else {
-        ?>
-            <p class="zthing">nothing found from the category list</p>
-        <?php
-        };
-        ?>
+            ?>
+        </div>
     </section>
 <!-- banner stuff -->
-    <section class="banner-display w79">
-        <?php
-        $stmt_check_banner = $connects->prepare("SELECT * FROM banners WHERE bannerState = ? ORDER BY bannerDates ASC;");
-        $stmt_check_banner->bind_param("s", $State);
-        $stmt_check_banner->execute();
-        $result_check_banner = $stmt_check_banner->get_result();
-        if ($result_check_banner->num_rows > 0) {
-            $uniqueItem = [];
-            while ($value = $result_check_banner->fetch_assoc()) {
-                $Bids = $value['bannerIds'];
-                $bannerRefImg = $value['bannerRefImg'];
-                if (!in_array($ids, $uniqueItem)) {
-        ?>
-        <div class="banner-container w40 r16-9">
-            <img src="../libsImg/<?php echo $bannerRefImg;?>" alt="<?php echo $bannerRefImg;?>" class="banner-img">
-            <a href=" home.php?RefIds=<?php echo $Bids;?>" class="banner-link">.</a>
+    <section class="posr leftMg pad-sl w79 h60 flex">
+        <div class="posa t0 r0 wh100p flex trs1s" id="slides">
+
         </div>
-        <?php
-                };
-            };
-        } else {
-        ?>
-            <p class="zthing">No banner there, someone's hiding it :p</p>
-        <?php
-        };
-        ?>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
     </section>
-<!-- good old software list -->
-    <section class="software-list h50" id="softwarelist">
+<!-- software list -->
+    <section class="leftMg pad-s-v w79 h50 flex fld ovs-v" id="softwarelist">
         <?php
         $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
         $stmt_check_software->bind_param("s", $State);
@@ -110,10 +97,12 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                 $category = $value['libsCategorys'];
                 if (!in_array($ids, $uniqueItem)) {
         ?>
-        <div class="software-container">
-            <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="software-banner">
-            <h2 class="software-titles"><?php echo $titles;?></h2>
-            <a href="viewsoftware.php?softwareTitles=<?php echo $titles;?>" class="software-link">.</a>
+        <div class="posr w100p h10 flex gap5">
+            <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="h100p objfit">
+            <div class="h100p flex fld">
+                <h2 class="rightMg txt-n"><?php echo $titles;?></h2>
+                <a href="viewsoftware.php?softwareTitles=<?php echo $titles;?>" class="link-cover">.</a>
+            </div>
         </div>
         <?php
                 };
@@ -125,14 +114,13 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         };
         ?>
     </section>
-    <?php include_once '../../footer.php';?>
 <!-- another messages passer -->
     <div id="alertcard">
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>
     </div>
     <script src="../../scriptstuff/script.js"></script>
-    <script src="../libsSys/IntakeSFT.js"></script>
+    <script src="../../scriptstuff/slide.js"></script>
     <script src="../../scriptstuff/alert.js"></script>
     <?php
     if (!empty($errors)) {
