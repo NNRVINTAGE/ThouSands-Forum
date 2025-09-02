@@ -32,6 +32,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
+    <link rel="stylesheet" href="../../styling/Mindex.css">
     <title>Dashboard</title>
 </head>
 <body class="container_again">
@@ -88,31 +89,71 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         </form>
     </dialog>
 <!-- topic on right of the page -->
-    <section class="mitol-container">
-        <?php
-        $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
-        $stmt_check_topic->bind_param("s", $topicState);
-        $stmt_check_topic->execute();
-        $result_check_topic = $stmt_check_topic->get_result();
-        if ($result_check_topic->num_rows > 0) {
-            $uniqueItem = [];
-            while ($value = $result_check_topic->fetch_assoc()) {
-                $ids = $value['topicIds'];
-                $titles = $value['topicTitles'];
-                if (!in_array($ids, $uniqueItem)) {
-        ?>
-        <div class="mini-topic-list">
-            <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="mitol-title"><?php echo $titles;?></a>
-        </div>
-        <?php
+    <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s z2">
+        <h2 class="pad-n txt-b border-b semibold">Dashboard</h2>
+        <div class="pad-n-s pad-st w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n semibold">Trendings</h2>
+            <?php
+            $TempTopic = [];
+            $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
+            $stmt_check_topic->bind_param("s", $topicState);
+            $stmt_check_topic->execute();
+            $result_check_topic = $stmt_check_topic->get_result();
+            if ($result_check_topic->num_rows > 0) {
+                $uniqueItem = [];
+                while ($value = $result_check_topic->fetch_assoc()) {
+                    $ids = $value['topicIds'];
+                    $titles = $value['topicTitles'];
+                    if (!in_array($ids, $uniqueItem)) {
+            ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s ovh"><?php echo $titles;?></h2>
+                <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="link-cover">.</a>
+            </div>
+            <?php
+                    };
                 };
+            } else {
+            ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">Error retrieving</h2>
+                <a href="#" class="link-cover">.</a>
+            </div>
+            <?php
             };
-        } else {
-        ?>
-            <p class="unknown">No topic found from the list</p>
-        <?php
-        };
-        ?>
+            ?>
+        </div>
+        <div class="pad-n-s pad-st w100p flex fld border-b">
+            <h2 class="pad-sb w100p txt-n semibold">Topic</h2>
+            <?php
+            $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
+            $stmt_check_topic->bind_param("s", $topicState);
+            $stmt_check_topic->execute();
+            $result_check_topic = $stmt_check_topic->get_result();
+            if ($result_check_topic->num_rows > 0) {
+                $uniqueItem = [];
+                while ($value = $result_check_topic->fetch_assoc()) {
+                    $ids = $value['topicIds'];
+                    $titles = $value['topicTitles'];
+                    if (!in_array($ids, $uniqueItem)) {
+            ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s ovh"><?php echo $titles;?></h2>
+                <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="link-cover">.</a>
+            </div>
+            <?php
+                    };
+                };
+            } else {
+            ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">Error retrieving</h2>
+                <a href="#" class="link-cover">.</a>
+            </div>
+            <?php
+            };
+            ?>
+        </div>
     </section>
     <!-- forum there -->
     <?php

@@ -40,10 +40,10 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <section class="category-list">
         <?php
         if (isset($requestedItem) && isset($searchTrigger)) {
-        $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ? AND categoryTitles LIKE '%$requestedItem%' ORDER BY categoryTitles DESC;");
+        $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categorytype = 'category' AND categoryState = ? AND categoryTitles LIKE '%$requestedItem%' ORDER BY categoryTitles DESC;");
         $stmt_check_category->bind_param("s", $State);
         } else {
-        $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
+        $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categorytype = 'category' AND categoryState = ?;");
         $stmt_check_category->bind_param("s", $State);
         };
         $stmt_check_category->execute();

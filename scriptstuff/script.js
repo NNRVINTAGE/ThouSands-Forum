@@ -21,6 +21,12 @@ function linker(reqstate) {
         case 'profile':
             window.location.replace('../../TS/forum/profile.php?user=self');
             break;
+        case 'forum':
+            window.location.replace('../../TS/forum/dashboard.php');
+            break;
+        case 'library':
+            window.location.replace('../../Library/core/home.php');
+            break;
         case 'logout':
             window.location.replace('../../processes/logout.php');
             break;

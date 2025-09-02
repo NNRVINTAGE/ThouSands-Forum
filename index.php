@@ -81,7 +81,7 @@ $State = "Publics";
     <section class="section-type-2">
         <h2 class="title-2">About Gateway</h2>
         <p>ThouSands Gateway is an central hub connecting every developer along with the potential enjoyer alike to 
-            not only discuss and communicate feedback but also contribute directly on their project development</p>
+            not only try and discuss but also communicate feedback directly on their project development</p>
     </section>
     <script src="scriptstuff/Mindex.js"></script>
     <?php include_once 'footer.php';?>

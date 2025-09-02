@@ -117,6 +117,9 @@ span {
 .c-white {
     color: white;
 }
+.c-semiwhite {
+    color: rgb(190, 190, 190);
+}
 
 /* uni section */
 .section-type-1 {
@@ -239,6 +242,19 @@ span {
 }
 .bottomMg {
     margin-bottom: auto;
+}
+
+.topMg-5 {
+    margin-top: 5vh;
+}
+.leftMg-5 {
+    margin-left: 5vh;
+}
+.rightMg-5 {
+    margin-right: 5vh;
+}
+.bottomMg-5 {
+    margin-bottom: 5vh;
 }
 
 /* uni size */

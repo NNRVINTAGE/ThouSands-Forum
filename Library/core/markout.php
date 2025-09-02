@@ -68,49 +68,49 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <section class="leftMg pad-s w79 h40 bg-4 flex fld">
         <h2 class="leftMg w100p">recently used</h2>
         <div class="h100p flex gap-s ovs">
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">games title</h2>
-            <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">games title</h2>
+                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">software stuff</h2>
+                <p class="rightMg txt-s z3">Total time: 1.6 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">another game</h2>
+                <p class="rightMg txt-s z3">Total time: 9.6 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">nice</h2>
+                <p class="rightMg txt-s z3">Total time: 69.6 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">title</h2>
+                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">title</h2>
+                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">title</h2>
+                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
         </div>
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">software stuff</h2>
-            <p class="rightMg txt-s z3">Total time: 1.6 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">another game</h2>
-            <p class="rightMg txt-s z3">Total time: 9.6 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">nice</h2>
-            <p class="rightMg txt-s z3">Total time: 69.6 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">title</h2>
-            <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">title</h2>
-            <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-        <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-            <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-            <h2 class="topMg rightMg txt-s z3">title</h2>
-            <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-            <a href="view.php?idSft=" class="link-cover">.</a>
-        </div>
-    </div>
     </section>
     <section class="leftMg pad-s w79 h40 flex wrap gap10">
         <h2 class="leftMg w100p">Publisher Announcement</h2>

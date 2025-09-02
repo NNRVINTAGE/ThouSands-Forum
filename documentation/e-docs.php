@@ -19,8 +19,8 @@
         </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">Links</h2>
-            <a href="../../TS/forum/dashboard.php" class="pad-s-s pad-r pad-sb txt-s">Forum</a>
-            <a href="../core/home.php" class="pad-s-s pad-r pad-sb txt-s">Library</a>
+            <a href="../TS/forum/dashboard.php" class="pad-s-s pad-r pad-sb txt-s">Forum</a>
+            <a href="../Library/core/home.php" class="pad-s-s pad-r pad-sb txt-s">Library</a>
         </div>
     </section>
     <section class="leftMg pad-l w79p flex fld acjc gap-s">

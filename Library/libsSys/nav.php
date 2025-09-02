@@ -15,12 +15,12 @@
     <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">
     <div id="Settings_Panel" style="transform: translateY(100vh) translateX(-50%);">
         <div class="RowGroup">
-            <h2>User : <?php echo isset($name) ? $name : 'Unidentified';?></h2>
-            <img src="../../img/information.png" alt="" class="Settings_Action" onclick="linker('profile')">
+            <img src="../../img/earth.svg" alt="" class="Settings_Option" onclick="linker('forum')">
+            <img src="../../img/library.svg" alt="" class="Settings_Option" onclick="linker('library')">
         </div>
         <div class="RowGroup">
-            <h2>Log-Out</h2>
-            <img src="../../img/log-out.png" alt="" class="Settings_Action" onclick="linker('logout')">
+            <img src="../../img/person.svg" alt="" class="Settings_Option" onclick="linker('profile')">
+            <img src="../../img/log-out.png" alt="" class="Settings_Option" onclick="linker('logout')">
         </div>
     </div>
     <!-- search panel -->

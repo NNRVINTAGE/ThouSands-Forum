@@ -44,13 +44,14 @@
     cursor: pointer;
     z-index: 900;
 }
+
 #Settings_Panel {
     position: fixed;
     padding: 10px 0;
     left: 50%;
     bottom: 81px;
-    width: 27vw;
-    aspect-ratio: 1.4/1;
+    width: 23vw;
+    aspect-ratio: 1.3/1;
     background: var(--LibsGrad2);
     display: flex;
     flex-direction: column;
@@ -60,20 +61,22 @@
     gap: 8px;
 }
 .RowGroup {
+    position: relative;
     margin: 0;
-    display: flex;
     padding: 0 11px;
     width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.RowGroup h2 {
-    margin: auto auto auto 0;
-}
-.Settings_Action {
+.Settings_Option {
+    position: relative;
     margin: 0;
+    width: 80px;
+    aspect-ratio: 1/1;
     object-fit: contain;
     object-position: center;
-    aspect-ratio: 1/1;
-    max-height: 28px;
     border-radius: 15px;
     cursor: pointer;
 }

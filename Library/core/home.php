@@ -44,7 +44,8 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n semibold">Categories</h2>
             <?php
-            $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categoryState = ?;");
+            $tempCatgArray = [];
+            $stmt_check_category = $connects->prepare("SELECT * FROM categorys WHERE categorytype = 'category' AND categoryState = ?;");
             $stmt_check_category->bind_param("s", $State);
             $stmt_check_category->execute();
             $result_check_category = $stmt_check_category->get_result();
@@ -54,10 +55,11 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     $ids = $value['categoryIds'];
                     $titles = $value['categoryTitles'];
                     if (!in_array($ids, $uniqueItem)) {
+                    $tempCatgArray[$ids] = $titles;
             ?>
             <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
                 <h2 class="w100p txt-s"><?php echo $titles;?></h2>
-                <a href="viewcategory.php?categoryIds=<?php echo $titles;?>" class="link-cover">.</a>
+                <a href="view.php?type=catg&Ids=<?php echo $titles;?>" class="link-cover">.</a>
             </div>
             <?php
                     };
@@ -81,10 +83,22 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
     </section>
+<!-- trending software -->
+    <section class="leftMg pad-n w79 flex fld gap5">
+        <h2 class="leftMg pad-s-s w100p">Trending releases</h2>
+        <div class="pad-s h100p flex gap-s ovh-v ovs-s">
+            <div class="posr rightMg vertiMg pad-s h30 r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3">games title</h2>
+                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
+                <a href="view.php?idSft=" class="link-cover">.</a>
+            </div>
+        </div>
+    </section>
 <!-- software list -->
-    <section class="leftMg pad-s-v w79 h50 flex fld ovs-v" id="softwarelist">
+    <section class="topMg-5 leftMg pad-s-v w79 h100 flex fld" id="softwarelist">
         <?php
-        $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
+        $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 9;");
         $stmt_check_software->bind_param("s", $State);
         $stmt_check_software->execute();
         $result_check_software = $stmt_check_software->get_result();
@@ -96,12 +110,20 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                 $titles = $value['libsTitles'];
                 $category = $value['libsCategorys'];
                 if (!in_array($ids, $uniqueItem)) {
+                    $catgList = $tempCatgArray[$category] ?? null;
         ?>
-        <div class="posr w100p h10 flex gap5">
-            <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="h100p objfit">
+        <div class="posr sideMg pad-s w88p flex bg-semiwhite gap5 border-1">
+            <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="h10 r16-9 objfit">
             <div class="h100p flex fld">
                 <h2 class="rightMg txt-n"><?php echo $titles;?></h2>
-                <a href="viewsoftware.php?softwareTitles=<?php echo $titles;?>" class="link-cover">.</a>
+                <p class="topMg rightMg txt-s c-semiwhite"><?php
+                    if (isset($catgList)) {
+                        echo $catgList;
+                    } else {
+                        echo "NaN";
+                    };
+                        ?></p>
+                <a href="view.php?type=clts&ids=<?php echo $titles;?>" class="link-cover">.</a>
             </div>
         </div>
         <?php

@@ -7,7 +7,7 @@ fetch('slide.php')
         slide.className = 'autoMg wh100p flex acjc';
         slide.innerHTML = `
         <img src="../libsImg/${banner.bannerRefImg}"  class="autoMg w79 h100p objfit" alt="">
-        <a href="redirect.php?ids=${banner.refLinks}" class="link-cover" target="_blank" rel="noopener noreferrer">.</a>
+        <a href="view.php?type=prms&ids=${banner.refLinks}" class="link-cover" target="_blank" rel="noopener noreferrer">.</a>
         `;
         slidesContainer.appendChild(slide);
     });
