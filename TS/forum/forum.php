@@ -54,6 +54,7 @@ if ($result_check_forums->num_rows == 1) {
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/forum_internal.css">
+    <link rel="stylesheet" href="../../styling/Mindex.css">
     <title><?php echo $titles;?></title>
 </head>
 <body>

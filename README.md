@@ -24,14 +24,6 @@ Acting as the central platform connecting every Project ThouSands Software & Uti
 - [Why did i make this in php?](#Why-did-i-make-this-in-php?)
 - [Documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/)
 
-## Quick start
-To run TFLs in a local machine, follow the setup instructions in the [documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/).<br>
-Current version of TFL developed within the development enviroment below:
-- Apache/2.4.58(Win64)
-- OpenSSL/3.1.3
-- PHP 8.2.12
-- MariaDB 10.4.32
-
 ## Contributing
 Any help is greatly appreciated but currently the project is in need of rework after the Operational Beta release as this is more of a proof of concept for the idea itself
 

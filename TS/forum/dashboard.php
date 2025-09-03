@@ -44,7 +44,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         <form class="univ-form" action="../component/post_out.php" method="post" enctype="multipart/form-data">
             <div class="special-form-input">
                 <img id="prev">
-                <input style="margin: 0 auto;" type="file" name="file" accept="image/*" onchange="loadFile(event)" required>
+                <input style="margin: 0 auto;" type="file" name="file" accept="image/*" onchange="loadFile(event)">
             </div>
             <div class="form-input-container">
                 <div class="form-input-row">
@@ -56,12 +56,8 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     <input type="text" name="ForumDescription" class="inptxt" placeholder="The description for the why or what start this forum " auto-complete="off" maxlength="255" required>
                 </div>
                 <div class="form-input-row">
-                    <label for="Forum">Forum </label>
-                    <input type="text" name="Forum" class="inptxt" placeholder="The description for the why or what start this forum " auto-complete="off" maxlength="255" required>
-                </div>
-                <div class="form-input-row">
-                    <label for="topicId">Topic</label>
-                    <select name="topicId" class="inpselect" required>
+                    <label for="ForumTopics">Topic</label>
+                    <select name="ForumTopics" class="inpselect" required>
                         <option value="" selected disabled>Select Topic</option>
                         <?php
                         $stmt_get_topics = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
@@ -71,11 +67,11 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                         if ($result_get_topics->num_rows > 0) {
                             $uniqueT = [];
                             while ($values =  $result_get_topics->fetch_assoc()) {
-                                $topicIds = $values['topicIds'];
+                                $ForumTopics = $values['topicIds'];
                                 $topicTitles = $values['topicTitles'];
-                                if (!in_array($topicIds, $uniqueT)) {
-                                    echo "<option name='topicId' value='$topicIds' required>$topicTitles</option>";
-                                    $uniqueT[] = $topicIds;
+                                if (!in_array($ForumTopics, $uniqueT)) {
+                                    echo "<option name='ForumTopics' value='$ForumTopics' required>$topicTitles</option>";
+                                    $uniqueT[] = $ForumTopics;
                                 };
                             };
                         };
@@ -83,7 +79,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     </select>
                 </div>
                 <div class="form-input-row">
-                    <input class="post-button" type="submit" name="submit" value="Upload">
+                    <input class="post-button" type="submit" name="submit" value="Post">
                 </div>
             </div>
         </form>
@@ -105,6 +101,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     $ids = $value['topicIds'];
                     $titles = $value['topicTitles'];
                     if (!in_array($ids, $uniqueItem)) {
+                        $TempTopicArray[$ids] = $titles;
             ?>
             <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
                 <h2 class="w100p txt-s ovh"><?php echo $titles;?></h2>
@@ -124,7 +121,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             ?>
         </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
-            <h2 class="pad-sb w100p txt-n semibold">Topic</h2>
+            <h2 class="pad-sb w100p txt-n semibold points" onclick="linker('topic')">Topic</h2>
             <?php
             $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
             $stmt_check_topic->bind_param("s", $topicState);
@@ -169,18 +166,17 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             $uniqueItem = [];
             while ($value = $result_check_HForum->fetch_assoc()) {
                 $Hids = $value['ForumIds'];
-                $Hcreators = $value['ForumCreator'];
                 $Htitles = $value['ForumTitles'];
                 $Htopics = $value['ForumTopics'];
                 $Hdates = $value['ForumDates'];
                 $Hcontents = $value['ForumContents'];
                 if (!in_array($Hids, $uniqueItem)) {
+                    $Htopic = $TempTopicArray[$Htopics] ?? null;
         ?>
         <div class="highligthed-forum-container">
             <h2 class="forum-title"><?php echo $Htitles;?></h2>
-            <p class="forum-username"><?php echo $Hcreators;?></p>
             <div class="detail-wrap">
-                <p class="topic"><?php echo $Htopics;?></p>
+                <p class="topic"><?php echo $Htopic;?></p>
                 <p class="dates"><?php echo $Hdates;?></p>
             </div>
             <p class="forum-content"><?php echo $Hcontents;?></p>
@@ -216,12 +212,13 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                 $dates = $value['ForumDates'];
                 $contents = $value['ForumContents'];
                 if (!in_array($ids, $uniqueItem)) {
+                    $topic = $TempTopicArray[$topics] ?? null;
         ?>
         <div class="forum-container">
             <h2 class="forum-title"><?php echo $titles;?></h2>
             <p class="forum-username"<?php echo $creators;?>></p>
             <div class="detail-wrap">
-                <p class="topic"><?php echo $topics;?></p>
+                <p class="topic"><?php echo $topic;?></p>
                 <p class="dates"><?php echo $dates;?></p>
             </div>
             <p class="forum-content"><?php echo $contents;?>

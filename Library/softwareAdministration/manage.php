@@ -24,7 +24,7 @@ $State = "publics";
     <link rel="stylesheet" href="../../styling/footer.css">
     <title>Management Dashboard</title>
 </head>
-<body class="h100p flex fld gap10 z1">
+<body class="wh100 flex fld bg-2 gap10 z1">
     <section class="posf lt0 w20 h100 bg-semiwhite flex fld z15">
         <h2 class="pad-n txt-b border-b">Management Tab</h2>
         <div class="pad-n-s pad-s-v w100p flex fld border-b">
@@ -49,7 +49,7 @@ $State = "publics";
             <a href="../core/home.php" class="pad-s-s pad-r pad-sb txt-s">Library</a>
         </div>
     </section>
-    <section class="leftMg w79p flex gap-s z2">
+    <section class="leftMg pad-s-v w79p flex gap-s z2">
     <?php
     // the published software
     $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsPublisher = ? AND libsState = ?;");

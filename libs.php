@@ -22,8 +22,8 @@ $State = "Publics";
     <link rel="stylesheet" href="styling/footer.css">
     <title>ThouSands Library</title>
 </head>
-<body>
-    <div class="bg">.</div>
+<body class="wh100p flex fld">
+    <div class="bg flex">.</div>
     <header>
         <nav id="nav">
             <?php
@@ -40,15 +40,15 @@ $State = "Publics";
             ?>
             </nav>
         </header>
-    <section class="sect_1">
-        <h1>ThouSands Library</h1>
+    <section class="leftMg w90 h80 flex fld">
+        <h1 class="topMg">ThouSands Library</h1>
         <h2>Open library collection platform for softwares & games</h2>
-        <div class="linkie-button">
+        <div class="bottomMg flex gap5">
             <a href="home.php#softwarelist?type=apps" class="Apps">Search Apps</a>
             <a href="home.php#sofwarelist?type=games" class="Games">Discover Games</a>
         </div>
     </section>
-    <section class="map_main_container">
+    <section class="leftMg w90 flex fld">
         <h2>Recently Added to Library</h2>
         <div class="map-container"> 
             <?php
@@ -85,7 +85,7 @@ $State = "Publics";
             ?>
         </div>
     </section>
-    <section class="libs_main_container">
+    <section class="leftMg w90 flex fld">
         <h2>Most collected software from the Library</h2>
         <p>see current top collected software from the library</p>
         <div class="libs-container">

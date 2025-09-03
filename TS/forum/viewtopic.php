@@ -29,13 +29,13 @@ if (isset($_GET['item']) && isset($_GET['onsearch'])) {
     $requestedItem = "empty";
 };
 $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
-$stmt_check_Topic = $connects->prepare("SELECT * FROM topics WHERE TopicState = ? AND TopicIds = ? ORDER BY TopicTitles ASC;");
+$stmt_check_Topic = $connects->prepare("SELECT * FROM topics WHERE TopicState = ? AND TopicIds = ?;");
 $stmt_check_Topic->bind_param("ss", $State, $topicIds);
 $stmt_check_Topic->execute();
 $result_check_Topic = $stmt_check_Topic->get_result();
 if ($result_check_Topic->num_rows == 1) {
     $value = $result_check_Topic->fetch_assoc();
-    $ids = $value['topicIds'];
+    $TopicIds = $value['topicIds'];
     $Ttitles = $value['topicTitles'];
     $dates = $value['topicDates'];
     $descs = $value['topicContents'];
@@ -52,6 +52,7 @@ if ($result_check_Topic->num_rows == 1) {
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/forum_univ.css">
     <link rel="stylesheet" href="../../styling/topic_internal.css">
+    <link rel="stylesheet" href="../../styling/Mindex.css">
     <title><?php echo $Ttitles;?></title>
 </head>
 <body>
@@ -73,17 +74,17 @@ if ($result_check_Topic->num_rows == 1) {
         <?php
         if (isset($requestedItem) && isset($searchTrigger)) {
         $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE ForumTopics = ? AND ForumTitles LIKE '%$requestedItem%' ORDER BY ForumDates DESC;");
-        $stmt_check_forumtopics->bind_param("s", $Ttitles);
+        $stmt_check_forumtopics->bind_param("s", $TopicIds);
         } else {
         $stmt_check_forumtopics = $connects->prepare("SELECT * FROM forums WHERE ForumTopics = ? ORDER BY ForumDates DESC;");
-        $stmt_check_forumtopics->bind_param("s", $Ttitles);
+        $stmt_check_forumtopics->bind_param("s", $TopicIds);
         };
         $stmt_check_forumtopics->execute();
         $result_check_forumtopics = $stmt_check_forumtopics->get_result();
         if ($result_check_forumtopics->num_rows > 0) {
             $uniqueItem = [];
             while ($value = $result_check_forumtopics->fetch_assoc()) {
-                $ids = $value['ForumIds'];
+                $ids= $value['ForumIds'];
                 $creators = $value['ForumCreator'];
                 $titles = $value['ForumTitles'];
                 $topics = $value['ForumTopics'];

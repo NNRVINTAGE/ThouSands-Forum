@@ -55,7 +55,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     $ids = $value['categoryIds'];
                     $titles = $value['categoryTitles'];
                     if (!in_array($ids, $uniqueItem)) {
-                    $tempCatgArray[$ids] = $titles;
+                        $tempCatgArray[$ids] = $titles;
             ?>
             <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
                 <h2 class="w100p txt-s"><?php echo $titles;?></h2>
@@ -85,7 +85,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     </section>
 <!-- trending software -->
     <section class="leftMg pad-n w79 flex fld gap5">
-        <h2 class="leftMg pad-s-s w100p">Trending releases</h2>
+        <h2 class="leftMg pad-s-s w100p">Trending Releases</h2>
         <div class="pad-s h100p flex gap-s ovh-v ovs-s">
             <div class="posr rightMg vertiMg pad-s h30 r16-9 bg-1 flex fld border-1 gap10 z1">
                 <img src="" alt="" class="posa ins0 wh100p bg-3 z2">

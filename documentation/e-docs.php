@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styling/footer.css">
     <title>CrossGate Documentation</title>
 </head>
-<body class="h100p flex fld gap10 z1">
+<body class="wh100p flex fld gap10 ovh-s ovs-v z1">
     <section class="posf lt0 w20 h100 bg-semiwhite flex fld z15">
         <h2 class="pad-n txt-b border-b">Documentation</h2>
         <div class="pad-n-s pad-st w100p flex fld border-b">
@@ -23,11 +23,11 @@
             <a href="../Library/core/home.php" class="pad-s-s pad-r pad-sb txt-s">Library</a>
         </div>
     </section>
-    <section class="leftMg pad-l w79p flex fld acjc gap-s">
+    <section class="leftMg pad-l w79p h80 flex fld gap-s">
         <div class="pad-n-v w100p flex fld border-b">
             <p class="txt-30">Gateways Documentation</p>
         </div>
-        <div class="pad-s-v leftMg w100p flex fld">
+        <div class="bottomMg pad-s-v leftMg w100p flex fld">
             <h2 class="txt-b">Introduction</h2>
             <p class="txt-n">Gateways is an central hub connecting every ThouSands software and service, to be honest i'm not sure this documentation will get finished or not</p>
         </div>

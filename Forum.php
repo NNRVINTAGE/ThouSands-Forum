@@ -20,6 +20,8 @@ $daState = "Publics";
     <link rel="stylesheet" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/index.css">
+    <!-- <link rel="stylesheet" href="styling/Mindex.css"> -->
+    <link rel="stylesheet" href="styling/footer.css">
     <title>ThouSands Forums</title>
 </head>
 <body>
@@ -44,7 +46,17 @@ $daState = "Publics";
         <h1>ThouSands Forums</h1>
         <h2>Open Source community forum connecting developer sharing work with everyone</h2>
         <div class="linkie-button">
+            <?php
+            if ($isLogged == true) {
+            ?>
             <a href="forum-connect/connect_it.php?state=login" class="Forum">Open Forum Tabs</a>
+            <?php
+            } else {
+            ?>
+            <a href="forum-connect/connect_it.php?state=login" class="Forum">Join a new community</a>
+            <?php
+            };
+            ?>
         </div>
     </section>
     <section class="devlog_main_container">
