@@ -17,7 +17,6 @@ footer {
     width: 40vw;
     height: 75%;
     display: flex;
-    flex-direction: column;
     color: inherit;
 }
 .footer-group:nth-child(2) {
@@ -32,12 +31,6 @@ footer {
 .footer-title {
     font-size: 32px;
 }
-.footer-group:nth-child(2) .footer-title {
-    text-align: right;
-}
-.footer-subtitle {
-    font-size: 20px;
-}
 
 .footer-menu_group {
     margin-top: 10px;
@@ -48,18 +41,22 @@ footer {
     gap: 10px;
 }
 
-.copyright {
+.legal {
     margin: auto 0;
-    width: 100vw;
-    max-width: 100vw;
+    width: 70vw;
+    max-width: 70vw;
     height: max-content;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
 }
-.things {
+.extra {
+    color: inherit;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.extra h2 {
     color: inherit;
     width: 100%;
     height: min-content;

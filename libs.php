@@ -90,7 +90,7 @@ $State = "Publics";
         <p>see current top collected software from the library</p>
         <div class="libs-container">
             <?php
-            $stmt_check_libs = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? ORDER BY cltNumbs DESC LIMIT 8;");
+            $stmt_check_libs = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? ORDER BY cltNumbs DESC LIMIT 10;");
             $stmt_check_libs->bind_param("s", $State);
             $stmt_check_libs->execute();
             $result_check_libs = $stmt_check_libs->get_result();
