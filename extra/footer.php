@@ -7,9 +7,9 @@
         </div>
         <div class="footer-group">
             <a href="https://" class="menu_button">About VODSOL</a>|
-            <a href="ThouSandsGateways.php" class="menu_button sideborder">Gateways</a>|
-            <a href="CrossGate.php" class="menu_button sideborder">CrossGates</a>|
-            <a href="documentation/e-docs.php" class="menu_button sideborder">Documentation</a>|
+            <a href="../../ThouSandsGateways.php" class="menu_button sideborder">Gateways</a>|
+            <a href="../../CrossGate.php" class="menu_button sideborder">CrossGates</a>|
+            <a href="../../documentation/e-docs.php" class="menu_button sideborder">Documentation</a>|
             <a href="https://github.com/NNRVINTAGE" class="menu_button">Github</a>
         </div>
     </footer>

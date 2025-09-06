@@ -6,9 +6,6 @@ if (isset($_SESSION['profileTags'])) {
     $aidis = $_SESSION['profileTags'];
     $name = $_SESSION['username'];
     $UploadEnabled = "yes";
-} else {
-    header ('location: ../../libs.php');
-    exit;
 };
 $SearchEnabled = "yes";
 $page = "home";
@@ -33,14 +30,14 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/footer.css">
     <link rel="stylesheet" href="../../styling/Mindex.css">
     <link rel="stylesheet" href="../../styling/slides.css">
-    <title>CrossGate Library</title>
+    <title>Welcome to ThouSands Gateways</title>
 </head>
 <body class="wh100p bg-2 gap-s flex fld ovh-s ovs-v">
 <!-- the nav of course -->
 <?php include_once '../libsSys/nav.php';?>
 <!-- category on the right of the page -->
     <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s z2">
-        <h2 class="pad-n txt-b border-b semibold">CrossGate Library</h2>
+        <h2 class="pad-n txt-b border-b semibold">Gateways Library</h2>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n semibold">Categories</h2>
             <?php
@@ -98,7 +95,8 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 <!-- software list -->
     <section class="topMg-5 leftMg pad-s-v w79 h100 flex fld" id="softwarelist">
         <?php
-        $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 9;");
+        $tempLibsArr = array();
+        $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
         $stmt_check_software->bind_param("s", $State);
         $stmt_check_software->execute();
         $result_check_software = $stmt_check_software->get_result();
@@ -108,10 +106,23 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                 $ids = $value['libsIds'];
                 $attachs = $value['libsAttachs'];
                 $titles = $value['libsTitles'];
+                $Desc = $value['libsDesc'];
+                $addedDates = $value['addedDates'];
+                $cltNumbs = $value['cltNumbs'];
                 $category = $value['libsCategorys'];
+                $fdrLibs = $value['fdrLibs'];
                 if (!in_array($ids, $uniqueItem)) {
                     $catgList = $tempCatgArray[$category] ?? null;
-        ?>
+                    $tempLibsArr[$ids] = [
+                    "ids"        => "$ids",
+                    "attachs"    => "$attachs",
+                    "titles"     => "$titles",
+                    "category"   => "$category",
+                    "addedDates" => "$addedDates",
+                    "cltNumbs"   => "$cltNumbs",
+                    "fdrLibs"    => "$fdrLibs"
+                ];
+                ?>
         <div class="posr sideMg pad-s w88p flex bg-semiwhite gap5 border-1">
             <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="h10 r16-9 objfit">
             <div class="h100p flex fld">
@@ -122,7 +133,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     } else {
                         echo "NaN";
                     };
-                        ?></p>
+                    ?></p>
                 <a href="view.php?type=clts&ids=<?php echo $titles;?>" class="link-cover">.</a>
             </div>
         </div>
@@ -130,12 +141,16 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                 };
             };
         } else {
-        ?>
+            ?>
             <p class="zthing">No software on the list</p>
         <?php
         };
         ?>
+        <script>
+            console.log('<?php echo json_encode($tempLibsArr);?>');
+        </script>
     </section>
+    <?php include_once '../../footer.php';?>
 <!-- another messages passer -->
     <div id="alertcard">
         <p id="alertcontent"></p>

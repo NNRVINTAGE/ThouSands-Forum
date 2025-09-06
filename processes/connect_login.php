@@ -7,7 +7,7 @@ if (isset($_POST['Login'])) {
     $password = $_POST['password'];
     $errors = [];
     if (empty($username)) {
-        $errors = "Username empty, wtf";
+        $errors = "Username empty, why?";
         $_SESSION['corsmsg'] = $errors;
     }
     if (empty($password)) {
@@ -17,7 +17,7 @@ if (isset($_POST['Login'])) {
     if (empty($errors)) {
         $stmt_check_username = $connects->prepare("SELECT * FROM user WHERE username = ?");
         $stmt_check_username->bind_param("s", $username);
-        $stmt_check_username->execute();    
+        $stmt_check_username->execute();
         $result_check_username = $stmt_check_username->get_result();
         if ($result_check_username->num_rows == 1) {
 

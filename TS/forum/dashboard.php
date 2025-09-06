@@ -33,6 +33,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <link rel="stylesheet" href="../../styling/connect_univ.css">
     <link rel="stylesheet" href="../../styling/connect_forms.css">
     <link rel="stylesheet" href="../../styling/Mindex.css">
+    <link rel="stylesheet" href="../../styling/footer.css">
     <title>Dashboard</title>
 </head>
 <body class="container_again">
@@ -42,9 +43,9 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <dialog id="add-dialog">
         <div class="dialog-nav"><h2>Add New Forum</h2><p onclick="SetDialog('add')">X</p></div>
         <form class="univ-form" action="../component/post_out.php" method="post" enctype="multipart/form-data">
-            <div class="special-form-input">
-                <img id="prev">
-                <input style="margin: 0 auto;" type="file" name="file" accept="image/*" onchange="loadFile(event)">
+            <div class="special-form-input posr r16-9">
+                <img class="posr wh100p" id="prevs">
+                <input class="posa ins0 wh100p txtc" type="file" name="file" accept="image/*" onchange="loadFiles(event)">
             </div>
             <div class="form-input-container">
                 <div class="form-input-row">
@@ -230,7 +231,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             }
         } else {
         ?>
-            <p class="unknown">No forum got found, something wrong in there</p>
+            <p class="unknown">No forum found, got something wrong in there</p>
         <?php
         };
         ?>
@@ -240,6 +241,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>
     </div>
+    <?php include_once '../../extra/footer.php';?>
     <script src="../../scriptstuff/script.js"></script>
     <script src="../../scriptstuff/alert.js"></script>
     <?php

@@ -33,7 +33,7 @@ if (isset($_SESSION['profileTags'])) {
             };
             $stmt_cmtPost->close();
         } else if ($initReq === "Post") {
-            $rnum = random_int(10000000, 9897989798);
+            $rnum = random_int(100000, 989798);
             $rword = getRandomWord();
             $FoIds = $rnum . $rword;
             $Fcreators = $aidis;

@@ -24,7 +24,7 @@ $State = "publics";
     <link rel="stylesheet" href="../../styling/footer.css">
     <title>Management Dashboard</title>
 </head>
-<body class="wh100 flex fld bg-2 gap10 z1">
+<body class="wh100p flex fld bg-2 gap10 z1">
     <section class="posf lt0 w20 h100 bg-semiwhite flex fld z15">
         <h2 class="pad-n txt-b border-b">Management Tab</h2>
         <div class="pad-n-s pad-s-v w100p flex fld border-b">
@@ -72,7 +72,7 @@ $State = "publics";
             <div class="sideMg w100p flex">
                 <button onclick="" class="autoMg pad-s w40p txt-s txtc bg-blue points z4">View</button>
                 <button onclick="SetDialog('edit'); reloadFile('../libsImg/<?php echo $attachs;?>'); LoadPublishs(this);" class="autoMg pad-s w40p txt-s txtc bg-red points z4" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $categorys;?>">Edit</button>
-                <button onclick="SetDialog('update');" class="autoMg pad-s w40p txt-s txtc bg-green points z4">Archive</button>
+                <button onclick="SetDialog('update'); LoadPublishtoArchive('../libsImg/<?php echo $attachs;?>', this);" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $categorys;?>" class="autoMg pad-s w40p txt-s txtc bg-green points z4">Archive</button>
             </div>
         </div>
     <?php
@@ -90,9 +90,9 @@ $State = "publics";
         <dialog id="add-dialog" class="posr w100p h80 flex fld acjc bg-semiwhite">
             <div class="posa lt0 w100p flex"><h2 class="rightMg pad-s txt-b">Add New Software/Game</h2><p class="pad-s-v pad-n-s txt-b red-hover" onclick="SetDialog('add')">X</p></div>
             <form class="w100p flex flex-r wrap" action="../component/post_out.php" method="post" enctype="multipart/form-data">
-                <div class="special-form-input w50p flex fld acjc gap5">
-                    <img id="prev" class="icon-b sideMg">
-                    <input class="sideMg" type="file" name="file" accept="image/*" onchange="loadFile(event)" required>
+                <div class="posr r16-9 w50p flex fld acjc gap5">
+                    <img id="prev" class="posr sideMg wh100p objfit">
+                    <input class="posa ins0 wh100p txtc" type="file" name="file" accept="image/*" onchange="loadFile(event)" required>
                 </div>
                 <div class="form-input-container pad-s-v w50p flex fld gap5">
                     <div class="form-input-row sideMg w88p flex fld">
@@ -136,9 +136,9 @@ $State = "publics";
         <dialog id="edit-dialog" class="posr w100p h80 flex fld acjc bg-semiwhite">
             <div class="posa lt0 w100p flex"><h2 class="rightMg pad-s txt-b">Edit Publish</h2><p class="pad-s-v pad-n-s txt-b red-hover" onclick="SetDialog('edit')">X</p></div>
             <form class="w100p flex flex-r wrap" name="EDITSTUFF" action="../component/post_out.php" method="post" enctype="multipart/form-data">
-                <div class="special-form-input w50p flex fld acjc gap5">
-                    <img id="prevs" name="prevs" class="icon-b sideMg">
-                    <input class="sideMg" type="file" name="file" accept="image/*" onchange="loadFiles(event)" required>
+                <div class="posr r16-9 w50p flex fld acjc gap5">
+                    <img id="prevs" name="prevs" class="posr sideMg wh100p objfit">
+                    <input class="posa ins0 wh100p txtc" type="file" name="file" accept="image/*" onchange="loadFiles(event)" required>
                 </div>
                 <div class="form-input-container pad-s-v w50p flex fld gap5">
                     <div class="form-input-row sideMg w88p flex fld">
@@ -181,10 +181,10 @@ $State = "publics";
     <!-- the archiving publish dialog -->
         <dialog id="update-dialog" class="posf ins0 wh100 flex fld acjc bg-semiwhite z15">
             <div class="posa lt0 w100p flex"><h2 class="rightMg pad-s txt-b">Archive it?</h2><p class="pad-s-v pad-n-s txt-b red-hover" onclick="SetDialog('update')">X</p></div>
-            <form class="w100p flex flex-r wrap" name="EDITSTUFF" action="../component/post_out.php" method="post" enctype="multipart/form-data">
-                <div class="special-form-input w50p flex fld acjc gap5">
-                    <img id="prev" name="prev" class="icon-b sideMg">
-                    <input class="sideMg" type="file" name="file" accept="image/*" onchange="loadFile(event)" required>
+            <form class="w100p flex flex-r wrap" name="ARCHIVES" action="../component/post_out.php" method="post" enctype="multipart/form-data">
+                <div class="posr r16-9 w50p flex fld acjc gap5">
+                    <img id="previ" class="posr sideMg wh100p objfit">
+                    <input class="posa ins0 wh100p txtc" type="file" name="file" accept="image/*" onchange="loadAFile(event)" required>
                 </div>
                 <div class="form-input-container pad-s-v w50p flex fld gap5">
                     <div class="form-input-row sideMg w88p flex fld">
@@ -225,8 +225,8 @@ $State = "publics";
             </form>
         </dialog>
     </section>
-
-    <script src="../libsSys/mng7.js"></script>
+    <section class="h30"></section>
+    <?php include_once '../../extra/footer.php';?>
     <script src="../../scriptstuff/script.js"></script>
 </body>
 </html>

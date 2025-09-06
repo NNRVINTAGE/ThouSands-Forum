@@ -17,8 +17,8 @@ $State = "Publics";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Library/libsImg/libs.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
-    <link rel="stylesheet" href="styling/Mindex.css">
     <link rel="stylesheet" href="styling/libs.css">
+    <link rel="stylesheet" href="styling/Mindex.css">
     <link rel="stylesheet" href="styling/footer.css">
     <title>ThouSands Library</title>
 </head>

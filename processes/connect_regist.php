@@ -3,18 +3,24 @@ require_once 'database.php';
 $errors = '';
 
 if (isset($_POST['Register'])) {
+    function getRandomWord($len = 10) {
+        $word = array_merge(range('a', 'z'), range('A', 'Z'));
+        shuffle($word);
+        return substr(implode($word), 0, $len);
+    }
     $profileTags = $_POST['tags'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $Email = $_POST['email'];
     $errors = [];
-    if (empty($profileTags)) {
-        $errors[] = "nobody can see you without your profile tags";
-        $_SESSION['corsmsg'] = $errors;
-    }
     if (empty($username)) {
         $errors[] = "Username empty dummy";
         $_SESSION['corsmsg'] = $errors;
+    }
+    if (empty($profileTags)) {
+        $rnum = random_int(1000, 9897);
+        $rword = getRandomWord();
+        $profileTags = $username . "_" . $rnum . $rword . $rnum;
     }
     if (empty($password)) {
         $errors[] = "You can't have an account without using password";

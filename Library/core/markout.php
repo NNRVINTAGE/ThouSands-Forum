@@ -127,6 +127,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
         <p id="alertcontent"></p>
         <div id="borderanimate"></div>
     </div>
+    <?php include_once '../../extra/footer.php';?>
     <script src="../../scriptstuff/script.js"></script>
     <script src="../libsSys/IntakeSFT.js"></script>
     <script src="../../scriptstuff/alert.js"></script>

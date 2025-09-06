@@ -23,7 +23,7 @@
     --monochrome1: rgb(121, 128, 133);
     --monochrome2: rgb(173, 173, 173);
     --gradibg: linear-gradient(to bottom, var(--monochrome2), var(--monochrome1));
-    --footbg: black;
+    --footbg: rgb(22, 25, 30);
     --alttext: rgb(0, 0, 0);
     --graditext: linear-gradient(to right, rgb(48, 204, 0), rgb(224, 228, 27), gold);
     --LibsBG1 : rgb(11, 140, 226);

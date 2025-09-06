@@ -99,7 +99,13 @@ var loadFile = function(event) {
     }
 };
 
-
+var loadAFiles = function(event) {
+    var output = document.getElementById('previ');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src)
+    }
+};
 var loadFiles = function(event) {
     var output = document.getElementById('prevs');
     output.src = URL.createObjectURL(event.target.files[0]);
@@ -107,14 +113,28 @@ var loadFiles = function(event) {
       URL.revokeObjectURL(output.src)
     }
 };
+
 function reloadFile(imgObj) {
     var output = document.getElementById('prevs');
     output.src = imgObj;
     output.onload = function() {
       URL.revokeObjectURL(output.src)
     }
-}
+};
 
+function LoadPublishtoArchive(imgObj, ReqstData) {
+    var output = document.getElementById('previ');
+    output.src = imgObj;
+    output.onload = function() {
+      URL.revokeObjectURL(output.src)
+    }
+    const form = document.forms.ARCHIVES;
+    const values = ReqstData.dataset;
+    Object.keys(values).forEach((key) => {
+        if (form[key]) 
+            form[key].value = values[key];
+    });
+};
 function LoadPublishs(ReqstData) {
     const form = document.forms.EDITSTUFF;
     const values = ReqstData.dataset;
