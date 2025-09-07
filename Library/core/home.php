@@ -17,6 +17,38 @@ if (isset($_GET['item'])) {
     $requestedItem = "empty";
 };
 $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+
+$tempLibsArr = array();
+$stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
+$stmt_check_software->bind_param("s", $State);
+$stmt_check_software->execute();
+$result_check_software = $stmt_check_software->get_result();
+if ($result_check_software->num_rows > 0) {
+    $uniqueItem = [];
+    while ($value = $result_check_software->fetch_assoc()) {
+        $ids = $value['libsIds'];
+        $attachs = $value['libsAttachs'];
+        $titles = $value['libsTitles'];
+        $Desc = $value['libsDesc'];
+        $addedDates = $value['addedDates'];
+        $cltNumbs = $value['cltNumbs'];
+        $category = $value['libsCategorys'];
+        $fdrLibs = $value['fdrLibs'];
+        if (!in_array($ids, $uniqueItem)) {
+            $catgList = $tempCatgArray[$category] ?? null;
+            $tempLibsArr[$ids] = [
+            "libsIds"        => "$ids",
+            "libsAttachs"    => "$attachs",
+            "libsTitles"     => "$titles",
+            "libsDesc"       => "$Desc",
+            "libsCategorys"  => "$category",
+            "addedDates"     => "$addedDates",
+            "cltNumbs"       =>  $cltNumbs,
+            "fdrLibs"        => "$fdrLibs"
+            ];
+        };
+    };
+};
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +68,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 <!-- the nav of course -->
 <?php include_once '../libsSys/nav.php';?>
 <!-- category on the right of the page -->
-    <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s z2">
+    <section class="posa lt0 pad-s w20 h100p flex fld gap-s z2">
         <h2 class="pad-n txt-b border-b semibold">Gateways Library</h2>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n semibold">Categories</h2>
@@ -74,7 +106,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     </section>
 <!-- banner stuff -->
     <section class="posr leftMg pad-sl w79 h60 flex">
-        <div class="posa t0 r0 wh100p flex trs1s" id="slides">
+        <div class="posa t0 r0 wh100p flex" id="slides">
 
         </div>
         <button class="prev">&#10094;</button>
@@ -82,47 +114,48 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     </section>
 <!-- trending software -->
     <section class="leftMg pad-n w79 flex fld gap5">
-        <h2 class="leftMg pad-s-s w100p">Trending Releases</h2>
-        <div class="pad-s h100p flex gap-s ovh-v ovs-s">
-            <div class="posr rightMg vertiMg pad-s h30 r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">games title</h2>
-                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
+        <h2 class="leftMg pad-s-s w100p">Popular Releases</h2>
+        <div class="pad-s h100p flex gap5 ovh-v ovs-s">
+        <?php
+        $tempLibsArrCopy = $tempLibsArr;
+        uasort($tempLibsArrCopy, function ($a, $b) {
+            return $b['cltNumbs'] <=> $a['cltNumbs'];
+        });
+        foreach ($tempLibsArrCopy as $id => $value) {
+            $ids = $value['libsIds'];
+            $attachs = $value['libsAttachs'];
+            $titles = $value['libsTitles'];
+            $Desc = $value['libsDesc'];
+            $addedDates = $value['addedDates'];
+            $cltNumbs = $value['cltNumbs'];
+            $category = $value['libsCategorys'];
+            $fdrLibs = $value['fdrLibs'];
+            $catgList = $tempCatgArray[$category] ?? null;
+        ?>
+            <div class="posr vertiMg pad-s h30 r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3"><?php echo $titles;?></h2>
+                <a href="view.php?type=clts&ids=<?php echo $titles;?>" class="link-cover">.</a>
             </div>
+        <?php
+        };
+        ?>
         </div>
     </section>
 <!-- software list -->
     <section class="topMg-5 leftMg pad-s-v w79 h100 flex fld" id="softwarelist">
         <?php
-        $tempLibsArr = array();
-        $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
-        $stmt_check_software->bind_param("s", $State);
-        $stmt_check_software->execute();
-        $result_check_software = $stmt_check_software->get_result();
-        if ($result_check_software->num_rows > 0) {
-            $uniqueItem = [];
-            while ($value = $result_check_software->fetch_assoc()) {
-                $ids = $value['libsIds'];
-                $attachs = $value['libsAttachs'];
-                $titles = $value['libsTitles'];
-                $Desc = $value['libsDesc'];
-                $addedDates = $value['addedDates'];
-                $cltNumbs = $value['cltNumbs'];
-                $category = $value['libsCategorys'];
-                $fdrLibs = $value['fdrLibs'];
-                if (!in_array($ids, $uniqueItem)) {
-                    $catgList = $tempCatgArray[$category] ?? null;
-                    $tempLibsArr[$ids] = [
-                    "ids"        => "$ids",
-                    "attachs"    => "$attachs",
-                    "titles"     => "$titles",
-                    "category"   => "$category",
-                    "addedDates" => "$addedDates",
-                    "cltNumbs"   => "$cltNumbs",
-                    "fdrLibs"    => "$fdrLibs"
-                ];
-                ?>
+        foreach ($tempLibsArr as $id => $value) {
+            $ids = $value['libsIds'];
+            $attachs = $value['libsAttachs'];
+            $titles = $value['libsTitles'];
+            $Desc = $value['libsDesc'];
+            $addedDates = $value['addedDates'];
+            $cltNumbs = $value['cltNumbs'];
+            $category = $value['libsCategorys'];
+            $fdrLibs = $value['fdrLibs'];
+            $catgList = $tempCatgArray[$category] ?? null;
+            ?>
         <div class="posr sideMg pad-s w88p flex bg-semiwhite gap5 border-1">
             <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="h10 r16-9 objfit">
             <div class="h100p flex fld">
@@ -136,19 +169,13 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
                     ?></p>
                 <a href="view.php?type=clts&ids=<?php echo $titles;?>" class="link-cover">.</a>
             </div>
+            <div class="leftMg h100p flex fld">
+                <p class="topMg leftMg txt-s c-semiwhite"><?php echo $addedDates;?></p>
+            </div>
         </div>
-        <?php
-                };
-            };
-        } else {
-            ?>
-            <p class="zthing">No software on the list</p>
         <?php
         };
         ?>
-        <script>
-            console.log('<?php echo json_encode($tempLibsArr);?>');
-        </script>
     </section>
     <?php include_once '../../footer.php';?>
 <!-- another messages passer -->
