@@ -18,7 +18,7 @@ $stmt_check_software->execute();
 $result_check_software = $stmt_check_software->get_result();
 if ($result_check_software->num_rows > 0) {
     $uniqueItem = [];
-    while ($value = $result_check_software->fetch_assoc()) {
+    while ($value = $result_check_software->fetch_assoc()) {/ 
         $ids = $value['libsIds'];
         $attachs = $value['libsAttachs'];
         $titles = $value['libsTitles'];

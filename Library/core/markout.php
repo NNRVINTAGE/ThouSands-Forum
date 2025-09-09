@@ -15,12 +15,43 @@ $SearchEnabled = "yes";
 $page = "markout";
 $State = "publics";
 $requestedItem = "empty";
-if (isset($_GET['item'])) {
+if (isset($_GET['item'])) {/
     $requestedItem = $_GET['item'];
 } else {
     $requestedItem = "empty";
 };
 $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
+$tempLibsArr = array();
+$stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
+$stmt_check_software->bind_param("s", $State);
+$stmt_check_software->execute();
+$result_check_software = $stmt_check_software->get_result();
+if ($result_check_software->num_rows > 0) {
+    $uniqueItem = [];
+    while ($value = $result_check_software->fetch_assoc()) {
+        $ids = $value['libsIds'];
+        $attachs = $value['libsAttachs'];
+        $titles = $value['libsTitles'];
+        $Desc = $value['libsDesc'];
+        $addedDates = $value['addedDates'];
+        $cltNumbs = $value['cltNumbs'];
+        $category = $value['libsCategorys'];
+        $fdrLibs = $value['fdrLibs'];
+        if (!in_array($ids, $uniqueItem)) {
+            $catgList = $tempCatgArray[$category] ?? null;
+            $tempLibsArr[$ids] = [
+            "libsIds"        => "$ids",
+            "libsAttachs"    => "$attachs",
+            "libsTitles"     => "$titles",
+            "libsDesc"       => "$Desc",
+            "libsCategorys"  => "$category",
+            "addedDates"     => "$addedDates",
+            "cltNumbs"       =>  $cltNumbs,
+            "fdrLibs"        => "$fdrLibs"
+            ];
+        };
+    };
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
