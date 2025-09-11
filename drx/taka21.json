@@ -1,10 +1,21 @@
 {
     "profileTags": "taka21",
-    "DeX1": {
-        "Hours": "5252",
-        "lastLog": "9-1-2025 10:05",
-        "achieved": {
-
+    "marked": {
+        "0": {
+            "libsIds": "232de",
+            "Hours": 5252,
+            "lastLog": "9-1-2025 10:15",
+            "achieved": {
+                "marked": "8-9-2025"
+            }
+        },
+        "1": {
+            "libsIds": "TGCrossGate",
+            "Hours": 2,
+            "lastLog": "9-1-2025 10:10",
+            "achieved": {
+                "marked": "8-9-2025"
+            }
         }
     }
 }

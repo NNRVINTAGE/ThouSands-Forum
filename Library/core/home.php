@@ -35,7 +35,6 @@ if ($result_check_software->num_rows > 0) {
         $category = $value['libsCategorys'];
         $fdrLibs = $value['fdrLibs'];
         if (!in_array($ids, $uniqueItem)) {
-            $catgList = $tempCatgArray[$category] ?? null;
             $tempLibsArr[$ids] = [
             "libsIds"        => "$ids",
             "libsAttachs"    => "$attachs",

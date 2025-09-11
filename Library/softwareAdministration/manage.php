@@ -12,13 +12,13 @@ if (isset($_SESSION['profileTags'])) {
 };
 $State = "publics";
 $tempLibsArr = array();
-$stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsState = ? LIMIT 10;");
-$stmt_check_software->bind_param("s", $State);
+$stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsPublisher = ? AND libsState = ? ;");
+$stmt_check_software->bind_param("ss", $aidis, $State);
 $stmt_check_software->execute();
 $result_check_software = $stmt_check_software->get_result();
 if ($result_check_software->num_rows > 0) {
     $uniqueItem = [];
-    while ($value = $result_check_software->fetch_assoc()) {/ 
+    while ($value = $result_check_software->fetch_assoc()) {
         $ids = $value['libsIds'];
         $attachs = $value['libsAttachs'];
         $titles = $value['libsTitles'];
@@ -28,7 +28,6 @@ if ($result_check_software->num_rows > 0) {
         $category = $value['libsCategorys'];
         $fdrLibs = $value['fdrLibs'];
         if (!in_array($ids, $uniqueItem)) {
-            $catgList = $tempCatgArray[$category] ?? null;
             $tempLibsArr[$ids] = [
             "libsIds"        => "$ids",
             "libsAttachs"    => "$attachs",
@@ -82,36 +81,34 @@ if ($result_check_software->num_rows > 0) {
     </section>
     <section class="leftMg pad-s-v w79p flex gap-s z2">
     <?php
+        ?>
+    <?php
     // the published software
-    $stmt_check_software = $connects->prepare("SELECT * FROM libslist WHERE libsPublisher = ? AND libsState = ?;");
-    $stmt_check_software->bind_param("ss", $aidis, $State);
-    $stmt_check_software->execute();
-    $result_check_software = $stmt_check_software->get_result();
-    if ($result_check_software->num_rows > 0) {
-        $uniqueItem = [];
-        while ($value = $result_check_software->fetch_assoc()) {
+    if (!empty($tempLibsArr)) {
+        foreach ($tempLibsArr as $id => $value) {
             $ids = $value['libsIds'];
             $attachs = $value['libsAttachs'];
             $titles = $value['libsTitles'];
             $desc = $value['libsDesc'];
-            $categorys = $value['libsCategorys'];
-            if (!in_array($ids, $uniqueItem)) {
+            $addedDates = $value['addedDates'];
+            $cltNumbs = $value['cltNumbs'];
+            $category = $value['libsCategorys'];
+            $fdrLibs = $value['fdrLibs'];
     ?>
-        <div class="rightMg w30p flex fld bg-5 bora-s gap-s">
+        <div class="w30p flex fld bg-5 bora-s gap-s">
             <img src="../libsImg/<?php echo $attachs;?>" alt="" class="w100p r16-9">
             <h2 class="pad-s txt-n"><?php echo $titles;?></h2>
             <div class="sideMg w100p flex">
                 <button onclick="" class="autoMg pad-s w40p txt-s txtc bg-blue points z4">View</button>
-                <button onclick="SetDialog('edit'); reloadFile('../libsImg/<?php echo $attachs;?>'); LoadPublishs(this);" class="autoMg pad-s w40p txt-s txtc bg-red points z4" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $categorys;?>">Edit</button>
-                <button onclick="SetDialog('update'); LoadPublishtoArchive('../libsImg/<?php echo $attachs;?>', this);" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $categorys;?>" class="autoMg pad-s w40p txt-s txtc bg-green points z4">Archive</button>
+                <button onclick="SetDialog('edit'); reloadFile('../libsImg/<?php echo $attachs;?>'); LoadPublishs(this);" class="autoMg pad-s w40p txt-s txtc bg-red points z4" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $category;?>">Edit</button>
+                <button onclick="SetDialog('update'); LoadPublishtoArchive('../libsImg/<?php echo $attachs;?>', this);" data-titles="<?php echo $titles;?>" data-desc="<?php echo $desc;?>" data-categoryIds="<?php echo $category;?>" class="autoMg pad-s w40p txt-s txtc bg-green points z4">Archive</button>
             </div>
         </div>
     <?php
-            };
         };
     } else {
     ?>
-        <p class="w100p txtn txt-n">Publish your software/games now!</p>
+        <p class="pad-b-v w100p txtc txt-n">Publish your software/games now!</p>
     <?php
     };
     ?>

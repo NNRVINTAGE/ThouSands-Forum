@@ -15,7 +15,7 @@ $SearchEnabled = "yes";
 $page = "markout";
 $State = "publics";
 $requestedItem = "empty";
-if (isset($_GET['item'])) {/
+if (isset($_GET['item'])) {
     $requestedItem = $_GET['item'];
 } else {
     $requestedItem = "empty";
@@ -38,7 +38,6 @@ if ($result_check_software->num_rows > 0) {
         $category = $value['libsCategorys'];
         $fdrLibs = $value['fdrLibs'];
         if (!in_array($ids, $uniqueItem)) {
-            $catgList = $tempCatgArray[$category] ?? null;
             $tempLibsArr[$ids] = [
             "libsIds"        => "$ids",
             "libsAttachs"    => "$attachs",
@@ -52,6 +51,24 @@ if ($result_check_software->num_rows > 0) {
         };
     };
 };
+$retrieve = "../../drx/$aidis.json";
+$jsonData = file_get_contents($retrieve);
+$data = json_decode($jsonData, true);
+$profileTag = $data['profileTags'];
+$markedData = $data['marked'];
+$marked = [];
+foreach ($markedData as $markedIndex => $info) {
+    $marked[$markedIndex] = [
+        "libsIds"  => $info['libsIds'],
+        "Hours"    => (int)$info['Hours'],
+        "lastLog"  => $info['lastLog'],
+    ];
+}
+$usrDatTemp[] = [
+    "profileTags" => $profileTag,
+    "marked"      => $marked
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,86 +86,60 @@ if ($result_check_software->num_rows > 0) {
 <?php include_once '../libsSys/nav.php';?>
     <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s">
         <h2 class="pad-n txt-b border-b">MarkOut</h2>
-        <div class="pad-n-s pad-s-v w100p flex fld border-b">
-            <h2 class="pad-sb w100p txt-s">Search</h2>
-        </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">Titles</h2>
-            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s">another game</h2>
+            <?php
+            foreach ($tempLibsArr as $id => $value) {
+                $attachs = $value['libsAttachs'];
+                $titles = $value['libsTitles'];
+                ?>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex">
+                <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="vertiMg rightMg-s10 icon-rs objfit">
+                <h2 class="w100p txt-s"><?php echo $titles;?></h2>
                 <a href="view.php?idSft=" class="link-cover">.</a>
             </div>
-            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s">games title</h2>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s">nice</h2>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s">software stuff</h2>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s">tf3</h2>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
+            <?php
+            };
+            ?>
         </div>
     </section>
     <section class="leftMg pad-s w79 h40 bg-4 flex fld">
-        <h2 class="leftMg w100p">recently used</h2>
-        <div class="h100p flex gap-s ovs">
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">games title</h2>
-                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
+        <h2 class="leftMg w100p">recently opened</h2>
+        <div class="h100p flex gap-s ovs-s ovh-v">
+        <?php
+        $tempCopy = $usrDatTemp;
+        uasort($tempCopy[0]['marked'], function ($b, $a) {
+            $timeA = strtotime($a['lastLog']);
+            $timeB = strtotime($b['lastLog']);
+            return $timeB <=> $timeA;
+        });
+        foreach ($tempCopy[0]['marked'] as $id => $value) {
+            $LibIds = $value['libsIds'];
+            $hour = $value['Hours'];
+            foreach ($tempLibsArr as $lid => $values) {
+                if ($LibIds === $ids) {
+                    $ids = $values['libsIds'];
+                    $titles = $values['libsTitles'];
+                    $attachs = $values['libsAttachs'];
+                }
+            }
+        ?>
+            <div class="posr vertiMg pad-s h30 r16-9 bg-1 flex fld border-1 gap10 z1">
+                <img src="../libsimg/<?php echo $attachs;?>" alt="<?php echo $attachs;?>" class="posa ins0 wh100p bg-3 z2">
+                <h2 class="topMg rightMg txt-s z3"><?php echo $titles;?></h2>
+                <p class="rightMg txt-s z3">Total time: <?php echo $hour;?> hrs</p>
+                <a href="view.php?type=clts&ids=<?php echo $titles;?>" class="link-cover">.</a>
             </div>
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">software stuff</h2>
-                <p class="rightMg txt-s z3">Total time: 1.6 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">another game</h2>
-                <p class="rightMg txt-s z3">Total time: 9.6 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">nice</h2>
-                <p class="rightMg txt-s z3">Total time: 69.6 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">title</h2>
-                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">title</h2>
-                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-            <div class="posr rightMg vertiMg pad-s h80p r16-9 bg-1 flex fld border-1 gap10 z1">
-                <img src="" alt="" class="posa ins0 wh100p bg-3 z2">
-                <h2 class="topMg rightMg txt-s z3">title</h2>
-                <p class="rightMg txt-s z3">Total time: 3.2 hrs</p>
-                <a href="view.php?idSft=" class="link-cover">.</a>
-            </div>
-        </div>
+        <?php
+        };
+        ?>
     </section>
     <section class="leftMg pad-s w79 h40 flex wrap gap10">
         <h2 class="leftMg w100p">Publisher Announcement</h2>
         <div class="posr rightMg vertiMg pad-s w30 r16-9 bg-1 flex fld border-2 z1">
             <img src="" alt="" class="posa ins0 r16-9 wh100p bg-3 z2">
             <h2 class="topMg txt-n z3">Recent Publisher Announcement</h2>
-            <p class="txt-s z3">the first few line of the announcement in there</p>
+            <p class="txt-s z3">the first few line cut of the announcement in there</p>
             <a href="../../TS/forum/viewtopic.php?topicIds=" class="link-cover">.</a>
         </div>
     </section>

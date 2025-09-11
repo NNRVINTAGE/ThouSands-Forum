@@ -221,6 +221,14 @@ span {
 .pad-b {
     padding: 5vw;
 }
+.pad-b-s {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.pad-b-v {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
 .autoMg {
     margin: auto;
@@ -255,6 +263,19 @@ span {
 }
 .bottomMg-5 {
     margin-bottom: 5vh;
+}
+
+.topMg-s10 {
+    margin-top: 10px;
+}
+.leftMg-s10 {
+    margin-left: 10px;
+}
+.rightMg-s10 {
+    margin-right: 10px;
+}
+.bottomMg-s10 {
+    margin-bottom: 5px;
 }
 
 /* uni size */
@@ -469,6 +490,10 @@ span {
 }
 
 /* uni icon */
+.icon-rs {
+    height: 14px;
+    aspect-ratio: 1/1;
+}
 .icon-s {
     width: 10vh;
     height: 10vh;
