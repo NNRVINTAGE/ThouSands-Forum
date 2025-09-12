@@ -163,7 +163,7 @@ if ($result_check_software->num_rows > 0) {
                     if (isset($catgList)) {
                         echo $catgList;
                     } else {
-                        echo "NaN";
+                        echo "Undefined";
                     };
                     ?></p>
                 <a href="view.php?type=clts&ids=<?php echo $titles;?>" class="link-cover">.</a>
