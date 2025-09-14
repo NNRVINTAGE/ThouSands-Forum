@@ -136,22 +136,9 @@ $usrDatTemp[] = [
     </section>
     <section class="leftMg pad-s w79 h40 flex wrap gap10">
         <?php
-        $tempCopy = $usrDatTemp;
-        uasort($tempCopy[0]['marked'], function ($b, $a) {
-            $timeA = strtotime($a['lastLog']);
-            $timeB = strtotime($b['lastLog']);
-            return $timeB <=> $timeA;
-        });
-        foreach ($tempCopy[0]['marked'] as $id => $value) {
-            $LibIds = $value['libsIds'];
-            $hour = $value['Hours'];
-            foreach ($tempLibsArr as $lid => $values) {
-                if ($LibIds === $ids) {
-                    $ids = $values['libsIds'];
-                    $titles = $values['libsTitles'];
-                    $attachs = $values['libsAttachs'];
-                }
-            }
+        foreach ($tempForums as $id => $value) {
+            $ForumIds = $value['ForumIds'];
+            $ForumTitles = $value['ForumTitles'];
         ?>
         <h2 class="leftMg w100p">Publisher Announcement</h2>
         <div class="posr rightMg vertiMg pad-s w30 r16-9 bg-1 flex fld border-2 z1">
