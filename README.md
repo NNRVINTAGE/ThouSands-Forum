@@ -31,7 +31,4 @@ Any help is greatly appreciated but currently the project is in need of rework a
 Cuz i hate myself, halfway doing the project I realized that these project needed rework and migration
 
 ## Credits
-much of part in this readme were inspired from [HCB](https://github.com/hackclub/hcb) readme
-
-<!-- the next shores report -->
-I started this project now that the website are ready and in this i did a few test and put together this world to later soon added with the multiplayer system, there's a few I didn't record in but you can play this yourself in the soon alpha release 15 sept UTC-11:00 so make sure to checks out my website too
+Part of this readme were inspired from [HCB](https://github.com/hackclub/hcb) readme
