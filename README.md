@@ -27,8 +27,5 @@ Acting as the central platform connecting every Project ThouSands Software & Uti
 ## Contributing
 Any help is greatly appreciated but currently the project is in need of rework after the Operational Beta release as this is more of a proof of concept for the idea itself
 
-## Why did i make this in php?
-Cuz i hate myself, halfway doing the project I realized that these project needed rework and migration
-
 ## Credits
 Part of this readme were inspired from [HCB](https://github.com/hackclub/hcb) readme
