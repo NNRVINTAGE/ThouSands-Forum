@@ -21,11 +21,19 @@ Acting as the central platform connecting every Project ThouSands Software & Uti
 - [Table of Contents](#table-of-contents)
 - [Quick start](#Quick-start)
 - [Contributing](#Contributing)
-- [Why did i make this in php?](#Why-did-i-make-this-in-php?)
 - [Documentation](https://github.com/NNRVINTAGE/ThouSands-Forum/blob/main/dev-docs/)
 
+## Quick start
+in your local machine it is recommended for you to have these in your enviroment
+
+MySQL something
+PHP 8.2.2
+
+if you'd have installed them import the db.sql to your MySQL database
+and then open up the `index.php` file on your browser to check if the site are working
+
 ## Contributing
-Any help is greatly appreciated but currently the project is in need of rework after the Operational Beta release as this is more of a proof of concept for the idea itself
+Any help is greatly appreciated but currently the project is in need of a rework and migration after the Operational Beta release as this is more of a proof of concept for the idea itself
 
 ## Credits
 Part of this readme were inspired from [HCB](https://github.com/hackclub/hcb) readme
