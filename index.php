@@ -1,4 +1,4 @@
-<?php
+<?x     php
 require_once "processes/database.php";
 $errors = array();
 session_start();

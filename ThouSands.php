@@ -7,8 +7,6 @@ if (isset($_SESSION['profileTags'])) {
 } else {
     $isLogged = false;
 };
-$raceds = "{[FATAL_ERR:0_]}";
-$raceds = htmlspecialchars($raceds, ENT_QUOTES, 'UTF-8');
 $daState = "Publics";
 ?>
 
@@ -52,8 +50,7 @@ $daState = "Publics";
     <section>
         <h2>About Project ThouSands</h2>
         <P>In a place where the endless desert and sea waves are all the eyes can see,
-            <br>Multiple tunnels opening appeared out of nowhere filled with frequent distant roar from the depth.
-            <br>from the past have written the sounds belong to an archaic entitys in whichsa sealed beneath by colonist to ensure it's genocidal act never repeat again but every since that time the entity start to break the seal and the faint roar becoming more louder,
+            <br>below the Czyn Colony, frequent faint roar from the distant depth followed by multiple quakes
             <br>Every journey will changes the fates and shape the world whichever direction it will be lead into
         </P>
         <p>
