@@ -50,11 +50,11 @@ $daState = "Publics";
     <section>
         <h2>About Project ThouSands</h2>
         <P>In a place where the endless desert and sea waves are all the eyes can see,
-            <br>below the Czyn Colony, frequent faint roar from the distant depth followed by multiple quakes
-            <br>Every journey will changes the fates and shape the world whichever direction it will be lead into
+            <br>beneath the colony, frequent faint roar from the distant depth followed with ever increasing quakes
+            <br>Uncover what hidden below with every journey will changes the fates and shape the world whichever direction it will be lead into
         </P>
         <p>
-            ThouSands Shores is part of the Project <span>ThouSands</span> series, in which you and the other player can shape the world as the time progress.
+            ThouSands Shores is part of the Project <span>ThouSands</span> series, in which you and the other player can shape the world and change the outcome of every calamity.
         </p>
     </section>
     <section class="map_main_container">
@@ -88,7 +88,7 @@ $daState = "Publics";
             } else {
             ?>
             <div class="mile-container">
-                <p class="devlog-desc">Data fetch failed</p>
+                <p class="devlog-desc">Fetch failed</p>
             </div>
             <?php
             };

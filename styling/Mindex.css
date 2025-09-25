@@ -146,10 +146,6 @@ span {
     flex-direction: column;
 }
 
-/* tables */
-.table-type-1 {
-    width: 70%;
-}
 
 /* uni param */
 .posf {
@@ -324,6 +320,12 @@ span {
 }
 .w65p {
     width: 65%;
+}
+.w70 {
+    width: 70vw;
+}
+.w70p {
+    width: 70%;
 }
 .w75 {
     width: 75vw;

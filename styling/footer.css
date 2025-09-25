@@ -1,7 +1,7 @@
 
 /* le footer */
 footer {
-    padding: 40px 6vw 10ch 6vw;
+    padding: 40px 6vw 10vh 6vw;
     width: 100%;
     height: max-content;
     display: flex;
@@ -13,7 +13,7 @@ footer {
 }
 .footer-group {
     padding: 10px 0;
-    min-width: calc(64vw + 224px);
+    min-width: calc(65vw + 224px);
     height: min-content;
     display: flex;
     justify-content: center;
@@ -41,14 +41,14 @@ footer {
 .legal {
     margin: auto 0;
     padding: 0 30px;
-    width: 64vw;
-    max-width: 64vw;
+    width: 65vw;
+    max-width: 65vw;
     height: 100%;
     text-align: left;
     color: rgb(191, 201, 208);
 }
 .legal .link {
-    padding: 0 20px;
+    padding: 0 16px;
     width: min-content;
     font-weight: 600;
     color: rgb(207, 230, 255);
