@@ -4,8 +4,8 @@
         <?php
             if ($UploadEnabled === "yes") {
         ?>
-                <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
                 <img src="../../img/add-circle.svg" alt="" class="Navigation_Button" onclick="SetDialog('add')">
+                <img src="../../img/search.png" alt="" class="Navigation_Button" onclick="search()">
         <?php
             } elseif (isset($SearchEnabled) && $SearchEnabled === "yes") {
         ?>
@@ -13,15 +13,8 @@
         <?php
             };
         ?>
-        <img src="../../img/grid.svg" alt="" class="Navigation_Button" onclick="settings()">
     </div>
     <img src="../../img/hide.png"  id="HideNav_Button" onclick="Navigation()">
-    <div id="Settings_Panel" style="transform: translateY(100vh) translateX(-50%);">
-        <img src="../../img/earth.svg" alt="" class="Settings_Option" onclick="linker('forum')">
-        <img src="../../img/library.svg" alt="" class="Settings_Option" onclick="linker('library')">
-        <img src="../../img/person.svg" alt="" class="Settings_Option" onclick="linker('profile')">
-        <img src="../../img/log-out.png" alt="" class="Settings_Option" onclick="linker('logout')">
-    </div>
     <!-- search panel -->
     <form id="Search_Panel" style="transform: translateY(100vh) translateX(-50%);" action="./<?php echo isset($page) ? $page : 'dashboard';?>.php">
         <?php if(isset($subpage) && isset($paramsubpage)){ ?><input type="text" name="<?php echo $paramsubpage;?>" value="<?php echo $subpage;?>" hidden tabindex="99"><?php };?>

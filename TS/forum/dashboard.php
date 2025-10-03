@@ -27,6 +27,7 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/forum_univ.css">
@@ -89,37 +90,15 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
     <section class="posf lt0 pad-s w20 h100 bg-2 flex fld gap-s z2">
         <h2 class="pad-n txt-b border-b semibold">Dashboard</h2>
         <div class="pad-n-s pad-st w100p flex fld border-b">
-            <h2 class="pad-sb w100p txt-n semibold">Trendings</h2>
-            <?php
-            $TempTopic = [];
-            $stmt_check_topic = $connects->prepare("SELECT * FROM topics WHERE topicState = ?;");
-            $stmt_check_topic->bind_param("s", $topicState);
-            $stmt_check_topic->execute();
-            $result_check_topic = $stmt_check_topic->get_result();
-            if ($result_check_topic->num_rows > 0) {
-                $uniqueItem = [];
-                while ($value = $result_check_topic->fetch_assoc()) {
-                    $ids = $value['topicIds'];
-                    $titles = $value['topicTitles'];
-                    if (!in_array($ids, $uniqueItem)) {
-                        $TempTopicArray[$ids] = $titles;
-            ?>
+            <h2 class="pad-sb w100p txt-n semibold">Highlight</h2>
             <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s ovh"><?php echo $titles;?></h2>
-                <a href="viewtopic.php?topicIds=<?php echo $ids;?>" class="link-cover">.</a>
+                <h2 class="w100p txt-s ovh">ThouSands Shores</h2>
+                <a href="viewtopic.php?topicIds=ThouSands-02471F" class="link-cover">.</a>
             </div>
-            <?php
-                    };
-                };
-            } else {
-            ?>
             <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
-                <h2 class="w100p txt-s">Error retrieving</h2>
-                <a href="#" class="link-cover">.</a>
+                <h2 class="w100p txt-s ovh">ThouSands(Bug & Feedback)</h2>
+                <a href="viewtopic.php?topicIds=ThouSands-Bug-n-Feedback-2362025" class="link-cover">.</a>
             </div>
-            <?php
-            };
-            ?>
         </div>
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n semibold points" onclick="linker('topic')">Topic</h2>
@@ -151,6 +130,20 @@ $requestedItem = htmlspecialchars($requestedItem, ENT_QUOTES, 'UTF-8');
             <?php
             };
             ?>
+        </div>
+        <div class="pad-s w100p flex fld border-b gap5">
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">Library</h2>
+                <a href="../../library/core/markout.php" class="link-cover">.</a>
+            </div>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">Profile</h2>
+                <a href="profile.php?user=self" class="link-cover">.</a>
+            </div>
+            <div class="posr pad-s-s pad-r pad-sb w100p flex fld">
+                <h2 class="w100p txt-s">Log-Out</h2>
+                <a href="../../processes/logout.php" class="link-cover">.</a>
+            </div>
         </div>
     </section>
     <!-- forum there -->

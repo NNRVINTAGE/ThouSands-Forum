@@ -1,4 +1,4 @@
 <?php
-header ('location: ../../libs.php');
+header ('location: ../../index.php');
 exit;
 ?>

@@ -6,7 +6,7 @@
             <img src="img/gateway.png" alt="" class="footer_logo">
         </div>
         <div class="footer-group">
-            <a href="https://" class="menu_button">About VODSOL</a>|
+            <a href="https://" class="menu_button">VODSOL</a>|
             <a href="ThouSandsGateways.php" class="menu_button sideborder">Gateways</a>|
             <a href="CrossGate.php" class="menu_button sideborder">CrossGates</a>|
             <a href="documentation/e-docs.php" class="menu_button sideborder">Documentation</a>|

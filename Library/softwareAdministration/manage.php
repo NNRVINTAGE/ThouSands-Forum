@@ -7,7 +7,7 @@ if (isset($_SESSION['profileTags'])) {
     // $TmpKeys = $_SESSION['TmpKeys'];
     $name = $_SESSION['username'];
 } else {
-    header ('location: ../../libs.php');
+    header ('location: ../../index.php');
     exit;
 };
 $State = "publics";
@@ -48,6 +48,7 @@ if ($result_check_software->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../styling/nav.css">
     <link rel="stylesheet" href="../../styling/pallate.css">
     <link rel="stylesheet" href="../../styling/Mindex.css">
@@ -76,7 +77,7 @@ if ($result_check_software->num_rows > 0) {
         <div class="pad-n-s pad-st w100p flex fld border-b">
             <h2 class="pad-sb w100p txt-n">Links</h2>
             <a href="../../TS/forum/dashboard.php" class="pad-s-s pad-r pad-sb txt-s">Forum</a>
-            <a href="../core/home.php" class="pad-s-s pad-r pad-sb txt-s">Library</a>
+            <a href="../../index.php" class="pad-s-s pad-r pad-sb txt-s">Library</a>
         </div>
     </section>
     <section class="leftMg pad-s-v w79p flex gap-s z2">

@@ -15,6 +15,7 @@ $State = "Publics";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="styling/pallate.css">
     <link rel="stylesheet" href="styling/Mindex.css">
     <link rel="stylesheet" href="styling/footer.css">
@@ -23,15 +24,7 @@ $State = "Publics";
 <body>
     <header>
         <nav>
-            <?php
-            if ($isLogged != true) {
-            ?>
-            <a href="libs.php" class="nav-button">Library</a>
-            <a href="Forum.php" class="nav-button">Forums</a>
-            <?php
-            };
-            ?>
-            <a href="index.php" class="nav-button">Gateways</a>
+            <a href="gateway.php" class="nav-button">Gateways</a>
             <a href="thousands.php" class="nav-button">Shores</a>
         </nav>
         <div class="linkie-button">
@@ -39,7 +32,7 @@ $State = "Publics";
             if ($isLogged == true) {
             ?>
             <a href="TS/forum/dashboard.php" class="linkie dashb">Forum</a>
-            <a href="Library/core/home.php" class="linkie dashb">Library</a>
+            <a href="index.php" class="linkie dashb">Library</a>
             <?php
             } else {
             ?>
@@ -65,8 +58,8 @@ $State = "Publics";
     <section id="sandbridges" class="flex">
         <h2 class="txt-b">SandBridges Plugin</h2>
         <p class="txt-s">For the developer to integrate CrossGate achievement system with an easy to use setup</p>
-        <a href="https://github.com/NNRVINTAGE/SandBridges" class="sideMg w50 txt-n button">Download</a>
-        <a href="https://github.com/NNRVINTAGE/SandBridges" class="sideMg w50 txt-n button">Source</a>
+        <a href="gets/crossgate.rar" class="sideMg w50 txt-n button">Download</a>
+        <a href="https://github.com/NNRVINTAGE/CrossGate" class="sideMg w50 txt-n button">Source</a>
         <p class="sideMg txt-ms">Current version only supported & tested in Godot</p>
     </section>
     <?php include_once 'footer.php';?>

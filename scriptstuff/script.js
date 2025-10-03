@@ -3,9 +3,6 @@ function linker(reqstate) {
         case 'login':
             window.location.replace('login.php');
             break;
-        case 'home':
-            window.location.replace('home.php');
-            break; 
         case 'dashboard':
             window.location.replace('dashboard.php');
             break; 
@@ -24,8 +21,8 @@ function linker(reqstate) {
         case 'forum':
             window.location.replace('../../TS/forum/dashboard.php');
             break;
-        case 'library':
-            window.location.replace('../../Library/core/home.php');
+        case 'index':
+            window.location.replace('../../index.php');
             break;
         case 'logout':
             window.location.replace('../../processes/logout.php');

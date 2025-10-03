@@ -91,6 +91,9 @@ span {
     background: var(--primary);
 }
 
+.bg-white {
+    background: rgb(255, 255, 255);
+}
 .bg-semiwhite {
     background: rgb(87, 97, 104);
 }
@@ -351,6 +354,11 @@ span {
 .w100p {
     width: 100%;
 }
+
+.min100 {
+    min-height: 100vh;
+}
+
 .h10 {
     height: 10vh;
 }
@@ -393,11 +401,23 @@ span {
 .h60p {
     height: 60%;
 }
+.h70 {
+    height: 70vh;
+}
+.h70p {
+    height: 70%;
+}
 .h80 {
     height: 80vh;
 }
 .h80p {
     height: 80%;
+}
+.h90 {
+    height: 90vh;
+}
+.h90p {
+    height: 90%;
 }
 .h100 {
     height: 100vh;
@@ -562,6 +582,9 @@ span {
 }
 
 /* uni zindex */
+.z0 {
+    z-index: 1;
+}
 .z1 {
     z-index: 1;
 }
@@ -680,3 +703,19 @@ span {
     text-align: center;
 }
 /* Alcyoneus Sueno Alcy */
+
+.opacity7 {
+    opacity: 0.7;
+}
+
+.blurbg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    z-index: -1;
+}
